@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\services\api\UrlServices;
 
 use App\Http\Controllers\Controller;
+use App\services\admin\DetailsServices;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
@@ -13,21 +14,15 @@ class DashboardController extends Controller
 {
     public function index(){
 
-        $detailsUser=$this->getUserDetails();
+        $detailsUser=(new DetailsServices())->getUserDetails();
         $countResource=$this->getCountResource();
-        $token=Session::get('token');
 
-        return view('admin.dashboard',compact('detailsUser','countResource'));
+
+        return view('admin.dashboard',compact('countResource','detailsUser'));
         //return $detailsUser;
     }
 
-    public function getUserDetails(){
-        $url=(new UrlServices())->getUrl();
-        $token=Session::get('token');
-        $response=Http::withToken($token)->get($url.'/api/admin/v1/details/admin');
 
-        return $response;
-    }
 
     public function getCountResource(){
         $url=(new UrlServices())->getUrl();

@@ -27,7 +27,7 @@
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-traffic"></i><span>Agences</span></a>
                 <ul class="ml-menu">
-                    <li><a href="">Liste</a></li>
+                    <li><a href="{{ route('admin.agencies.index') }}">Liste</a></li>
                     <li><a href="">Ajouter</a></li>
 
                 </ul>

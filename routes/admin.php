@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AgenciesController;
 use App\Http\Controllers\Admin\auth\loginController;
 use App\Http\Controllers\Admin\auth\LogoutController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -25,6 +26,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::middleware(['admin'])->group(function(){
 
     });
+    Route::resource('agencies', AgenciesController::class);
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 
     Route::post('logout',[LogoutController::class,'logout'])->name('logout');
