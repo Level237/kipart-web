@@ -14,9 +14,10 @@ class DashboardController extends Controller
     public function index(){
 
         $detailsUser=$this->getUserDetails();
+        $countResource=$this->getCountResource();
         $token=Session::get('token');
 
-        return view('admin.dashboard',compact('detailsUser'));
+        return view('admin.dashboard',compact('detailsUser','countResource'));
         //return $detailsUser;
     }
 
@@ -24,6 +25,14 @@ class DashboardController extends Controller
         $url=(new UrlServices())->getUrl();
         $token=Session::get('token');
         $response=Http::withToken($token)->get($url.'/api/admin/v1/details/admin');
+
+        return $response;
+    }
+
+    public function getCountResource(){
+        $url=(new UrlServices())->getUrl();
+        $token=Session::get('token');
+        $response=Http::withToken($token)->get($url.'/api/admin/v1/count/resources');
 
         return $response;
     }

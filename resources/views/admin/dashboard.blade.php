@@ -25,7 +25,7 @@
                 <div class="card widget_2 big_icon traffic">
                     <div class="body">
                         <h6>Agences</h6>
-                        <h2>20 <small class="info">Agences</small></h2>
+                        <h2>{{ $countResource['agencies'] }}<small class="info"> Agences</small></h2>
                         <small>2% de plus que hier</small>
                         <div class="progress">
                             <div class="progress-bar l-amber" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 2%;"></div>
@@ -37,7 +37,7 @@
                 <div class="card widget_2 big_icon sales">
                     <div class="body">
                         <h6>Tickets</h6>
-                        <h2>10 <small class="info">Vendus</small></h2>
+                        <h2>{{ $countResource['tickets'] }}<small class="info"> Vendus</small></h2>
                         <small>6% superieur a hier</small>
                         <div class="progress">
                             <div class="progress-bar l-blue" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width: 6%;"></div>
@@ -61,7 +61,7 @@
                 <div class="card widget_2 big_icon domains">
                     <div class="body">
                         <h6>Utilisateur </h6>
-                        <h2>100 <small class="info">Nouveaux</small></h2>
+                        <h2>{{ $countResource['users'] }}<small class="info"> Nouveaux</small></h2>
                         <small>20% de plus que hier</small>
                         <div class="progress big_icon domains">
                             <div class="progress-bar l-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
