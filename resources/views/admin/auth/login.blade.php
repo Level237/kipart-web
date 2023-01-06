@@ -22,7 +22,7 @@
             <input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
-				<form>
+				<form action="{{ route('admin.login') }}">
 					<label for="chk" aria-hidden="true">Admin Login</label>
 					<input type="email" name="email" placeholder="Email" required="">
 					<input type="password" name="pswd" placeholder="Password" required="">

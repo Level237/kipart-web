@@ -4,9 +4,9 @@ namespace App\services\api;
 
 class UrlServices{
 
-    public static $url="Kipart.stillforce.tech";
+    public static $url="http://kipart.stillforce.tech";
 
-    public static function get(){
+    public static function getUrl(){
         return self::$url;
     }
 }
