@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Title Tag  -->
-	<title>KiPART WEB</title>
+	<title>KiPART</title>
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/favicon.png" href="img/favicon.png">
@@ -159,7 +159,7 @@
 								<div class="input-group mb-3 ">
 
 									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+										aria-describedby="basic-addon3" placeholder="Ville">
 								</div>
 							</div>
 						</div>
