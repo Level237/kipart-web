@@ -18,19 +18,24 @@
 <body>
 	<div class="main">
 
-        <form action="">
-            <input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
-				<form action="{{ route('admin.login') }}">
+				<form method="POST" action="{{ route('admin.login') }}">
+
+                    @csrf
 					<label for="chk" aria-hidden="true">Admin Login</label>
+                    @if(Session::get("fail"))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail') }}
+                                </div>
+                            @endif
 					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Sign up</button>
+					<input type="password" name="password" placeholder="Password" required="">
+					<button type="submit">Log In</button>
 				</form>
 			</div>
 
-        </form>
+
 
 
 

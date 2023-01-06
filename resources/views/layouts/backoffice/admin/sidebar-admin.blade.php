@@ -10,7 +10,7 @@
                 <div class="user-info">
                     <a class="image" href="profile.html"><img src="{{ asset('admin/assets/images/profile_av.jpg') }}" alt="User"></a>
                     <div class="detail">
-                        <h4>{{ Auth::guard('admin')->user()->name }}</h4>
+                        <h4>Admin</h4>
                         <small>Super Admin</small>
                     </div>
                 </div>
@@ -27,14 +27,14 @@
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-traffic"></i><span>Agences</span></a>
                 <ul class="ml-menu">
-                    <li><a href="{{ route('admin.agencies.index') }}">Liste</a></li>
-                    <li><a href="{{ route('admin.agencies.create') }}">Ajouter</a></li>
+                    <li><a href="">Liste</a></li>
+                    <li><a href="">Ajouter</a></li>
 
                 </ul>
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-bus"></i><span>Voyages</span></a>
                 <ul class="ml-menu">
-                    <li><a href="{{ route('admin.travels.index') }}">Tout les voyages</a></li>
+                    <li><a href="">Tout les voyages</a></li>
                     {{-- <li><a href="{{ route('admin.travels.create') }}">Generer</a></li> --}}
 
                 </ul>
@@ -42,16 +42,16 @@
 
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-bus"></i><span>Trajet</span></a>
                 <ul class="ml-menu">
-                    <li><a href="{{ route('admin.paths.index') }}">Tout les Trajets</a></li>
-                    <li><a href="{{ route('admin.paths.create') }}">Ajouter un trajet</a></li>
+                    <li><a href="">Tout les Trajets</a></li>
+                    <li><a href="">Ajouter un trajet</a></li>
 
                 </ul>
             </li>
 
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-bus"></i><span>bus</span></a>
                 <ul class="ml-menu">
-                    <li><a href="{{ route('admin.bus.index') }}">Tout les Bus</a></li>
-                    <li><a href="{{ route('admin.bus.create') }}">Ajouter un Bus</a></li>
+                    <li><a href="">Tout les Bus</a></li>
+                    <li><a href="">Ajouter un Bus</a></li>
 
                 </ul>
             </li>
