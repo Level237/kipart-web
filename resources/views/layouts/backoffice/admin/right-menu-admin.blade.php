@@ -231,7 +231,7 @@
         <li><a href="javascript:void(0);" class="app_group_work" title="Group Work"><i class="zmdi zmdi-group-work"></i></a></li>
         <li><a href="javascript:void(0);" class="js-right-sidebar" title="Setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
 
-        <form method="POST" action="" id="logout-form">
+        <form method="POST" action="{{ route('admin.logout') }}" id="logout-form">
             @csrf
 
 

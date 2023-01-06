@@ -2,7 +2,7 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="index.html"><img src="admin/assets/images/kipart.png" width="25" alt="Aero"><span class="m-l-10" style="color: #fff">KiPART</span></a>
+        <a href="index.html"><img src="{{ asset('admin/assets/images/kipart.png') }}" width="25" alt="Aero"><span class="m-l-10" style="color: #fff">KiPART</span></a>
     </div>
     <div class="menu">
         <ul class="list">
@@ -10,8 +10,8 @@
                 <div class="user-info">
                     <a class="image" href="profile.html"><img src="{{ asset('admin/assets/images/profile_av.jpg') }}" alt="User"></a>
                     <div class="detail">
-                        <h4>Admin</h4>
-                        <small>Super Admin</small>
+                        <h4>{{ $detailsUser['name'] }}</h4>
+                        <small>Admin Kipart</small>
                     </div>
                 </div>
             </li>
