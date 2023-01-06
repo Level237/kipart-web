@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Agent\auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('agent')->name('agent.')->group(function(){
 
-Route::get('/', function () {
-    return view('homepage');
+    Route::get('login',[LoginController::class,'index'])->name('login');
+    Route::post('login',[LoginController::class,'login'])->name('login');
 });
