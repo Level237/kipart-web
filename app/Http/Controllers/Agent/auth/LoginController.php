@@ -25,7 +25,7 @@ class LoginController extends Controller
         ]);
 
         $access_token = json_decode((string) $response->getBody(), true)['access_token'];
-        Session::put('token', $access_token);
+        Session::put('tokenAgency', $access_token);
         Session::save();
 
         if(isset($response['error'])){

@@ -225,16 +225,14 @@
 
 
 
-        <li><a href="{{ route('agent.logout') }}" class="mega-menu" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Sign Out"><i class="zmdi zmdi-power"></i>
-
-        </a>
-        <form  action="{{ route('agent.logout') }}" method="post" id="logout-form" class="d-none">
+        <form method="POST" action="{{ route('agent.logout') }}" id="logout-form">
             @csrf
 
 
-
-
         </form>
-    </li>
+
+        <li><a href="" class="mega-menu" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Sign Out"><i class="zmdi zmdi-power"></i>
+
+        </a></li>
     </ul>
 </div>

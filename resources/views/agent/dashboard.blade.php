@@ -7,7 +7,7 @@
     <div class="block-header">
         <div class="row">
             <div class="col-lg-7 col-md-6 col-sm-12">
-                <h2>{{ Auth::guard('agent')->user()->name }}</h2>
+                <h2>{{ $detailAgency['name'] }}</h2>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> Agence</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
@@ -25,7 +25,7 @@
                 <div class="card widget_2 big_icon traffic">
                     <div class="body">
                         <h6>Bus</h6>
-                        <h2>20 <small class="info">Bus</small></h2>
+                        <h2>{{ $countResource['numberOfBus'] }} <small class="info">Bus</small></h2>
                         <small>2% de plus que hier</small>
                         <div class="progress">
                             <div class="progress-bar l-amber" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 2%;"></div>
@@ -36,7 +36,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card widget_2 big_icon sales">
                     <div class="body">
-                        <h6>Trajets</h6>
+                        <h6>Voyages</h6>
                         <h2>10 <small class="info">Trajets</small></h2>
                         <small>6% superieur a hier</small>
                         <div class="progress">
