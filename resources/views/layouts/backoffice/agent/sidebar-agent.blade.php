@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </li>
-            <li class="active open"><a href="#"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+            <li class="active open"><a href="{{ route('agent.dashboard') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
             <li><a href="#"><i class="zmdi zmdi-account"></i><span>Mon Profil</span></a></li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span></a>
                 <ul class="ml-menu">
@@ -42,8 +42,8 @@
 
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-ticket-star"></i><span>Tickets</span></a>
                 <ul class="ml-menu">
-                    <li><a href="#">Historique</a></li>
-                    <li><a href="#">Lister</a></li>
+                    <li><a href="{{ route('agent.tickets') }}">Tout les Tickets</a></li>
+                    <li><a href="{{ route('agent.select-ticket') }}">Filtrer</a></li>
                 </ul>
             </li>
             {{-- <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-box-o"></i><span>Utilisateurs</span></a>

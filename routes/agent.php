@@ -3,6 +3,7 @@
 use App\Http\Controllers\Agent\auth\LoginController;
 use App\Http\Controllers\Agent\auth\LogoutController;
 use App\Http\Controllers\Agent\DashboardController;
+use App\Http\Controllers\Agent\TicketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,7 @@ Route::prefix('agent')->name('agent.')->group(function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
     Route::post('login',[LoginController::class,'login'])->name('login');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('select/ticket/filter',[TicketController::class])->name('select-ticket');
+    Route::get('tickets',[TicketController::class,'index'])->name('tickets');
     Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 });
