@@ -21,7 +21,7 @@ Route::prefix('agent')->name('agent.')->group(function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
     Route::post('login',[LoginController::class,'login'])->name('login');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::get('select/ticket/filter',[TicketController::class])->name('select-ticket');
+    Route::get('select/ticket/filter',[TicketController::class,'selectFilter'])->name('select-ticket');
     Route::get('tickets',[TicketController::class,'index'])->name('tickets');
     Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 });

@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="{{ asset('admin/assets/plugins/charts-c3/plugin.css') }}"/>
 
 <link rel="stylesheet" href="{{ asset('admin/assets/plugins/morrisjs/morris.min.css') }}" />
-
+<link rel="stylesheet" href="{{ asset('admin/assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" />
 <!-- Custom Css -->
 <link rel="stylesheet" href="{{ asset('admin/assets/css/style.min.css') }}">
 </head>
