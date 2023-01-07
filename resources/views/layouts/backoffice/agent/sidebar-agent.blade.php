@@ -8,7 +8,7 @@
         <ul class="list">
             <li>
                 <div class="user-info">
-                    <a class="image" href="#"><img src="{{ asset('admin/assets/images/buca.jpg') }}" alt="User"></a>
+                    <a class="image" href="#"><img src="{{ 'http://kipart.stillforce.tech/'.$detailAgency['logo'] }}" alt="User"></a>
                     <div class="detail">
                         <h4>{{ $detailAgency['name'] }}</h4>
 
