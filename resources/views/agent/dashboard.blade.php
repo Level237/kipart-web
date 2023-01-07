@@ -34,10 +34,10 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card widget_2 big_icon sales">
+                <div class="card widget_2">
                     <div class="body">
-                        <h6>Voyages</h6>
-                        <h2>10 <small class="info">Trajets</small></h2>
+                        <h6>Trajet Favori</h6>
+                        <h5>Douala-Yaoundé</h5>
                         <small>6% superieur a hier</small>
                         <div class="progress">
                             <div class="progress-bar l-blue" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width: 6%;"></div>
@@ -60,8 +60,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card widget_2 big_icon domains">
                     <div class="body">
-                        <h6>Ticket Vendus </h6>
-                        <h2>100 <small class="info">Nouveaux</small></h2>
+                        <h6>Tickets</h6>
+                        <h2>{{ $countResource['ticket'] }} <small class="info">vendus</small></h2>
                         <small>20% de plus que hier</small>
                         <div class="progress big_icon domains">
                             <div class="progress-bar l-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
@@ -76,7 +76,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Ticket list</h2>
+                    <h2>Tickets Recent</h2>
 
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
@@ -92,7 +92,7 @@
                     <div class="card state_w1">
                         <div class="body d-flex justify-content-between">
                             <div>
-                                <h5>2,365</h5>
+                                <h5>{{ $countResource['total'] }}</h5>
                                 <span>Total Tickets</span>
                             </div>
                             <div class="sparkline" data-type="bar" data-width="97%" data-height="55px" data-bar-Width="3" data-bar-Spacing="5" data-bar-Color="#FFC107">5,2,3,7,6,4,8,1</div>
@@ -140,79 +140,39 @@
                             <table class="table table-hover c_table">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Nom</th>
-                                        <th>Bus</th>
+                                        <th>Numero de place</th>
+                                        <th>Telephone</th>
                                         <th>Trajet</th>
                                         <th>Date</th>
                                         <th>heure</th>
                                         <th>Classe</th>
-                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><strong>A2586</strong></td>
-                                        <td><a href="#" title="">Jean Rousseau</a></td>
-                                        <td>LT 390</td>
-                                        <td>Doual-Yaounde</td>
-                                        <td>02 Janv 2023</td>
-                                        <td>11h</td>
-                                        <td>VIP</td>
-                                        <td><span class="badge badge-warning">en attente</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>A4578</strong></td>
-                                        <td><a href="ticket-detail.html" title="">Marie Nicaise</a></td>
-                                        <td>CE 879</td>
-                                        <td>Douala - Baff</td>
-                                        <td>04 Jan 2023</td>
-                                        <td>6h</td>
-                                        <td>CLASSIQUE</td>
-                                        <td><span class="badge badge-warning">En attente</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>A6523</strong></td>
-                                        <td><a href="ticket-detail.html" title="">Paul Loussa</a></td>
-                                        <td>CE 890</td>
-                                        <td>Douala-Yaounde</td>
-                                        <td>09 Jan 2023</td>
-                                        <td>4h30</td>
-                                        <td>PRESTIGE</td>
-                                        <td><span class="badge badge-info">Validé</span></td>
-                                    </tr>
+                                    @foreach ($datas as $tickets)
+                                        @foreach ($tickets as $ticket)
+                                            <tr>
+                                                <td><strong>{{ $ticket->name }}</strong></td>
+                                                <td><a href="#" title="">{{ $ticket->seatNumber }}</a></td>
+                                                <td>{{ $ticket->telephone }}</td>
+                                                @foreach ($ticket->Voyage as $travel)
+                                                <td>{{ $travel->departure }} - {{ $travel->arrival }}</td>
 
-                                    <tr>
-                                        <td><strong>A6573</strong></td>
-                                        <td><a href="#" title="">Paul poopo</a></td>
-                                        <td>CE 890</td>
-                                        <td>Douala-Yaounde</td>
-                                        <td>09 Jan 2023</td>
-                                        <td>4h30</td>
-                                        <td>VVIP</td>
-                                        <td><span class="badge badge-info">Validé</span></td>
-                                    </tr>
 
-                                    <tr>
-                                        <td><strong>A3573</strong></td>
-                                        <td><a href="#" title="">Noum poopo</a></td>
-                                        <td>LT 890</td>
-                                        <td>Douala-Dschang</td>
-                                        <td>10 Jan 2023</td>
-                                        <td>8h30</td>
-                                        <td>Classique</td>
-                                        <td><span class="badge badge-info">Validé</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>A3573</strong></td>
-                                        <td><a href="#" title="">Noumbisie Marthe</a></td>
-                                        <td>OU 890</td>
-                                        <td>Douala-Bafang</td>
-                                        <td>20 Dec 2022</td>
-                                        <td>8h30</td>
-                                        <td>Classique</td>
-                                        <td><span class="badge badge-info">Validé</span></td>
-                                    </tr>
+                                                <td>{{ $travel->date }}</td>
+
+                                                <td>{{ $travel->heure }}</td>
+
+                                                <td>{{ $travel->classe }}</td>
+                                                {{--  <td><span class="badge badge-warning">en attente</span></td>  --}}
+                                                @endforeach
+                                            </tr>
+
+
+                                        @endforeach
+                                    @endforeach
+
 
                                 </tbody>
                             </table>
@@ -240,7 +200,7 @@
                         <div class="chat-widget">
                             <ul class="list-unstyled">
                                 <li class="left">
-                                    <img src="{{ asset('admin/assets/images/buca.jpg') }}" class="rounded-circle" alt="">
+                                    <img src="{{ 'http://kipart.stillforce.tech/'.$detailAgency['logo'] }}" class="rounded-circle" alt="">
                                     <ul class="list-unstyled chat_info">
                                         <li><small>Buca 11:00AM</small></li>
                                         <li><span class="message bg-blue">Hello, Kipart</span></li>
