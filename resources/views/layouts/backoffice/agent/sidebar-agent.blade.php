@@ -10,7 +10,7 @@
                 <div class="user-info">
                     <a class="image" href="#"><img src="{{ asset('admin/assets/images/buca.jpg') }}" alt="User"></a>
                     <div class="detail">
-                        <h4>{{ Auth::guard('agent')->user()->name }}</h4>
+                        <h4>{{ $detailAgency['name'] }}</h4>
 
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                     <li><a href="jvectormap.html">jVectorMap</a></li>
                 </ul>
             </li> --}}
-           
+
         </ul>
     </div>
 </aside>
