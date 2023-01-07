@@ -143,7 +143,7 @@
 					<div class="home-slider2  w-70  input-border position-absolute position-relative"
 						style="background-color: rgb(255, 255, 255);margin-left: -100px;margin-top: 70px;">
 						<div class="col-lg-8 col-md-8 col-12 ">
-							<form class="form " method="post" action="#">
+
 								<div class="col-md-8">
 									<select class="form-select" aria-label="Default select example"
 										style="color: #da920d; font-family: Arial, Helvetica, sans-serif;">
@@ -154,12 +154,12 @@
 						</div>
 
 						<div class="row mt-3">
-							<div class="col-lg-12 col-md-12">
+							<div class="col-lg-12 col-md-12 input-border">
 
 								<div class="input-group mb-3 ">
 
-									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3" placeholder="Ville">
+									<input type="text" class="form-control input-design"  id="basic-url"
+										aria-describedby="basic-addon3" placeholder="Depart">
 								</div>
 							</div>
 						</div>
@@ -169,7 +169,7 @@
 								<div class="input-group mb-3 ">
 
 									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+										aria-describedby="basic-addon3" placeholder="Arrivé">
 								</div>
 							</div>
 						</div>
@@ -179,16 +179,16 @@
 
 								<div class="input-group mb-3 ">
 
-									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+									<input type="date" class="form-control input-design" id="basic-url"
+										aria-describedby="basic-addon3" placeholder="Date de Depart">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 
 								<div class="input-group mb-3 ">
 
-									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+									<input type="date" class="form-control input-design" id="basic-url"
+										aria-describedby="basic-addon3" placeholder="Ajouter un retour">
 								</div>
 							</div>
 						</div>
