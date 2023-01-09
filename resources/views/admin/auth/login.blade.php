@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Sign up / Login Form</title>
+  <title>Login:Admin</title>
   <link rel="stylesheet" href="{{ asset('assets/css/login/login.css') }}">
 
 </head>
