@@ -13,7 +13,7 @@
 	<title>KiPART</title>
 
 	<!-- Favicon -->
-	<link rel="icon" type="image/favicon.png" href="img/favicon.png">
+	<link rel="icon" type="image/favicon.png" href="assets/img/favicon.png">
 
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -138,26 +138,26 @@
 			<div class="hero d-flex justify-content-center">
 
 
-				<div class="home-slider1  position-relative"
-					style="background-image:url({{ asset('assets/img/home.png') }}); margin-top: 40px;margin-right: -150px;">
-					<div class="home-slider2  w-70  input-border position-absolute position-relative"
-						style="background-color: rgb(255, 255, 255);margin-left: -100px;margin-top: 70px;">
-						<div class="col-lg-8 col-md-8 col-12 ">
+				<div class="home-slider1  position-relative" style="background-image:url({{ asset('assets/img/home.png') }}); margin-top: 40px;margin-right: -150px;">
+					<div class="home-slider2  w-70  input-border position-absolute position-relative" style="background-color: rgb(255, 255, 255);margin-left: -100px;margin-top: 70px;">
 
-								<div class="col-md-8">
-									<select class="form-select" aria-label="Default select example"
-										style="color: #da920d; font-family: Arial, Helvetica, sans-serif;">
+						<div class="col-lg-6 col-md-12 ">
+                            <div class="input-group mb-1 ">
+                            <select class=" input-group" style="color: #da920d;border:none ">
 										<option value="1">Aller Simple</option>
 										<option value="2">Aller et retour</option>
 									</select>
-								</div>
+                            </div>
+
 						</div>
+
 
 						<div class="row mt-3">
 							<div class="col-lg-12 col-md-12">
 
-								<div class="input-group mb-1 ">
 
+								 <div class="input-group mb-1 ">
+                                    {{-- <span class="input-group-text" style="border-radius: 20px" id="basic-addon1">@</span> --}}
 									<input type="text" style="border-radius: 20px" class="form-control input-design"  id="basic-url"
 										aria-describedby="basic-addon3" placeholder="Depart">
 
