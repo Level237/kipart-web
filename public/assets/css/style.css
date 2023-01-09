@@ -4764,3 +4764,14 @@ p.has-large-font-size {
 
     border-radius:10% ;
 }
+
+.fontuser {
+    position: relative;
+}
+
+.fontuser i{
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    color: gray;
+}
