@@ -16,4 +16,13 @@ class DetailsAgencyServices{
 
         return $response;
     }
+
+    public function getMyTickets(){
+
+        $url=(new UrlServices())->getUrl();
+        $token=Session::get('tokenAgency');
+        $response=Http::withToken($token)->get($url.'/api/agent/v1/list/ticket');
+
+        return $response;
+    }
 }

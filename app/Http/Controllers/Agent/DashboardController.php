@@ -15,8 +15,11 @@ class DashboardController extends Controller
 
         $detailAgency=(new DetailsAgencyServices())->getDetails();
         $countResource=$this->getCountResource();
+        $tickets=$this->myTickets();
+        $datas=json_decode($tickets->getBody());
 
-        return view('agent.dashboard',compact('detailAgency','countResource'));
+        return view('agent.dashboard',compact('detailAgency','countResource','datas'));
+        //return $tickets;
     }
 
     public function getCountResource(){
@@ -25,5 +28,12 @@ class DashboardController extends Controller
         $response=Http::withToken($token)->get($url.'/api/agent/v1/count/resources');
 
         return $response;
+    }
+
+    public function myTickets(){
+
+        $tickets=(new DetailsAgencyServices())->getMyTickets();
+
+        return $tickets;
     }
 }
