@@ -19,7 +19,7 @@
             <li><a href="#"><i class="zmdi zmdi-account"></i><span>Mon Profil</span></a></li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span></a>
                 <ul class="ml-menu">
-                    <li><a href="#">Email</a></li>
+                    <li><a href="https://tawk.to/myKipart">Support chat</a></li>
                     <li><a href="#">kiPART Apps</a></li>
                     <li><a href="#">Calendar</a></li>
                     <li><a href="#">Contact</a></li>
