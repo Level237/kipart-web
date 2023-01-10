@@ -10,10 +10,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Title Tag  -->
-	<title>KiPART WEB</title>
+	<title>KiPART</title>
 
 	<!-- Favicon -->
-	<link rel="icon" type="image/favicon.png" href="img/favicon.png">
+	<link rel="icon" type="image/favicon.png" href="assets/img/favicon.png">
 
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -138,78 +138,109 @@
 			<div class="hero d-flex justify-content-center">
 
 
-				<div class="home-slider1  position-relative"
-					style="background-image:url({{ asset('assets/img/home.png') }}); margin-top: 40px;margin-right: -150px;">
-					<div class="home-slider2  w-70  input-border position-absolute position-relative"
-						style="background-color: rgb(255, 255, 255);margin-left: -100px;margin-top: 70px;">
-						<div class="col-lg-8 col-md-8 col-12 ">
-							<form class="form " method="post" action="#">
-								<div class="col-md-8">
-									<select class="form-select" aria-label="Default select example"
-										style="color: #da920d; font-family: Arial, Helvetica, sans-serif;">
+				<div class="home-slider1  position-relative" style="background-image:url({{ asset('assets/img/home.png') }}); margin-top: 40px;margin-right: -150px;">
+					<div class="home-slider2  w-70  input-border position-absolute position-relative" style="background-color: rgb(255, 255, 255);margin-left: -100px;margin-top: 70px;">
+
+						<div class="col-lg-6 col-md-12 ">
+                            <div class="input-group mb-1 ">
+                            <select class=" input-group" style="color: #da920d;border:none ">
 										<option value="1">Aller Simple</option>
 										<option value="2">Aller et retour</option>
 									</select>
-								</div>
+                            </div>
+
 						</div>
+
 
 						<div class="row mt-3">
 							<div class="col-lg-12 col-md-12">
 
-								<div class="input-group mb-3 ">
 
-									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+								 <div class="input-group mb-1 ">
+                                    {{-- <span class="input-group-text" style="border-radius: 20px" id="basic-addon1">@</span> --}}
+									<input type="text" style="border-radius: 20px" class="form-control input-design"  id="basic-url"
+										aria-describedby="basic-addon3" placeholder="Depart">
+
 								</div>
 							</div>
 						</div>
 						<div class="row mt-3">
 							<div class="col-lg-12 col-md-12">
 
-								<div class="input-group mb-3 ">
+								<div class="input-group  mb-1 ">
 
-									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+									<input type="text" style="border-radius: 20px" class=" form-control input-design" id="basic-url"
+										aria-describedby="basic-addon3" placeholder="Arrivé">
 								</div>
 							</div>
 						</div>
 
 						<div class="row mt-3">
-							<div class="col-lg-6 col-md-12">
+							<div class="col-lg-6 col-md-12 ">
 
-								<div class="input-group mb-3 ">
+								<div class="input-group mb-1 ">
 
-									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+									<input type="datetime-local" style="border-radius: 20px" class=" input-design" id="basic-url"
+										aria-describedby="basic-addon3" value="Date de Depart">
 								</div>
 							</div>
-							<div class="col-lg-6 col-md-12">
+							<div class="col-lg-6 col-md-12 ">
 
-								<div class="input-group mb-3 ">
+								<div class="input-group mb-1 ">
 
-									<input type="text" class="form-control input-design" id="basic-url"
+									<input type="datetime-local" style="border-radius: 20px" class=" input-design" id="basic-url"
 										aria-describedby="basic-addon3">
 								</div>
 							</div>
 						</div>
 
+                        <div class="row mt-3">
+							<div class="col-lg-6 col-md-12 ">
+
+								<div class="input-group  ">
+                                    <div class="icon" ><h4 style="color: rgb(229, 145, 0)"><i class="fa fa-user fa-1x"></i>Nombre de Passager</h4></div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-12 ">
+
+								<div class="input-group  ">
+                                    <div class="icon" ><h4 style="color: rgb(229, 145, 0)"><i class="fa fa-star fa-1x"></i>Classe</h4></div>
+								</div>
+							</div>
+						</div>
+
 						<div class="row mt-3">
-							<div class="col-lg-6 col-md-12">
+							<div class="col-lg-6 col-md-12 ">
 
-								<div class="input-group mb-3 ">
+								<div class="input-group mb-1 ">
 
-									<input type="number" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+									<input type="number" style="border-radius: 20px" class=" input-design" id="basic-url"
+										aria-describedby="basic-addon3" placeholder="0">
 								</div>
 							</div>
-							<div class="col-lg-6 col-md-12">
+							<div class="col-lg-6 col-md-12 ">
 
-								<div class="input-group mb-3 ">
+								<div class="input-group mb-1 ">
 
-									<input type="text" class="form-control input-design" id="basic-url"
-										aria-describedby="basic-addon3">
+									<select class="input-design input-group" style="align-content: center" >
+                                    <option value="1">VIP</option>
+                                    <option value="2">CLASSIQUE</option>
+                                </select>
 								</div>
 							</div>
+						</div>
+                        <div class="row mt-3" >
+							<div class="col-lg-12 col-md-12" style="align-content: center">
+
+								<div class="form-group button">
+                                    <button type="submit" class="bizwheel-btn3 ">CHERCHER
+                                    </button>
+                                </div>
+
+
+								</div>
+							</div>
+
 						</div>
 					</div>
 					</form>

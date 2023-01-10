@@ -22,7 +22,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /*======================================
 	CSS Theme Table of Contents
-========================================	
+========================================
 # Header CSS
 # Hero Area CSS
 # Features CSS
@@ -46,7 +46,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Contact Form CSS
 # Image Feature CSS
 # Theme Others CSS
-========================================*/ 
+========================================*/
 
 /*======================================
 	Header CSS
@@ -64,7 +64,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .center-element{
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
 /* Topbar */
@@ -188,7 +188,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 .header .menu-area {
     position: relative;
-    
+
 }
 
 .image1{
@@ -198,7 +198,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     -moz-boder-radius: 75px;
     -webkit-border-radius: 75px;
     border-radius: 25%;
-    
+
     border-color:#e2a307 ;
 }
 .header .navbar {
@@ -747,7 +747,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	background:#fff;
 	color:#111014;
 }
-.header.style2 .top-contact, 
+.header.style2 .top-contact,
 .header.style2 .social-icons {
     padding: 0;
 }
@@ -757,7 +757,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /*======================================
 	Blog CSS
-========================================*/  
+========================================*/
 .blog {
 	background: #fff;
 	position: relative;
@@ -897,7 +897,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	display: inline-block;
 	margin-left: 5px;
 }
-/* Blog Grid */ 
+/* Blog Grid */
 .blog.blog-grid {
 	background: #fff;
 	position: relative;
@@ -913,11 +913,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     padding: 50px 0 50px;
     background: #fff;
 }
-.blog-single h1, 
-.blog-single h2, 
-.blog-single h3, 
-.blog-single h4, 
-.blog-single h5, 
+.blog-single h1,
+.blog-single h2,
+.blog-single h3,
+.blog-single h4,
+.blog-single h5,
 .blog-single h6 {
     margin-bottom: 10px;
     margin-top: 10px;
@@ -1091,7 +1091,7 @@ blockquote {
 /* Comment List */
 
 .input-icon  {
-    
+
     position: relative;
 }
 .input-icon i{
@@ -1099,7 +1099,7 @@ blockquote {
     left: 10;
     top: 20px;
     color: #E7A014;
-    
+
 
 }
 .blog-comments-form {
@@ -1143,7 +1143,7 @@ blockquote {
 }
 /*======================================
 	End Blog CSS
-========================================*/  
+========================================*/
 
 /*====================================
 	Shop CSS
@@ -1166,7 +1166,7 @@ blockquote {
 
 /*======================================
 	Sidebar CSS
-========================================*/  
+========================================*/
 /* Blog Sidebar */
 .blog-sidebar {
 	margin-top: 30px;
@@ -1368,7 +1368,7 @@ blockquote {
 }
 /*======================================
 	End Sidebar CSS
-========================================*/  
+========================================*/
 
 /*====================================
 	Page CSS
@@ -1720,7 +1720,7 @@ blockquote {
 	End Preloader CSS
 ======================================*/
 
-/* Boxed Layout 
+/* Boxed Layout
 
 #page.boxed-layout {
 	position: relative;
@@ -2090,28 +2090,28 @@ p.has-large-font-size {
 
 /*======================================
 	Hero Area CSS
-========================================*/ 
+========================================*/
 .home-slider1 {
     width: 65%;
     height: 80%;
-    background-size: cover;  
+    background-size: cover;
     border-radius: 10%;
     z-index: 1;
-    margin-bottom: 15px; 
-   
-    
+    margin-bottom: 15px;
+
+
 }
 .home-slider2 {
 	width: 60%;
     height: 80%;
-    background-size: cover;  
-    border-radius: 10%; 
+    background-size: cover;
+    border-radius: 10%;
     z-index: 2;
     padding: 4%;
-   
-   
-   
-   
+
+
+
+
 }
 
 .hero-slider {
@@ -2122,7 +2122,7 @@ p.has-large-font-size {
 .hero{
     background-size: cover;
     background-position: center;
-    
+
 }
 
 .hero-slider, .hero,
@@ -2442,7 +2442,7 @@ p.has-large-font-size {
 }
 /*======================================
    End Hero Area CSS
-========================================*/ 
+========================================*/
 
 /*======================================
 	Features CSS
@@ -2590,12 +2590,12 @@ p.has-large-font-size {
 .about-content .button{
 	margin-top:20px;
 }
- 
- 
- 
+
+
+
 /*======================================
 	Features Main CSS
-========================================*/ 
+========================================*/
 .features-main h2 {
     font-size: 36px;
     line-height: 40px;
@@ -2720,11 +2720,11 @@ p.has-large-font-size {
 }
 /*======================================
 	End Features Main CSS
-========================================*/ 
+========================================*/
 
 /*======================================
 	Services CSS
-========================================*/ 
+========================================*/
 .single-service {
 	position: relative;
 	background: #fff;
@@ -2933,7 +2933,7 @@ p.has-large-font-size {
 .call-action .bizwheel-btn {
     background: #F3A712;
     color: #fff;
-	
+
 }
 .call-action .bizwheel-btn:hover{
 	background:#fff;
@@ -3015,7 +3015,7 @@ p.has-large-font-size {
 	padding-right:0px;
 	border:none;
 }
-#portfolio-nav li.active, 
+#portfolio-nav li.active,
 #portfolio-nav li:hover {
     color: #F3A712;
 }
@@ -3310,11 +3310,11 @@ p.has-large-font-size {
 }
 /*======================================
 	End Portfolio CSS
-========================================*/  
+========================================*/
 
 /*======================================
 	Testimonial CSS
-========================================*/ 
+========================================*/
 .testimonials {
 	background-size: cover;
 	background-position: center;
@@ -3433,11 +3433,11 @@ p.has-large-font-size {
 }
 /*======================================
 	End Testimonial CSS
-========================================*/ 
+========================================*/
 
 /*======================================
 	CounterUp CSS
-========================================*/ 
+========================================*/
 .counterup{
 	padding:50px 0 80px;
 	background:#2E2751;
@@ -3526,7 +3526,7 @@ p.has-large-font-size {
 
 /*======================================
 	Team CSS
-========================================*/    
+========================================*/
 .single-team {
     background: #fff;
     text-align: center;
@@ -3701,11 +3701,11 @@ p.has-large-font-size {
 }
 /*======================================
 	End Team CSS
-========================================*/   
+========================================*/
 
 /*======================================
 	Blog CSS
-========================================*/ 
+========================================*/
 .latest-blog {
 	overflow: hidden;
 }
@@ -3887,7 +3887,7 @@ p.has-large-font-size {
 }
 /*======================================
 	End BLog CSS
-========================================*/ 
+========================================*/
 
 /*======================================
 	Client Carousel CSS
@@ -4291,12 +4291,12 @@ p.has-large-font-size {
  .form-group1{
 	margin:0;
 	margin-top:15px;
-    
+
 }
 .contact-form-area .form-group  input {
-    
-    
-   
+
+
+
     display: block;
     border-radius: 20px;
     padding: 20px 170px 20px 15px;
@@ -4425,7 +4425,7 @@ p.has-large-font-size {
 	background:#e4e4e4;
 	padding:100px 0;
 	overflow:hidden;
-} 
+}
 .img-feature{
 	position:relative;
 	display:inline-block;
@@ -4701,8 +4701,8 @@ p.has-large-font-size {
 .pagination-plugin li{
 	display:inline-block;
 }
-.pagination-plugin span, 
-.pagination-plugin a, 
+.pagination-plugin span,
+.pagination-plugin a,
 .pagination-plugin a:focus {
 	background: #2E2751;
 	width: 44px;
@@ -4758,8 +4758,20 @@ p.has-large-font-size {
     background-color: rgb(227, 223, 223);
     height: 50px;
     border-radius:20px ;
+
 }
 .input-border{
- 
-    border-radius:20% ;
+
+    border-radius:10% ;
+}
+
+.fontuser {
+    position: relative;
+}
+
+.fontuser i{
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    color: gray;
 }
