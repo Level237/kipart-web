@@ -26,6 +26,7 @@
 					<label for="chk" aria-hidden="true">Agent Login</label>
                     @if(Session::get("fail"))
                                 <div class="alert alert-danger">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                                     {{ Session::get('fail') }}
                                 </div>
                             @endif

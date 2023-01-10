@@ -24,15 +24,18 @@ class LoginController extends Controller
             'password' => $request->password,
         ]);
 
+
+        if(isset($response['error'])){
+            return back()->with('fail',"Email ou mot de passe invalide");
+        }else{
         $access_token = json_decode((string) $response->getBody(), true)['access_token'];
         Session::put('tokenAgency', $access_token);
         Session::save();
 
-        if(isset($response['error'])){
-            return back()->with('fail',$response["error"]);
+            return to_route('agent.dashboard');
         }
 
-        return to_route('agent.dashboard');
+
         }
     }
 
