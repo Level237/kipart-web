@@ -20,7 +20,13 @@ class DashboardController extends Controller
         $tickets=$this->myTickets();
         $datas=json_decode($tickets->getBody());
 
-        return view('agent.dashboard',compact('detailAgency','countResource','datas','detailSubAgency'));
+        if(isset($detailSubAgency['errors'])){
+            return to_route('agent.login');
+        }else{
+            return view('agent.dashboard',compact('detailAgency','countResource','datas','detailSubAgency'));
+        }
+
+
         //return $tickets;
     }
 
