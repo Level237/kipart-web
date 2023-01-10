@@ -7,7 +7,7 @@
     <div class="block-header">
         <div class="row">
             <div class="col-lg-7 col-md-6 col-sm-12">
-                <h2>{{ $detailAgency['name'] }}</h2>
+                <h2>{{ $detailSubAgency['name']}}</h2>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> Agence</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
@@ -200,7 +200,7 @@
                         <div class="chat-widget">
                             <ul class="list-unstyled">
                                 <li class="left">
-                                    <img src="{{ 'http://kipart.stillforce.tech/'.$detailAgency['logo'] }}" class="rounded-circle" alt="">
+                                    <img src="" class="rounded-circle" alt="">
                                     <ul class="list-unstyled chat_info">
                                         <li><small>Buca 11:00AM</small></li>
                                         <li><span class="message bg-blue">Hello, Kipart</span></li>
