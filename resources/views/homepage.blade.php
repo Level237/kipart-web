@@ -158,7 +158,7 @@
 
 								 <div class="input-group mb-1 ">
                                     {{-- <span class="input-group-text" style="border-radius: 20px" id="basic-addon1">@</span> --}}
-									<input type="text" style="border-radius: 20px" class="form-control input-design"  id="basic-url"
+									<input type="text" style="font-weight: bold; font-size: 15px; border-radius: 20px" class="form-control input-design"  id="basic-url"
 										aria-describedby="basic-addon3" placeholder="Depart">
 
 								</div>
@@ -169,7 +169,7 @@
 
 								<div class="input-group  mb-1 ">
 
-									<input type="text" style="border-radius: 20px" class=" form-control input-design" id="basic-url"
+									<input type="text" style="font-weight: bold; font-size:15px; border-radius: 20px" class=" form-control input-design" id="basic-url"
 										aria-describedby="basic-addon3" placeholder="Arrivé">
 								</div>
 							</div>
@@ -198,13 +198,13 @@
 							<div class="col-lg-6 col-md-12 ">
 
 								<div class="input-group  ">
-                                    <div class="icon" ><h4 style="color: rgb(229, 145, 0)"><i class="fa fa-user fa-1x"></i>Nombre de Passager</h4></div>
+                                    <div class="icon " ><h4 style="color: rgb(229, 145, 0)"><i class="fa fa-user fa-1x" style="margin-right: 10px;"></i>Nombre de Passager</h4></div>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12 ">
 
 								<div class="input-group  ">
-                                    <div class="icon" ><h4 style="color: rgb(229, 145, 0)"><i class="fa fa-star fa-1x"></i>Classe</h4></div>
+                                    <div class="icon" ><h4 style="color: rgb(229, 145, 0)"><i class="fa fa-star fa-1x" style="margin-right: 10px;"></i>Classe</h4></div>
 								</div>
 							</div>
 						</div>
@@ -230,10 +230,10 @@
 							</div>
 						</div>
 
-							<div class="col-lg-12 col-md-12  " >
+							<div class="col-lg-12 col-md-12  " style="margin-right: 10px;">
 
-								<div class="form-group button  ">
-                                    <button type="submit" class="bizwheel-btn3 justify-content-center ">CHERCHER
+								<div class="form-group button center-element  " >
+                                    <button type="submit" class="bizwheel-btn3 justify-content-center " >CHERCHER
                                     </button>
                                 </div>
 
@@ -325,8 +325,8 @@
 					<div class="features-main ">
 
 						<div class="b-features">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-6">
+							<div class="row ">
+								<div class="col-lg-3 col-md-3 col-6 mb-2">
 									<!-- agence list -->
 									<div class="img">
 										<img src="{{ asset('assets/img/agence/buca.jpg') }}" alt="#" class="image1">
@@ -334,7 +334,7 @@
 									</div>
 									<!--/ End agence list -->
 								</div>
-								<div class="col-lg-4 col-md-3 col-6">
+								<div class="col-lg-4 col-md-3 col-6 mb-2">
 									<!-- agence list -->
 									<div class="img">
 										<img src="{{ asset('assets/img/agence/general.jpeg') }}" alt="#" class="image1">
@@ -342,7 +342,7 @@
 									</div>
 									<!--/ End agence list -->
 								</div>
-								<div class="col-lg-3 col-md-3 col-6">
+								<div class="col-lg-3 col-md-3 col-6 mb-2">
 									<!-- agence list -->
 									<div class="img">
 										<img src="{{ asset('assets/img/agence/global.jpeg') }}" alt="#" class="image1">
@@ -350,7 +350,7 @@
 									</div>
 									<!--/ End agence list -->
 								</div>
-								<div class="col-lg-3 col-md-3 col-6" style="border-radius: 3px;">
+								<div class="col-lg-3 col-md-3 col-6 mb-3" style="border-radius: 3px;">
 									<!-- agence list -->
 									<div class="img">
 										<img src="{{ asset('assets/img/agence/united.jpg') }}" alt="#" class="image1">
@@ -358,7 +358,7 @@
 									</div>
 									<!--/ End agence list -->
 								</div>
-								<div class="col-lg-3 col-md-3 col-6">
+								<div class="col-lg-3 col-md-3 col-6 mb-3">
 									<!-- agence list -->
 									<div class="img">
 										<img src="{{ asset('assets/img/agence/finex.png') }}" alt="#" class="image1">
@@ -474,11 +474,11 @@
 							de réception ?</h1>
 						<form class="form " method="post" action="">
 							<div class="row">
-								<div class="col-lg-5 col-md-5 col-12 center-element" style="color: white;">
+								<div class="col-lg-5 col-md-5 col-12 center-element" style="color: rgb(243, 241, 241);">
 									<div class="form-group">
 
 										<input type="email" name="email" placeholder="Votre e-mail">
-										<div class="icon"><i class="fa fa-envelope-open fa-2x"></i></div>
+										{{-- <div class="icon"><i class="fa fa-envelope-open fa-2x"></i></div> --}}
 									</div>
 								</div>
 								<div class="col-lg-5 col-md-5 col-12">
