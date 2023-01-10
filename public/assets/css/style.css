@@ -3590,7 +3590,8 @@ p.has-large-font-size {
 }
 .single-team .t-content .designation {
     position: relative;
-    font-size: 14px;
+    font-size: 25px;
+    font-weight : bold;
     display: block;
     padding-bottom: 12px;
     margin-top: 5px;

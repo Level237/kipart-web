@@ -229,19 +229,17 @@
 								</div>
 							</div>
 						</div>
-                        <div class="row mt-3" >
-							<div class="col-lg-12 col-md-12" style="align-content: center">
 
-								<div class="form-group button">
-                                    <button type="submit" class="bizwheel-btn3 ">CHERCHER
+							<div class="col-lg-12 col-md-12  " >
+
+								<div class="form-group button  ">
+                                    <button type="submit" class="bizwheel-btn3 justify-content-center ">CHERCHER
                                     </button>
                                 </div>
 
 
 								</div>
 							</div>
-
-						</div>
 					</div>
 					</form>
 					<!-- <form class="row g-3 needs-validation " novalidate>
@@ -469,8 +467,8 @@
 
 				<div class="contact-form-area ">
 					<div class="col-lg-8 col-md-8 col-12 center-element">
-						<h2 style="color: #000000; text-align: center;">Newsletter</h2>
-						<h1 class="designation" style="color: #ffa807; text-align: center;">Vous souhaitez recevoir des
+						<h3 style="color: #474747; text-align: center;">Newsletter</h3>
+						<h1 class="title fw-bold" style="color: hsl(38, 100%, 40%); text-align: center; font-size: 35px">Vous souhaitez recevoir des
 							remises exclusives
 							et des mises à jour directement dans votre boîte
 							de réception ?</h1>
