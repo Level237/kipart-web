@@ -422,8 +422,9 @@ big {
 	border-radius: 15px;
 }
 .bizwheel-btn3 {
-    
+
 	text-align: center;
+
 	margin: 0;
 	padding: 10px 32px;
 	background: #e19c11;
@@ -435,7 +436,7 @@ big {
 	transition: all 0.4s ease;
 	display: inline-block;
 
-	border-radius: 15px;
+
 }
 .bizwheel-btn {
 	text-align: center;
