@@ -8,17 +8,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use App\services\agent\DetailsAgencyServices;
+use Illuminate\Database\Eloquent\Collection;
 
 class DashboardController extends Controller
 {
     public function index(){
 
-        $detailAgency=(new DetailsAgencyServices())->getDetails();
+        $detailSubAgency=(new DetailsAgencyServices())->getDetails();
+        $detailAgency=(new DetailsAgencyServices())->detailAgency();
         $countResource=$this->getCountResource();
         $tickets=$this->myTickets();
         $datas=json_decode($tickets->getBody());
 
-        return view('agent.dashboard',compact('detailAgency','countResource','datas'));
+        return view('agent.dashboard',compact('detailAgency','countResource','datas','detailSubAgency'));
         //return $tickets;
     }
 

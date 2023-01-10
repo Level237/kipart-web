@@ -11,7 +11,7 @@
                     <a class="image" href="#"><img src="{{ 'http://kipart.stillforce.tech/'.$detailAgency['logo'] }}" alt="User"></a>
                     <div class="detail">
                         <h4>{{ $detailAgency['name'] }}</h4>
-
+                        <strong><small>{{ $detailSubAgency['name']}}</small></strong>
                     </div>
                 </div>
             </li>
