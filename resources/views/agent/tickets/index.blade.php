@@ -1,5 +1,7 @@
 @extends('layouts.backoffice.agent.main-agent')
-@section('title', 'Dashboard-Admin')
+@section('title')
+Listes des Tickets
+@endsection
 @section('content')
 
 <section class="content">

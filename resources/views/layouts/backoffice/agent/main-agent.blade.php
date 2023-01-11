@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="{{ asset('admin/assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" />
 <!-- Custom Css -->
 <link rel="stylesheet" href="{{ asset('admin/assets/css/style.min.css') }}">
+<title>@yield('title')</title>
 </head>
 
 <body class="theme-blush">
