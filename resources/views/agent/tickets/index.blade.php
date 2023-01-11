@@ -13,8 +13,7 @@ Listes des Tickets
                     <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> Agence</a></li>
                     <li class="breadcrumb-item active">Tout les Tickets</li>
                 </ul>
-                @foreach ($datas as $tickets)
-                                    @forelse ($tickets as $ticket)
+
                 <a href="{{ route('agent.select-ticket') }}"><button class="btn btn-primary mt-4">Appliquer un filtre</button></a>
                 <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
             </div>
@@ -44,6 +43,8 @@ Listes des Tickets
                             </thead>
                             <tbody>
 
+                                    @foreach ($datas as $tickets)
+                                    @forelse ($tickets as $ticket)
                                     <tr>
                                         <td><strong>{{ $ticket->name }}</strong></td>
                                         <td><a href="#" title="">{{ $ticket->seatNumber }}</a></td>
@@ -61,7 +62,16 @@ Listes des Tickets
                                         @endforeach
                                     </tr>
 
+                                    @empty
+                   <div class="mt-5 text-center">
+                    <p class="text-center" style="color: gray">Aucun Ticket Disponible</p>
+                   </div>
+                @endforelse
 
+
+
+
+            @endforeach
 
                             </tbody>
                         </table>
@@ -73,16 +83,7 @@ Listes des Tickets
                         <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
                         <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
                     </ul>
-                    @empty
-                   <div class="mt-5 text-center">
-                    <p class="text-center" style="color: gray">Aucun Ticket Disponible</p>
-                   </div>
-                @endforelse
 
-
-
-
-            @endforeach
                 </div>
             </div>
         </div>
