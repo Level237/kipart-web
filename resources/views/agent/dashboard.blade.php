@@ -1,5 +1,7 @@
 @extends('layouts.backoffice.agent.main-agent')
-@section('title', 'Dasboard Agent')
+@section('title')
+Dashboard::agent
+@endsection
 @section('content')
 
 <!-- Main Content -->

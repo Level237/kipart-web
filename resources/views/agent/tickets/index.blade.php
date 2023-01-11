@@ -1,5 +1,7 @@
 @extends('layouts.backoffice.agent.main-agent')
-@section('title', 'Dashboard-Admin')
+@section('title')
+Listes des Tickets
+@endsection
 @section('content')
 
 <section class="content">
@@ -11,6 +13,8 @@
                     <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> Agence</a></li>
                     <li class="breadcrumb-item active">Tout les Tickets</li>
                 </ul>
+                @foreach ($datas as $tickets)
+                                    @forelse ($tickets as $ticket)
                 <a href="{{ route('agent.select-ticket') }}"><button class="btn btn-primary mt-4">Appliquer un filtre</button></a>
                 <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
             </div>
@@ -25,6 +29,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="card project_list">
                     <div class="table-responsive">
+
                         <table class="table table-hover c_table">
                             <thead>
                                 <tr>
@@ -38,28 +43,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($datas as $tickets)
-                                    @foreach ($tickets as $ticket)
-                                        <tr>
-                                            <td><strong>{{ $ticket->name }}</strong></td>
-                                            <td><a href="#" title="">{{ $ticket->seatNumber }}</a></td>
-                                            <td>{{ $ticket->telephone }}</td>
-                                            @foreach ($ticket->Voyage as $travel)
-                                            <td>{{ $travel->departure }} - {{ $travel->arrival }}</td>
+
+                                    <tr>
+                                        <td><strong>{{ $ticket->name }}</strong></td>
+                                        <td><a href="#" title="">{{ $ticket->seatNumber }}</a></td>
+                                        <td>{{ $ticket->telephone }}</td>
+                                        @foreach ($ticket->Voyage as $travel)
+                                        <td>{{ $travel->departure }} - {{ $travel->arrival }}</td>
 
 
-                                            <td>{{ $travel->date }}</td>
+                                        <td>{{ $travel->date }}</td>
 
-                                            <td>{{ $travel->heure }}</td>
+                                        <td>{{ $travel->heure }}</td>
 
-                                            <td>{{ $travel->classe }}</td>
-                                            {{--  <td><span class="badge badge-warning">en attente</span></td>  --}}
-                                            @endforeach
-                                        </tr>
+                                        <td>{{ $travel->classe }}</td>
+                                        {{--  <td><span class="badge badge-warning">en attente</span></td>  --}}
+                                        @endforeach
+                                    </tr>
 
-
-                                    @endforeach
-                                @endforeach
 
 
                             </tbody>
@@ -72,6 +73,16 @@
                         <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
                         <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
                     </ul>
+                    @empty
+                   <div class="mt-5 text-center">
+                    <p class="text-center" style="color: gray">Aucun Ticket Disponible</p>
+                   </div>
+                @endforelse
+
+
+
+
+            @endforeach
                 </div>
             </div>
         </div>
