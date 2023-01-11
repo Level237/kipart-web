@@ -427,9 +427,10 @@ big {
 
 	margin: 0;
 	padding: 10px 32px;
+    margin-left: 70px;
 	background: #e19c11;
 	color: rgb(255, 255, 255);
-	font-size: 25px;
+	font-size: 20px;
 	text-transform: capitalize;
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
