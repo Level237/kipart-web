@@ -155,9 +155,16 @@ Dashboard::agent
                                     @foreach ($datas as $tickets)
                                         @foreach ($tickets as $ticket)
                                             <tr>
-                                                <td><strong>{{ $ticket->name }}</strong></td>
-                                                <td><a href="#" title="">{{ $ticket->seatNumber }}</a></td>
-                                                <td>{{ $ticket->telephone }}</td>
+                                                @foreach ($ticket->Passager as $passenger)
+                                                    <td><strong>{{ $passenger->nom }}</strong></td>
+                                                    <td><a href="#" title="">{{ $passenger->seatNumber }}</a></td>
+
+
+                                                    <td>
+                                                        {{ $passenger->telephone }}
+                                                    </td>
+                                                @endforeach
+
                                                 @foreach ($ticket->Voyage as $travel)
                                                 <td>{{ $travel->departure }} - {{ $travel->arrival }}</td>
 

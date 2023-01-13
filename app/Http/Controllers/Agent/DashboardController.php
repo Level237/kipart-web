@@ -23,6 +23,7 @@ class DashboardController extends Controller
         if(isset($detailSubAgency['errors'])){
             return to_route('agent.login');
         }else{
+            //return $datas;
             return view('agent.dashboard',compact('detailAgency','countResource','datas','detailSubAgency'));
         }
 

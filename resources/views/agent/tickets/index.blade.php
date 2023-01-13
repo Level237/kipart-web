@@ -43,12 +43,19 @@ Listes des Tickets
                             </thead>
                             <tbody>
 
-                                    @foreach ($datas as $tickets)
-                                    @forelse ($tickets as $ticket)
+                                @foreach ($datas as $tickets)
+                                @foreach ($tickets as $ticket)
                                     <tr>
-                                        <td><strong>{{ $ticket->name }}</strong></td>
-                                        <td><a href="#" title="">{{ $ticket->seatNumber }}</a></td>
-                                        <td>{{ $ticket->telephone }}</td>
+                                        @foreach ($ticket->Passager as $passenger)
+                                            <td><strong>{{ $passenger->nom }}</strong></td>
+                                            <td><a href="#" title="">{{ $passenger->seatNumber }}</a></td>
+
+
+                                            <td>
+                                                {{ $passenger->telephone }}
+                                            </td>
+                                        @endforeach
+
                                         @foreach ($ticket->Voyage as $travel)
                                         <td>{{ $travel->departure }} - {{ $travel->arrival }}</td>
 
@@ -62,16 +69,9 @@ Listes des Tickets
                                         @endforeach
                                     </tr>
 
-                                    @empty
-                   <div class="mt-5 text-center">
-                    <p class="text-center" style="color: gray">Aucun Ticket Disponible</p>
-                   </div>
-                @endforelse
 
-
-
-
-            @endforeach
+                                @endforeach
+                            @endforeach
 
                             </tbody>
                         </table>
