@@ -12,7 +12,8 @@ class TicketController extends Controller
 
         $detailAgency=(new DetailsAgencyServices())->detailAgency();
         $detailSubAgency=(new DetailsAgencyServices())->getDetails();
-        return view('agent.tickets.select-filter',compact('detailAgency','detailSubAgency'));
+        $datasAgency=json_decode($detailAgency->getBody());
+        return view('agent.tickets.select-filter',compact('datasAgency'));
     }
 
     public function index(){
@@ -21,8 +22,8 @@ class TicketController extends Controller
         $datas=json_decode($tickets->getBody());
         $detailAgency=(new DetailsAgencyServices())->detailAgency();
         $detailSubAgency=(new DetailsAgencyServices())->getDetails();
-
-        return view('agent.tickets.index',compact('datas','detailAgency','detailSubAgency'));
+        $datasAgency=json_decode($detailAgency->getBody());
+        return view('agent.tickets.index',compact('datas','datasAgency'));
         //return $detailAgency;
     }
 }

@@ -9,7 +9,11 @@ Dashboard::agent
     <div class="block-header">
         <div class="row">
             <div class="col-lg-7 col-md-6 col-sm-12">
-                <h2>{{ $detailSubAgency['name']}}</h2>
+                @foreach ($datasAgency as $data)
+                    @foreach ($data as $agency)
+                    <h2>{{ $agency->nom }}</h2>
+
+
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> Agence</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
@@ -209,9 +213,9 @@ Dashboard::agent
                         <div class="chat-widget">
                             <ul class="list-unstyled">
                                 <li class="left">
-                                    <img src="" class="rounded-circle" alt="">
+                                    <img src="{{ 'http://kipart.stillforce.tech/'.$agency->logo }}" class="rounded-circle" alt="">
                                     <ul class="list-unstyled chat_info">
-                                        <li><small>Buca 11:00AM</small></li>
+                                        <li><small>{{ $agency->nom }} 11:00AM</small></li>
                                         <li><span class="message bg-blue">Hello, Kipart</span></li>
                                         <li><span class="message bg-blue">Bonjour</span></li>
                                     </ul>
@@ -220,7 +224,7 @@ Dashboard::agent
 
                                     <ul class="list-unstyled chat_info">
                                         <li><small>11:10AM</small></li>
-                                        <li><span class="message">Hello, Buca</span></li>
+                                        <li><span class="message">Hello, {{ $agency->nom }}</span></li>
                                     </ul>
                                     <img src="{{ asset('admin/assets/images/kipart.png') }}" class="rounded-circle" alt="">
                                 </li>
@@ -231,12 +235,14 @@ Dashboard::agent
                                     </ul>
                                 </li>
                                 <li class="left">
-                                    <img src="{{ asset('admin/assets/images/buca.jpg') }}" class="rounded-circle" alt="">
+                                    <img src="{{ 'http://kipart.stillforce.tech/'.$agency->logo }}" class="rounded-circle" alt="">
                                     <ul class="list-unstyled chat_info">
-                                        <li><small>Buca 11:13AM</small></li>
+                                        <li><small>{{ $agency->nom }} 11:13AM</small></li>
                                         <li><span class="message bg-blue">Merci de nous faire parvenir votre liste de passagers pour le voyage VIP de 17h45</span></li>
                                     </ul>
                                 </li>
+                                @endforeach
+                                @endforeach
                                 <li class="left">
                                     <li class="right">
 

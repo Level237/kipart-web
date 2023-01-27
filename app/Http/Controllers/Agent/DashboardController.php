@@ -14,17 +14,18 @@ class DashboardController extends Controller
 {
     public function index(){
 
-        $detailSubAgency=(new DetailsAgencyServices())->getDetails();
+        //$detailSubAgency=(new DetailsAgencyServices())->getDetails();
         $detailAgency=(new DetailsAgencyServices())->detailAgency();
         $countResource=$this->getCountResource();
         $tickets=$this->myTickets();
         $datas=json_decode($tickets->getBody());
-
-        if(isset($detailSubAgency['errors'])){
+        $datasAgency=json_decode($detailAgency->getBody());
+        if(isset($detailAgency['errors'])){
             return to_route('agent.login');
         }else{
             //return $datas;
-            return view('agent.dashboard',compact('detailAgency','countResource','datas','detailSubAgency'));
+            return view('agent.dashboard',compact('datasAgency','countResource','datas'));
+            //return $detailAgency;
         }
 
 

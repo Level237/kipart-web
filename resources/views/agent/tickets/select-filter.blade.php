@@ -5,7 +5,12 @@
     <div class="block-header">
         <div class="row">
             <div class="col-lg-7 col-md-6 col-sm-12">
-                <h2>{{ $detailAgency['name'] }}</h2>
+                @foreach ($datasAgency as $data)
+                    @foreach ($data as $agency)
+                    <h2>{{ $agency->nom }}</h2>
+
+                    @endforeach
+                    @endforeach
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> Agence</a></li>
                     <li class="breadcrumb-item active">Filter</li>

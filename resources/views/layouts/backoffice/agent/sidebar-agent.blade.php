@@ -6,15 +6,20 @@
     </div>
     <div class="menu">
         <ul class="list">
-            <li>
-                <div class="user-info">
-                    <a class="image" href="#"><img src="{{ 'http://kipart.stillforce.tech/'.$detailAgency['logo'] }}" alt="User"></a>
-                    <div class="detail">
-                        <h4>{{ $detailAgency['name'] }}</h4>
-                        <strong><small>{{ $detailSubAgency['name']}}</small></strong>
+            @foreach ($datasAgency as $datas)
+                @foreach ($datas as $agency)
+                <li>
+                    <div class="user-info">
+                        <a class="image" href="#"><img src="{{ 'http://kipart.stillforce.tech/'.$agency->logo }}" alt="User"></a>
+                        <div class="detail">
+                            <h4>{{ $agency->agence }}</h4>
+                            <strong><small>{{ $agency->nom}}</small></strong>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+                @endforeach
+            @endforeach
+
             <li class="active open"><a href="{{ route('agent.dashboard') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
             <li><a href="#"><i class="zmdi zmdi-account"></i><span>Mon Profil</span></a></li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span></a>
