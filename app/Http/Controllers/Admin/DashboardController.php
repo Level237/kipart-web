@@ -19,7 +19,7 @@ class DashboardController extends Controller
 
 
         return view('admin.dashboard',compact('countResource','detailsUser'));
-        //return $detailsUser;
+        //return $countResource;
     }
 
 
@@ -27,7 +27,7 @@ class DashboardController extends Controller
     public function getCountResource(){
         $url=(new UrlServices())->getUrl();
         $token=Session::get('token');
-        $response=Http::withToken($token)->get($url.'/api/admin/v1/count/resources');
+        $response=Http::withToken($token)->get($url.'/api/admin/v1/adm/resource');
 
         return $response;
     }
