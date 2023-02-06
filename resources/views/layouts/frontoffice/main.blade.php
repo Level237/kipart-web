@@ -5,68 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/styles-responsive.css')}}" />
+
     <link rel="icon" href="{{ asset('assets/images/logo.svg') }}" sizes="any">
   </head>
   <body>
     @include('layouts.frontoffice.header')
+    @yield('content')
 
-    <footer>
-      <article>
-        <div class="content">
-          <div>
-            <img src="{{ asset('assets/images/logo.svg') }}" alt="logo" />
-          </div>
-          <div>
-            <ul>
-              <li>Pret à partir</li>
-              <li>Vos réservations</li>
-              <li>Créer un compte</li>
-              <li>Obtenir l'application</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li>Dans le bureau</li>
-              <li>À propos de nous</li>
-              <li>Carrières</li>
-              <li>Devenir un partenaire</li>
-            </ul>
-          </div>
-          <div>
-            <div>Besoin de notre aide?</div>
-            <div>
-              <a href="#">Centre d'aide</a>
-            </div>
-          </div>
-          <div>
-            <div>Suivez-nous</div>
-            <ul>
-              <li><a href="#"><img src="{{ asset('assets/images/linkedin.svg') }}" alt="linkedin"/></a></li>
-              <li><a href="#"></a><img src="{{ asset('assets/images/facebook.svg') }}" alt="facebook"/></a></li>
-              <li><a href="#"></a><img src="{{ asset('assets/images/instagram.svg') }}" alt="instagram"/></a></li>
-            </ul>
-          </div>
-        </div>
-      </article>
-      <article>
-        <div class="content">
-          <div>
-            <img src="{{ asset('assets/images/logo-2.svg') }}" alt="logo 2" />
-          </div>
-          <div>
-            <a href="#">Conditions d'utilisation</a>
-          </div>
-          <div>
-            <a href="#">Politique de confidentialité</a>
-          </div>
-          <div>
-            <a href="#"><img src="{{ asset('assets/images/play-store.png') }}" /></a>
-            <a href="#"><img src="{{ asset('assets/images/apple-store.svg') }}" /></a>
-          </div>
-        </div>
-      </article>
-    </footer>
-
+    @include('layouts.frontoffice.footer')
     <div
       id="login"
       class="dialog-container"
@@ -171,7 +117,7 @@
         </div>
       </div>
     </div>
-
+    <script src="{{ asset('assets/js/function.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/a11y-dialog@7/dist/a11y-dialog.min.js"></script>
     <script type="module">
