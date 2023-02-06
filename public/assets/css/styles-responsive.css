@@ -1,0 +1,210 @@
+/* NAV */
+@media screen and (max-width: 768px) {
+  header nav {
+    width: 90%;
+  }
+
+  header nav ul {
+    display: none;
+  }
+
+  header nav #menu-toggle-primary {
+    display: block;
+  }
+
+  header nav #menu-toggle-primary img {
+    filter: invert(43%) sepia(98%) saturate(509%) hue-rotate(360deg) brightness(100%) contrast(89%);
+    width: 45px;
+    height: 45px;
+  }
+  header nav #menu-toggle-primary a.close-menu-primary {
+    display: none;
+  }
+
+  header nav:target ul {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    height: auto;
+    z-index: 4000;
+  
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+  }
+
+  header nav:target #menu-toggle-primary a.close-menu-primary {
+    display: block;
+    padding-top: 2em;
+    padding-right: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5000;
+  }
+
+  header nav:target #menu-toggle-primary a.open-menu-primary {
+    display: none;
+  }
+}
+
+/* FOOTER */
+@media screen and (max-width: 768px) {
+  footer article:first-child > .content,
+  footer article:last-child > .content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0;
+    gap: 1em;
+  }
+
+  footer article:first-child > .content > div:nth-child(5) {
+    margin: 0;
+  }
+
+  footer article:first-child > .content > div > div ~ ul {
+    justify-content: space-between;
+  }
+
+  footer article:first-child > .content > div > div ~ ul img {
+    width: 45px;
+    height: 45px;
+  }
+
+  footer article:last-child > .content > div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  footer article:last-child > .content > div:last-child img {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+/* HOME  */
+@media screen and (max-width: 768px) {
+  main#homepage #hero {
+    background-image: url(../images/bg-header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+
+    width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  main#homepage #hero > .content {
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  main#homepage #hero > .content .overlay {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  main#homepage #agencies > .content {
+    width: 90%;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  main#homepage #agencies > .content article {
+    width: 100%;
+  }
+
+  main#homepage #agencies > .content > article:last-child {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    gap: 3em;
+  }
+
+  main#homepage #agencies > .content > article:first-child {
+    gap: 1em;
+  }
+
+  main#homepage #agencies > .content > article:last-child div.agency-item {
+    padding: 1em; /* Remove it when using real images */
+  }
+
+  main#homepage #app {
+    padding: 2em 0;
+  }
+
+  main#homepage #app > .content {
+    width: 90%;
+  }
+
+  main#homepage #app > .content > article {
+    display: none;
+  }
+
+  main#homepage #app > .content > article:last-child {
+    gap: 1em;
+    margin: 0;
+  }
+
+  main#homepage #app > .content > article:last-child div {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  main#homepage #app > .content > article:last-child div ul {
+    width: 100%;
+  }
+
+  main#homepage #app > .content > article:last-child div ul:first-child li {
+    justify-content: space-between;
+  }
+
+  main#homepage #app > .content > article:last-of-type img {
+    width: 100%;
+    height: auto;
+  }
+
+  main#homepage #newsletter > .content {
+    width: 90%;
+    padding: 2em 0;
+  }
+
+  main#homepage #newsletter > .content > form {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  main#homepage #newsletter > .content > form > .input input,
+  main#homepage #newsletter > .content > form > button {
+    height: 90px;
+  }
+
+  main#homepage #hero > .content article:first-of-type > form > .group {
+    flex-direction: column;
+  }
+
+  main#homepage #hero > .content article:first-of-type > form .actions button[type="submit"] {
+    width: 100%;
+  }
+
+  main#homepage #hero > .content {
+    gap: 1em;
+  }
+}
