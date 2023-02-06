@@ -1,663 +1,344 @@
-<!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-    <!-- Meta Tag -->
+<html>
+  <head>
+    <title>KiPart</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name='copyright' content='pavilan'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Title Tag  -->
-    <title>KiPART</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/favicon.png" href="assets/img/favicon.png">
-
-    <!-- Web Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Kipart Plugins CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/cubeportfolio.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/slicknav.min.css') }}">
-
-    <!-- KiPART Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
-
-</head>
-
-<body id="bg">
-
-    <!-- Boxed Layout -->
-    <div id="page" class="site boxed-layout">
-
-        <!-- Preloader -->
-        <div class="preeloader">
-            <div class="preloader-spinner"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/styles-responsive.css')}}" />
+  </head>
+  <body>
+    <header>
+      <nav id="menu-primary">
+        <div class="logo">
+          <img src="{{asset('assets/images/logo.svg')}}" alt="logo">
         </div>
-        <!--/ End Preloader -->
-
-        <!-- Header -->
-        <header class="header">
-            <!-- Middle Header -->
-            <div class="middle-header">
-                <div class="container" style="align-content: center;">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="middle-inner">
-                                <div class="row">
-                                    <div class="col-lg-1 col-md-3 col-6">
-                                        <!-- Logo -->
-                                        <div class="logo">
-                                            <!-- Image Logo -->
-                                            <div class="img-logo" style="align-items: center;">
-                                                <a href="#">
-                                                    <img src="{{ asset('assets/img/logo.png') }}" alt="#">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="mobile-nav"></div>
-                                    </div>
-                                    <div class="col-lg-10 col-md-9 col-12">
-                                        <div class="menu-area">
-                                            <!-- Main Menu -->
-                                            <nav class="navbar navbar-expand-lg">
-                                                <div class="navbar-collapse">
-                                                    <div class="nav-inner">
-                                                        <div class="menu-home-menu-container">
-                                                            <!-- Naviagiton -->
-                                                            <ul id="nav" class="nav main-menu menu navbar-nav">
-                                                                <li><a href="#">Vos réservations</a></li>
-                                                                <li><a href="#">S’identifier</a>
-                                                                </li>
-                                                                <li><a href="#">Creer un compte</a></li>
-                                                                <li><a href="#">EN</a>
-                                                                    <ul class="sub-menu">
-
-                                                                        <li><a href="#">FR</a></li>
-
-                                                                    </ul>
-                                                                </li>
-
-
-                                                            </ul>
-                                                            <!--/ End Naviagiton -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </nav>
-                                            <!--/ End Main Menu -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/ End Middle Header -->
-
-        </header>
-        <!--/ End Header -->
-
-        <!-- Hero Slider -->
-        <section class="hero-slider d-grid gap-3 position-relative"
-            style="background-image:url('{{ asset('assets/img/hero.jpg') }}');">
-
-
-            <!-- <div class="row  align-items-center">
-     <div class="col-lg-4-offset-4  bg-white">
-      <div class="w-50 " style="background-color: aliceblue;margin-left: 100px;">
-
-       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-       </div>
-       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-       </div>
-      </div>
-     </div>
-     <div class="col-lg-8 po">
-
-       <img src="{{ asset('assets/img/home.png') }}" alt="">
-
-     </div>
-    </div> -->
-
-            <div class="hero d-flex justify-content-center">
-
-
-                <div class="home-slider1  position-relative"
-                    style="background-image:url({{ asset('assets/img/home.png') }}); margin-top: 40px;margin-right: -150px;">
-                    <div class="home-slider2  w-70  input-border position-absolute position-relative"
-                        style="background-color: rgb(255, 255, 255);margin-left: -100px;margin-top: 70px;">
-
-                        <div class="col-lg-6 col-md-12 ">
-                            <div class="input-group mb-1 ">
-                                <select class=" input-group" style="color: hsl(38, 100%, 40%);border:none ">
-                                    <option value="1">Aller Simple</option>
-                                    <option value="2">Aller et retour</option>
-                                </select>
-                            </div>
-
-                        </div>
-
-
-                        <div class="row mt-3">
-                            <div class="col-lg-12 col-md-12">
-
-
-                                <div class="input-group mb-1 ">
-                                    {{-- <span class="input-group-text" style="border-radius: 20px" id="basic-addon1">@</span> --}}
-                                    <input type="text"
-                                        style="font-weight: bold; font-size: 15px; border-radius: 20px"
-                                        class="form-control input-design" id="basic-url"
-                                        aria-describedby="basic-addon3" placeholder="Depart">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-lg-12 col-md-12">
-
-                                <div class="input-group  mb-1 ">
-
-                                    <input type="text"
-                                        style="font-weight: bold; font-size:15px; border-radius: 20px"
-                                        class=" form-control input-design" id="basic-url"
-                                        aria-describedby="basic-addon3" placeholder="Arrivé">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mt-3">
-                            <div class="col-lg-6 col-md-12 ">
-
-                                <div class="input-group mb-1 ">
-
-                                    <input type="datetime-local" style="border-radius: 20px" class=" input-design"
-                                        id="basic-url" aria-describedby="basic-addon3" value="Date de Depart">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 ">
-
-                                <div class="input-group mb-1 ">
-
-                                    <input type="datetime-local" style="border-radius: 20px" class=" input-design"
-                                        id="basic-url" aria-describedby="basic-addon3">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mt-3">
-                            <div class="col-lg-6 col-md-12 ">
-
-                                <div class="input-group  ">
-                                    <div class="icon ">
-                                        <h4 style="color:hsl(38, 100%, 40%)"><i class="fa fa-user fa-1x"
-                                                style="margin-right: 10px;"></i>Nombre de Passager</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 ">
-
-                                <div class="input-group  ">
-                                    <div class="icon">
-                                        <h4 style="color: hsl(38, 100%, 40%)"><i class="fa fa-star fa-1x"
-                                                style="margin-right: 10px;"></i>Classe</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mt-3">
-                            <div class="col-lg-6 col-md-12 ">
-
-                                <div class="input-group mb-1 ">
-
-                                    <input type="number" style="border-radius: 20px" class=" input-design"
-                                        id="basic-url" aria-describedby="basic-addon3" placeholder="0">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 ">
-
-                                <div class="input-group mb-3 ">
-
-                                    <select class="input-design input-group" style="align-content: center">
-                                        <option value="1">VIP</option>
-                                        <option value="2">CLASSIQUE</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 ">
-
-                            <div class="form-group button ">
-                                <button type="submit" class="bizwheel-btn3" style=" width: 300px;
-                                height:60px;">CHERCHER
-                                </button>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                </form>
-
-            </div>
-    </div>
-
-
-    </div>
-    </div>
-
-
-    </div>
-
-
-    </section>
-    <!--/ End Hero Slider -->
-
-
-
-
-    <!-- Agence list -->
-    <section class="video-feature side  section-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="features-main ">
-                        <div class="title">
-                            <h2 style="color: hsl(38, 100%, 40%);">Toutes vos agences de
-                                voyages préférés sur
-                                une seule plateforme</h2>
-                            <p style="color: black;">Plus de 10 agences de voyage de confiance, afin que vous
-                                puissiez vous concentrer uniquement sur le voyage.
-                                Trouvez les horaires, les prix, l'emplacement des gares
-                                routières, les services, les promotions et les bons plans</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="features-main ">
-
-                        <div class="b-features">
-                            <div class="row ">
-                                <div class="col-lg-3 col-md-3 col-6 mb-2">
-                                    <!-- agence list -->
-                                    <div class="img">
-                                        <img src="{{ asset('assets/img/agence/buca.jpg') }}" alt="#"
-                                            class="image1">
-
-                                    </div>
-                                    <!--/ End agence list -->
-                                </div>
-                                <div class="col-lg-4 col-md-3 col-6 mb-2">
-                                    <!-- agence list -->
-                                    <div class="img">
-                                        <img src="{{ asset('assets/img/agence/general.jpeg') }}" alt="#"
-                                            class="image1">
-
-                                    </div>
-                                    <!--/ End agence list -->
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-6 mb-2">
-                                    <!-- agence list -->
-                                    <div class="img">
-                                        <img src="{{ asset('assets/img/agence/global.jpeg') }}" alt="#"
-                                            class="image1">
-
-                                    </div>
-                                    <!--/ End agence list -->
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-6 mb-3" style="border-radius: 3px;">
-                                    <!-- agence list -->
-                                    <div class="img">
-                                        <img src="{{ asset('assets/img/agence/united.jpg') }}" alt="#"
-                                            class="image1">
-
-                                    </div>
-                                    <!--/ End agence list -->
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-6 mb-3">
-                                    <!-- agence list -->
-                                    <div class="img">
-                                        <img src="{{ asset('assets/img/agence/finex.png') }}" alt="#"
-                                            class="image1">
-
-                                    </div>
-                                    <!--/ End agence list -->
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div id="menu-toggle-primary">
+          <a class="open-menu-primary" href="#menu-primary">
+            <img src="images/icon-hamburger-menu.svg" alt="Open this menu" />
+          </a>
+          <a class="close-menu-primary" href="#">
+            <img src="{{ asset('assets/images/icon-times.svg')}}" alt="Close this menu" />
+          </a>
         </div>
-    </section>
-    <!--/ agence list -->
-
-
-    <!-- App  -->
-    <section class="video-feature side  section-bg" style="background-color: white;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="features-main ">
-                        <div class="img">
-                            <img src="{{ asset('assets/img/agence/app.png') }}" alt="#">
-
-                        </div>
-
-                    </div>
+        <ul>
+          <li>Vos réservations</li>
+          <li><a href="#" data-a11y-dialog-show="login">S'identifier</a></li>
+          <li><a href="#" data-a11y-dialog-show="register">Créer un compte</a></li>
+          <li>En</li>
+        </ul>
+      </nav>
+    </header>
+    <main id="homepage">
+      <section id="hero">
+        <div class="content">
+          <article>
+            <form method="post" action="#">
+              <div class="input select">
+                <select>
+                  <option value="aller-simple">Aller Simple</option>
+                  <option value="aller-retour">Aller et Retour</option>
+                </select>
+              </div>
+              <div class="input left">
+                <img src="{{asset('assets/images/icon-departure.svg')}}" alt="departure icon" />
+                <input type="text" placeholder="Douala" />
+              </div>
+              <div class="input left">
+                <img src="{{asset('assets/images/icon-location.svg')}}" alt="location icon" />
+                <input type="text" placeholder="Yaounde" />
+              </div>
+              <div class="group">
+                <div class="input left">
+                  <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" />
+                  <input type="date" />
                 </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="features-main ">
-
-                        <div class="b-features">
-                            <div class="row">
-
-                                <div class="title">
-                                    <h2 style="color: hsl(38, 100%, 40%);">L’application tout-en-un
-                                        des voyageurs</h2>
-                                    <p style="color: black;">Téléchargez l'application KiPART gratuitement pour
-                                        bénéficier
-                                        d'une expertise sur laquelle vous pouvez compter et voyagez en
-                                        toute confiance.</p>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-12">
-
-                                    <i class="fa fa-envelope-o"></i> Assistance voyage
-
-                                </div>
-
-
-
-                                <div class="col-lg-6 col-md-6 col-12">
-
-                                    <div class="img">
-                                        <img src="{{ asset('assets/img/agence/android.png') }}" alt="#">
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="col-lg-6 col-md-6 col-12">
-
-                                    <i class="fa fa-refresh"></i> Mise à jour et rappels
-
-
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-12">
-
-                                    <div class="img">
-                                        <img src="{{ asset('assets/img/agence/apple.png') }}" alt="#">
-
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-
-                                    <i class="fa fa-mobile-phone"></i> Billets sur mobile
-
-                                </div>
-
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="input">
+                  <button type="button">
+                    <span>+</span>
+                    Ajouter un retour
+                  </button>
                 </div>
-            </div>
+              </div>
+              <div class="group">
+                <div>
+                  <label>
+                    <img src="{{asset('assets/images/icon-user.svg')}}" alt="user icon" class="colored"/>
+                    Nombre de passager
+                  </label>
+                  <div class="input right">
+                    <input type="number" placeholder="0" id="number-of-passengers"/>
+                    <button type="button" class="no-bg" onclick="increaseNumberOfPassengers()">
+                      <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" />
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label>
+                    <img src="{{asset('assets/images/icon-star.svg')}}" alt="icon start" class="colored"/> Classe
+                  </label>
+                  <select>
+                    <option value="vip">VIP</option>
+                    <option value="eco">ECO</option>
+                  </select>
+                </div>
+              </div>
+              <div class="actions">
+                <button type="submit">CHERCHER</button>
+              </div>
+            </form>
+          </article>
+          <article>
+            <div class="title">Salut !</div>
+            <div class="subtitle">Où désirez-vous voyager ?</div>
+          </article>
+          <div class="overlay"></div>
         </div>
-    </section>
-    <!--/ App -->
-
-    <section class="contact-us">
-
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-12">
-                <!-- Contact Form -->
-
-                <div class="contact-form-area ">
-                    <div class="col-lg-8 col-md-8 col-12 center-element">
-                        <h3 style="color: #474747; text-align: center;">Newsletter</h3>
-                        <h1 class="title fw-bold"
-                            style="color: hsl(38, 100%, 40%); text-align: center; font-size: 35px">Vous souhaitez
-                            recevoir des
-                            remises exclusives
-                            et des mises à jour directement dans votre boîte
-                            de réception ?</h1>
-                        <form class="form " method="post" action="">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-5 col-12 center-element"
-                                    style="color: rgb(243, 241, 241);">
-                                    <div class="form-group">
-
-                                        <input type="email" name="email" placeholder="Votre e-mail">
-                                        {{-- <div class="icon"><i class="fa fa-envelope-open fa-2x"></i></div> --}}
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-md-5 col-12">
-                                    <div class="form-group button">
-                                        <button type="submit" class="bizwheel-btn2 ">Je m’enregistre
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!--/ End contact Form -->
-            </div>
-
+      </section>
+      <section id="agencies">
+        <div class="content">
+          <!-- <div> -->
+            <article>
+              <h2>Toutes vos agences de voyages préférés sur une seule plateforme</h2>
+              <p>
+                Plus de 10 agences de voyage de confiance, afin que vous puissiez vous concentrer uniquement sur le voyage. </br>
+                Trouvez les horaires, les prix, l'emplacement des gares routières, les services, les promotions et les bons plans.
+              </p>
+            </article>
+            <article>
+              <div class="agency-item 1">LOGO AGENCE</div>
+              <div class="agency-item 2">LOGO AGENCE</div>
+              <div class="agency-item 3">LOGO AGENCE</div>
+              <div class="agency-item 4">LOGO AGENCE</div>
+              <div class="agency-item 5">LOGO AGENCE</div>
+              <div class="agency-item 6">LOGO AGENCE</div>
+              <div class="agency-item 7">LOGO AGENCE</div>
+              <div class="agency-item 8">LOGO AGENCE</div>
+              <div class="agency-item 9">LOGO AGENCE</div>
+            </article>
+          <!-- </div> -->
         </div>
-
-    </section>
-    <!--/ End Contact Us -->
-
-    <!--/ new letter -->
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <!-- Footer Top -->
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- Footer About -->
-                        <div class="single-widget footer-about widget">
-                            <div class="logo">
-                                <div class="img-logo">
-                                    <a class="logo" href="#">
-                                        <img class="img-responsive" src="{{ asset('assets/img/logo.png') }}"
-                                            alt="logo">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/ End Footer About -->
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-12">
-                        <!-- Footer Links -->
-                        <div class="single-widget f-link widget">
-                            <h4 class="widget-title">Pret à partir</h4>
-                            <ul>
-                                <li><a href="#">Vos réservations</a></li>
-                                <li><a href="#">Créer un compte</a></li>
-                                <li><a href="#">Obtenir l'application</a></li>
-
-                            </ul>
-                        </div>
-                        <!--/ End Footer Links -->
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-12">
-
-                        <div class="single-widget f-link widget">
-                            <h4 class="widget-title">Dans le bureau</h4>
-                            <ul>
-                                <li><a href="#">À propos de nous</a></li>
-                                <li><a href="#">Carrières</a></li>
-                                <li><a href="#">Devenir un partenaire</a></li>
-
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-12">
-
-                        <div class="single-widget f-link widget">
-                            <h4 class="widget-title">Besoin de notre aide ?</h4>
-                            <ul>
-                                <a href="#" class="bizwheel-btn">Centre d’aide</a>
-
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-12">
-
-                        <div class="single-widget f-link widget">
-                            <h4 class="widget-title">Suivez-nous
-                            </h4>
-                            <ul>
-                                <li><a class="facebook" href="#" target="_blank"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li><a class="linkedin" href="#" target="_blank"><i
-                                            class="fa fa-linkedin"></i></a></li>
-                                <li><a class="instagram" href="#" target="_blank"><i
-                                            class="fa fa-instagram"></i></a>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-
+      </section>
+      <section id="app">
+        <div class="content">
+          <article>
+            <img src="{{ asset('assets/images/app.png') }}" alt="app section" />
+          </article>
+          <article>
+            <h2>L'application tout-en-un des voyageurs</h2>
+            <p>Télécharger l'application KiPART gratuitement pour bénéficier d'une expertise sur laquelle vous pouvez compter et voyagez en toute confiance</p>
+            <div>
+              <ul>
+                <li><img src="{{ asset('assets/images/icon-info.svg') }}" alt="info icon"/> Assistance voyage</li>
+                <li><img src="{{ asset('assets/images/icon-square.svg') }}" alt="square icon"/> Billets sur mobile</li>
+                <li><img src="{{ asset('assets/images/icon-refresh.svg') }}" alt="refresh icon"/> Mise à jour et rappels</li>
+              </ul>
+              <ul>
+                <li><img src="{{ asset('assets/images/play-store.png') }}" alt="play-store" /></li>
+                <li><img src="{{ asset('assets/images/apple-store.svg') }}" alt="apple-store" /></li>
+              </ul>
             </div>
+          </article>
         </div>
-        <!-- Copyright -->
-        <div class="copyright" style="background-color: black; color: white;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 col-md-6 col-12">
-
-
-                        <h3 class="widget-title" style="color: white;">KiPART</h3>
-
-
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-12">
-
-                        <h6 class="widget-title">Conditions d'utilisation</h6>
-
-
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-12">
-
-                        <h6 class="widget-title">Politique de confidentialité</h6>
-
-
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-12">
-
-                        <div class="img">
-                            <img src="{{ asset('assets/img/agence/android.png') }}" alt="#">
-
-                        </div>
-
-
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-12">
-
-                        <div class="img">
-                            <img src="{{ asset('assets/img/agence/apple.png') }}" alt="#">
-
-                        </div>
-
-
-                    </div>
-                </div>
+      </section>
+      <section id="newsletter">
+        <div class="content">
+          <h2>Vous souhaitez recevoir des remises exclusives et des mises à jour directement dans votre boite de réceptions?</h2>
+          <hr/>
+          <form method="POST" action="#">
+            <div class="input">
+              <img src="{{ asset('assets/images/icon-email.svg') }}" alt="email icon" />
+              <input type="email" placeholder="Votre email" name="email" id="email" />
             </div>
+            <button type="submit">Je m'enregistre</button>
+          </form>
         </div>
-        <!--/ End Copyright -->
+      </section>
+    </main>
+    <footer>
+      <article>
+        <div class="content">
+          <div>
+            <img src="{{ asset('assets/images/logo.svg') }}" alt="logo" />
+          </div>
+          <div>
+            <ul>
+              <li>Pret à partir</li>
+              <li>Vos réservations</li>
+              <li>Créer un compte</li>
+              <li>Obtenir l'application</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>Dans le bureau</li>
+              <li>À propos de nous</li>
+              <li>Carrières</li>
+              <li>Devenir un partenaire</li>
+            </ul>
+          </div>
+          <div>
+            <div>Besoin de notre aide?</div>
+            <div>
+              <a href="#">Centre d'aide</a>
+            </div>
+          </div>
+          <div>
+            <div>Suivez-nous</div>
+            <ul>
+              <li><a href="#"><img src="{{ asset('assets/images/linkedin.svg') }}" alt="linkedin"/></a></li>
+              <li><a href="#"></a><img src="{{ asset('assets/images/facebook.svg') }}" alt="facebook"/></a></li>
+              <li><a href="#"></a><img src="{{ asset('assets/images/instagram.svg') }}" alt="instagram"/></a></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="content">
+          <div>
+            <img src="./images/logo-2.svg" alt="logo 2" />
+          </div>
+          <div>
+            <a href="#">Conditions d'utilisation</a>
+          </div>
+          <div>
+            <a href="#">Politique de confidentialité</a>
+          </div>
+          <div>
+            <a href="#"><img src="{{ asset('assets/images/play-store.png') }}" /></a>
+            <a href="#"><img src="{{ asset('assets/images/apple-store.svg') }}" /></a>
+          </div>
+        </div>
+      </article>
     </footer>
 
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/63bbc8fa47425128790c65d0/1gmaoi58g';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    <!--End of Tawk.to Script-->
-    <!-- Jquery JS -->
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-migrate-3.0.0.js') }}"></script>
-    <!-- Popper JS -->
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <!-- Bootstrap JS -->
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <!-- Modernizr JS -->
-    <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
-    <!-- ScrollUp JS -->
-    <script src="{{ asset('assets/js/scrollup.js') }}"></script>
-    <!-- FacnyBox JS -->
-    <script src="{{ asset('assets/js/jquery-fancybox.min.js') }}"></script>
-    <!-- Cube Portfolio JS -->
-    <script src="{{ asset('assets/js/cubeportfolio.min.js') }}"></script>
-    <!-- Slick Nav JS -->
-    <script src="{{ asset('assets/js/slicknav.min.js') }}"></script>
-    <!-- Way Points JS -->
-    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
-    <!-- CounterUp JS -->
-    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
-    <!-- Slick Nav JS -->
-    <script src="{{ asset('assets/js/slicknav.min.js') }}"></script>
-    <!-- Slick Slider JS -->
-    <script src="{{ asset('assets/js/owl-carousel.min.js') }}"></script>
-    <!-- Easing JS -->
-    <script src="{{ asset('assets/js/easing.js') }}"></script>
-    <!-- Magnipic Popup JS -->
-    <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
-    <!-- Active JS -->
-    <script src="{{ asset('assets/js/active.js') }}"></script>
-</body>
+    <div
+      id="login"
+      class="dialog-container"
+      aria-hidden="true"
+    >
+      <!-- 2. The dialog overlay -->
+      <div class="dialog-overlay" data-a11y-dialog-hide></div>
+      <!-- 3. The actual dialog -->
+      <div class="dialog-content" role="document">
+        <!-- 4. The close button -->
+        <!-- <button type="button" data-a11y-dialog-hide aria-label="Close dialog">
+          &times;
+        </button> -->
+        <!-- 5. The dialog title -->
+        <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
+        <!-- 6. Dialog content -->
+        <div class="content dialog-content">
+          <div class="advert">
+            <div>
+              <span class="white">Connectez-vous</span>
+              <span class="colored">et vivez pleinement l'expérience</span>
+              <span class="white">Ki</span><span class="colored">Part</span>
+            </div>
+          </div>
+          <div class="details">
+            <form>
+              <fieldset>
+                <div class="title">Profitez de réservations et de remboursements plus rapides ainsi que les réductions</div>
 
+                <div class="input">
+                  <input type="text" name="username" id="username" placeholder="Téléphone ou e-mail" />
+                </div>
+                <div class="input right">
+                  <input type="password" name="password" id="password" placeholder="Mot de passe" />
+                  <button type="button"><img src="images/icon-eye.svg" alt="eye icon" /></button>
+                </div>
+                <div class="group">
+                  <div><a href="#">Mot de passe oublié?</a></div>
+                  <div>
+                    <input type="checkbox" />
+                    Se souvenir de moi
+                  </div>
+                </div>
+              </fieldset>
+              <div class="actions">
+                <button type="submit">CONNEXION</button>
+                <div>Vous n'avez pas encore de compte ?</div>
+                <div><a href="#">Créer un compte</a></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="register"
+      class="dialog-container"
+      aria-hidden="true"
+    >
+      <!-- 2. The dialog overlay -->
+      <div class="dialog-overlay" data-a11y-dialog-hide></div>
+      <!-- 3. The actual dialog -->
+      <div class="dialog-content" role="document">
+        <!-- 4. The close button -->
+        <!-- <button type="button" data-a11y-dialog-hide aria-label="Close dialog">
+          &times;
+        </button> -->
+        <!-- 5. The dialog title -->
+        <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
+        <!-- 6. Dialog content -->
+        <div class="content dialog-content">
+          <div class="advert">
+            <div>
+              <span class="white">Connectez-vous</span>
+              <span class="colored">et vivez pleinement l'expérience</span>
+              <span class="white">Ki</span><span class="colored">Part</span>
+            </div>
+          </div>
+          <div class="details">
+            <form>
+              <fieldset>
+                <div class="input">
+                  <input type="text" name="name" id="name" placeholder="Noms & Prénoms" />
+                </div>
+                <div class="input">
+                  <input type="text" name="email" id="email" placeholder="E-mail" />
+                </div>
+                <div class="input">
+                  <input type="text" name="phone" id="phone" placeholder="Téléphone" />
+                </div>
+                <div class="input right">
+                  <input type="password" name="password" id="password" placeholder="Mot de passe" />
+                  <button type="button"><img src="images/icon-eye.svg" alt="eye icon" /></button>
+                </div>
+              </fieldset>
+              <div class="actions">
+                <button type="submit">Créer un compte</button>
+                <div>En créeant votre compte vous acceptez nos <a href="#">conditions d'utilisation</a> et notre <a href="#">politique de confidentialité</a></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/a11y-dialog@7/dist/a11y-dialog.min.js"></script>
+    <script type="module">
+      import A11yDialog from 'https://cdn.jsdelivr.net/npm/a11y-dialog@7/dist/a11y-dialog.esm.min.js'
+
+      function increaseNumberOfPassengers() {
+        var numberOfPassengers = document.getElementById("number-of-passengers");
+        numberOfPassengers.value = +numberOfPassengers.value + 1;
+      }
+
+      const containerLogin = document.querySelector('#login');
+      const dialogLogin = new A11yDialog(containerLogin);
+      dialogLogin.on('show', function (dialogEl, event) {
+        console.log(dialogEl);
+        console.log(event);
+      });
+
+      const containerRegister = document.querySelector('#register');
+      const dialogRegister = new A11yDialog(containerRegister);
+      dialogRegister.on('show', function (dialogEl, event) {
+        console.log(dialogEl);
+        console.log(event);
+      });
+    </script>
+  </body>
 </html>
