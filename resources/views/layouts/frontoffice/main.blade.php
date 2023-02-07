@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/styles-responsive.css')}}" />
 
     <link rel="icon" href="{{ asset('assets/images/logo.svg') }}" sizes="any">
+    <script src="https://kit.fontawesome.com/021511bd83.js" crossorigin="anonymous"></script>
   </head>
   <body>
     @include('layouts.frontoffice.header')

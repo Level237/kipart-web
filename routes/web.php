@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\public\SearchController;
 use App\Http\Controllers\User\auth\LoginController;
 use App\Http\Controllers\User\auth\LogoutController;
+use App\Http\Controllers\public\ListAgencyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,5 @@ Route::get('/',[HomePageController::class,'homepage'])->name('homepage');
 
 Route::post('login',[LoginController::class,'login'])->name('login');
 Route::post('logout',[LogoutController::class,'logout'])->name('logout');
+Route::post('step-one/choice-your-agency',[SearchController::class,'stepOne'])->name('search.step-one');
+Route::get('list/agencyByPath/{departure}/{arrival}',[ListAgencyController::class,'ListAgencyWithPath'])->name('list.agencyByPath');
