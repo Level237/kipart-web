@@ -1,6 +1,6 @@
 @extends('layouts.frontoffice.main')
 @section('title')
-Choisissez votre Agence
+Choisissez votre Sous-Agence
 @endsection
 
 @section('content')

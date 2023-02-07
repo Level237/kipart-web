@@ -14,7 +14,14 @@ class SearchController extends Controller
     public function stepOne(Request $request){
 
         $listAgenciesWithPath=(new ListAgencyWithPathServices())->index($request->departure,$request->arrival);
-
+        $arrayTravel=[
+            'type'=>$request->type,
+            'type'=>$request->type,
+            'type'=>$request->type,
+            'type'=>$request->type,
+            'type'=>$request->type,
+            'type'=>$request->type,
+        ];
         $datas=json_decode($listAgenciesWithPath->getBody());
 
         return view('search.step-one',compact('datas'));
