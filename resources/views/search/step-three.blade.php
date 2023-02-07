@@ -54,44 +54,7 @@ Choisissez votre Agence
       <section id="details">
         <div class="content">
           <div class="">
-            <div id="by-agencies">
-              <header>
-                <h6>Départs par agence de voyage</h6>
-              </header>
-              <div class="items">
-                @foreach ($datas as $data)
 
-                    @foreach ($data as $list)
-                        <div class="item">
-                            <div class="logo">
-                                <form method="post" action="{{ route('search.step-two') }}">
-                                    @csrf
-                                    <input type="hidden" name="agency_id" value="{{ $list->id }}">
-                                    <button type="submit">
-                                        <img src="{{ $list->logo }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;">
-                                    </button>
-                                </form>
-                                <p style="color:black;">{{ $list->name }}</p>
-
-                        </a>
-
-                            </div>
-
-                            <div class="star">
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-regular fa-star fa-xs"></i>
-                            </div>
-                        </div>
-                    @endforeach
-
-                @endforeach
-
-
-              </div>
-            </div>
             <hr />
             <div id="all-departures">
               <header>

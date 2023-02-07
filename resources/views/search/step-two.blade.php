@@ -56,22 +56,24 @@ Choisissez votre Agence
           <div class="">
             <div id="by-agencies">
               <header>
-                <h6>Départs par agence de voyage</h6>
+                <h6>Choisissez votre sous Agence</h6>
               </header>
               <div class="items">
-                @foreach ($datas as $data)
 
-                    @foreach ($data as $list)
+
+                    @foreach ($datas as $subAgencies)
+                        @foreach ($subAgencies as $list)
                         <div class="item">
                             <div class="logo">
-                                <form method="post" action="{{ route('search.step-two') }}">
+                                <form method="post" action="{{ route('search.step-three') }}">
                                     @csrf
                                     <input type="hidden" name="agency_id" value="{{ $list->id }}">
                                     <button type="submit">
                                         <img src="{{ $list->logo }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;">
                                     </button>
+
                                 </form>
-                                <p style="color:black;">{{ $list->name }}</p>
+                                <p style="color:black;">{{ $list->nom }}</p>
 
                         </a>
 
@@ -85,7 +87,8 @@ Choisissez votre Agence
                             <i class="fa-regular fa-star fa-xs"></i>
                             </div>
                         </div>
-                    @endforeach
+                        @endforeach
+
 
                 @endforeach
 
