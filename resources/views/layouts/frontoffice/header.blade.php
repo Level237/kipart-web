@@ -12,9 +12,22 @@
         </a>
       </div>
       <ul>
-        <li>Vos réservations</li>
+
+        @if(!isset($userCurrent['errors']))
+            <li>Tableau de bord</li>
+            <li>Mes Tickets</li>
+            <form method="POST" action="{{ route('logout') }}" id="logout">
+                @csrf
+            </form>
+
+            <li><a href="" class="mega-menu" onclick="event.preventDefault(); document.getElementById('logout').submit();" title="Sign Out">
+                Deconnexion
+            </a></li>
+        @else
         <li><a href="#" data-a11y-dialog-show="login">S'identifier</a></li>
         <li><a href="#" data-a11y-dialog-show="register">Créer un compte</a></li>
+        @endif
+
         <li>En</li>
       </ul>
     </nav>

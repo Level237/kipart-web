@@ -2,6 +2,10 @@
 
 namespace App\services\user;
 
+use App\services\api\UrlServices;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
+
 class DetailUserService{
 
     public function getCurrentUser(){

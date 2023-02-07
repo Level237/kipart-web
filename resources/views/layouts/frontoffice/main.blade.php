@@ -48,6 +48,7 @@
       class="dialog-container"
       aria-hidden="true"
     >
+
       <!-- 2. The dialog overlay -->
       <div class="dialog-overlay" data-a11y-dialog-hide></div>
       <!-- 3. The actual dialog -->
@@ -93,6 +94,32 @@
         </div>
       </div>
     </div>
+
+    <div
+      id="logout"
+      class="dialog-container"
+      aria-hidden="true"
+    >
+
+      <!-- 2. The dialog overlay -->
+      <div class="dialog-overlay" data-a11y-dialog-hide></div>
+      <!-- 3. The actual dialog -->
+      <div class="dialog-content" role="document">
+        <!-- 4. The close button -->
+        <!-- <button type="button" data-a11y-dialog-hide aria-label="Close dialog">
+          &times;
+        </button> -->
+        <!-- 5. The dialog title -->
+        <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
+        <!-- 6. Dialog content -->
+        <div class="content dialog-content">
+
+          <div class="details">
+
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="{{ asset('assets/js/function.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/a11y-dialog@7/dist/a11y-dialog.min.js"></script>
@@ -107,6 +134,13 @@
       const containerLogin = document.querySelector('#login');
       const dialogLogin = new A11yDialog(containerLogin);
       dialogLogin.on('show', function (dialogEl, event) {
+        console.log(dialogEl);
+        console.log(event);
+      });
+
+      const containerLogout=document.querySelector('#logout');
+      const dialogLogout = new A11yDialog(containerLogout);
+      dialogLogout.on('show', function (dialogEl, event) {
         console.log(dialogEl);
         console.log(event);
       });

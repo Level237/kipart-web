@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\services\api\UrlServices;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 use App\services\user\DetailUserService;
 
 class LoginController extends Controller
@@ -25,11 +26,11 @@ class LoginController extends Controller
         $access_token = json_decode((string) $response->getBody(), true)['access_token'];
         Session::put('tokenUser', $access_token);
         Session::save();
-        $userCurrent=(new DetailUserService())->getCurrentUser();
 
-        //return to_route('homepage');
 
-        return $userCurrent;
+        return to_route('homepage');
+
+        //return $userCurrent;
     }
     }
 }

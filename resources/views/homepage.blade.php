@@ -71,7 +71,12 @@ Kipart
           </form>
         </article>
         <article>
-          <div class="title">Salut!</div>
+          <div class="title">Salut
+            @if(!isset($userCurrent['errors']))
+                {{ $userCurrent['name'] }}
+            @else
+
+          @endif !</div>
           <div class="subtitle">Où désirez-vous voyager ?</div>
         </article>
         <div class="overlay"></div>
