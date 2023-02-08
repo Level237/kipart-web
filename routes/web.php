@@ -6,6 +6,7 @@ use App\Http\Controllers\public\SearchController;
 use App\Http\Controllers\User\auth\LoginController;
 use App\Http\Controllers\User\auth\LogoutController;
 use App\Http\Controllers\public\ListAgencyController;
+use App\Http\Controllers\Passengers\AddPassengerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,9 @@ use App\Http\Controllers\public\ListAgencyController;
 Route::get('/',[HomePageController::class,'homepage'])->name('homepage');
 
 Route::post('login',[LoginController::class,'login'])->name('login');
-Route::get('login',function(){
-    return view('auth.login');
-});
+Route::get('login',[LoginController::class,'index'])->name('go-to-login');
+
+Route::get('add-passenger',[AddPassengerController::class,'add'])->name('add-passenger');
 Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 Route::post('step-one/choice-your-agency',[SearchController::class,'stepOne'])->name('search.step-one');
 Route::post('step-two/choice-your-sub-agency',[SearchController::class,'stepTwo'])->name('search.step-two');

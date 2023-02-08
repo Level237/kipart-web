@@ -28,9 +28,17 @@ class LoginController extends Controller
         Session::save();
 
 
-        return to_route('homepage');
+            return redirect()->back();
 
         //return $userCurrent;
     }
+
+   
+    }
+
+    public function index(){
+
+        return view('auth.login');
+        
     }
 }
