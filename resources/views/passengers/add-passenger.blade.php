@@ -20,7 +20,7 @@ Ajouter un passager
     <section id="details">
       <div class="content">
         <article id="informations">
-          <form>
+          <form action="{{ route('add-passenger') }}" method="post">
             <fieldset>
               <div class="input">
                 <input type="text" name="name" id="name" placeholder="Noms & Prénoms" />

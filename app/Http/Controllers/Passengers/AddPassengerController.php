@@ -8,7 +8,7 @@ use App\services\user\DetailUserService;
 
 class AddPassengerController extends Controller
 {
-    public function add(){
+    public function index(){
 
         $userCurrent=(new DetailUserService())->getCurrentUser();
 
@@ -16,8 +16,10 @@ class AddPassengerController extends Controller
 
             return to_route('go-to-login');
         }else{
-            return view('passengers.add-passenger');
+            return view('passengers.add-passenger',compact('userCurrent'));
         }
        
     }
+
+    public function 
 }

@@ -73,7 +73,7 @@ Choisissez votre Voyage
 
 
 
-                        <a href="{{ route('add-passenger') }}">
+                        <a href="{{ route('goto-passenger') }}">
                             <div class="item">
                                 <div class="infos">
                                 <div class="header">
