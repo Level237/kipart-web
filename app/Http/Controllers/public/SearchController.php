@@ -16,12 +16,16 @@ class SearchController extends Controller
         $listAgenciesWithPath=(new ListAgencyWithPathServices())->index($request->departure,$request->arrival);
         $arrayTravel=[
             'type'=>$request->type,
-            'type'=>$request->type,
-            'type'=>$request->type,
-            'type'=>$request->type,
-            'type'=>$request->type,
-            'type'=>$request->type,
+            'departure'=>$request->departure,
+            'arrival'=>$request->arrival,
+            'dateDeparture'=>$request->dateDeparture,
+            'departure_time'=>$request->departure_time,
+            'number_of_places'=>$request->number_of_places,
+            'classe'=>$request->classe,
         ];
+
+        $request->session()->put('arrayTravel',$arrayTravel);
+
         $datas=json_decode($listAgenciesWithPath->getBody());
 
         return view('search.step-one',compact('datas'));
@@ -39,7 +43,9 @@ class SearchController extends Controller
     }
 
     public function stepThree(Request $request){
-
-        return view('search.step-three');
+        $arrayTravel=$request->session()->get('arrayTravel');
+         $request->session()->put('SubAgency',$request->subAgency);
+        return view('search.step-three',compact('arrayTravel'));
+        //return $request->subAgency;
     }
 }
