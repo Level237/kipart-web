@@ -35,7 +35,7 @@ class SearchController extends Controller
     public function stepTwo(Request $request){
 
         $listSubAgencies=(new ListSubAgencyServices())->index($request->agency_id);
-
+        $request->session()->put('agency_name',$request->agency_name);
         $datas=json_decode($listSubAgencies);
 
         return view('search.step-two',compact('datas'));
@@ -44,8 +44,9 @@ class SearchController extends Controller
 
     public function stepThree(Request $request){
         $arrayTravel=$request->session()->get('arrayTravel');
-         $request->session()->put('SubAgency',$request->subAgency);
-        return view('search.step-three',compact('arrayTravel'));
+        $agencyName=$request->session()->get('agency_name');
+         $request->session()->put('subAgency',$request->subAgency);
+        return view('search.step-three',compact('arrayTravel','agencyName'));
         //return $request->subAgency;
     }
 }

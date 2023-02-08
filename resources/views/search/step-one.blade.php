@@ -61,17 +61,18 @@ Choisissez votre Agence
               <div class="items">
                 @foreach ($datas as $data)
 
-                    @foreach ($data as $list)
+                    @foreach ($data as $agency)
                         <div class="item">
                             <div class="logo">
                                 <form method="post" action="{{ route('search.step-two') }}">
                                     @csrf
-                                    <input type="hidden" name="agency_id" value="{{ $list->id }}">
+                                    <input type="hidden" name="agency_id" value="{{ $agency->id }}">
+                                    <input type="hidden" name="agency_name" value="{{ $agency->name }}">
                                     <button type="submit">
-                                        <img src="{{ $list->logo }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;">
+                                        <img src="{{ $agency->logo }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;">
                                     </button>
                                 </form>
-                                <p style="color:black;">{{ $list->name }}</p>
+                                <p style="color:black;">{{ $agency->name }}</p>
 
                         </a>
 
