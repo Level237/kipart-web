@@ -68,47 +68,56 @@ Choisissez votre Voyage
                 </div>
               </header>
               <div class="items">
+                @foreach ($datas as $travel)
 
 
-                <div class="item">
-                  <div class="infos">
-                    <div class="header">
-                      <div>{{ $agencyName }}</div>
-                      <div class="name">Douala - Yaoundé</div>
-                    </div>
-                    <div class="body">
-                      <div class="hour">04:00</div>
-                      <div class="others">
-                        <div>
-                          <div>Type de vehicule</div>
-                          <div class="type-of-car">Gros porteur</div>
+
+
+
+                        <div class="item">
+                            <div class="infos">
+                            <div class="header">
+                                <div>{{ $travel->name }}</div>
+                                <div class="name">{{ $travel->departure }} - {{ $travel->arrival }}</div>
+                            </div>
+                            <div class="body">
+                                <div class="hour">{{ $travel->hours }}</div>
+                                <div class="others">
+                                <div>
+                                    <div>Type de vehicule</div>
+                                    <div class="type-of-car">Gros porteur</div>
+                                </div>
+                                <div>
+                                    <div>Classe</div>
+                                    <div class="class">{{ $travel->classe }}</div>
+                                </div>
+                                <div>
+                                    <div>Nombre de places</div>
+                                    <div class="seats">{{ $travel->number_of_places }}</div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div> <a href="#">Notez l'agence</a></div>
+                            </div>
+                            </div>
+                            <div class="price">
+                            <span>3 500</span>
+                            <span>F CFA</span>
+                            </div>
                         </div>
-                        <div>
-                          <div>Classe</div>
-                          <div class="class">VIP</div>
-                        </div>
-                        <div>
-                          <div>Nombre de places</div>
-                          <div class="seats">70</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="footer">
-                      <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                      </div>
-                      <div> <a href="#">Notez l'agence</a></div>
-                    </div>
-                  </div>
-                  <div class="price">
-                    <span>3 500</span>
-                    <span>F CFA</span>
-                  </div>
-                </div>
+
+
+                @endforeach
+
+
               </div>
             </div>
             <div class="message">

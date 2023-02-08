@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use App\services\public\search\agencies\ListSubAgencyServices;
 use App\services\public\search\agencies\ListAgencyWithPathServices;
+use App\services\public\search\SearchServices;
 
 class SearchController extends Controller
 {
@@ -29,6 +30,7 @@ class SearchController extends Controller
         $datas=json_decode($listAgenciesWithPath->getBody());
 
         return view('search.step-one',compact('datas'));
+        //return $request->dateDeparture;
 
     }
 
@@ -46,7 +48,17 @@ class SearchController extends Controller
         $arrayTravel=$request->session()->get('arrayTravel');
         $agencyName=$request->session()->get('agency_name');
          $request->session()->put('subAgency',$request->subAgency);
-        return view('search.step-three',compact('arrayTravel','agencyName'));
+         $dataSearch=(new SearchServices())->searchByAgency(2,$arrayTravel['type'],$arrayTravel['departure'],$arrayTravel['arrival'],$arrayTravel['departure_time'],$arrayTravel['dateDeparture'],$arrayTravel['number_of_places'],$arrayTravel['classe']);
+         $datas=json_decode($dataSearch);
+         $datas=$datas->data;
+
+         return view("search.step-three",compact('agencyName',"datas"));
+        //return $arrayTravel;
+
+        // foreach($datas as $travel){
+        //     dd($travel->departure);
+        // }
+        // dd($datas);
         //return $request->subAgency;
     }
 }

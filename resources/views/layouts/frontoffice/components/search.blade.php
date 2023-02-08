@@ -21,7 +21,7 @@
       </div>
       <div class="input">
 
-          <select name="hours" id="" name="departure_time">
+          <select name="departure_time" id="">
             <option value="05:00">05:00</option>
             <option value="06:00">06:00</option>
             <option value="07:30">07:30</option>
