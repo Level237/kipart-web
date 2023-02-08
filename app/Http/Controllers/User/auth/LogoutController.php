@@ -14,7 +14,7 @@ class LogoutController extends Controller
 
         $url=(new UrlServices())->getUrl();
 
-        $response=Http::post($url.'/logout');
+        $response=Http::post($url.'/api/v1/logout');
         $request->session()->forget('tokenUser');
         $request->session()->flush();
         $request->session()->regenerate();

@@ -21,6 +21,9 @@ use App\Http\Controllers\public\ListAgencyController;
 Route::get('/',[HomePageController::class,'homepage'])->name('homepage');
 
 Route::post('login',[LoginController::class,'login'])->name('login');
+Route::get('login',function(){
+    return view('auth.login');
+});
 Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 Route::post('step-one/choice-your-agency',[SearchController::class,'stepOne'])->name('search.step-one');
 Route::post('step-two/choice-your-sub-agency',[SearchController::class,'stepTwo'])->name('search.step-two');
