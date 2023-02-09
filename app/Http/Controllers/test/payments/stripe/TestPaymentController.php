@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class TestPaymentController extends Controller
 {
+
+
     public function testPayment(){
 
-        
+
     }
 }
