@@ -70,10 +70,14 @@ Choisissez votre Voyage
               <div class="items">
                 @foreach ($datas as $travel)
 
+                <form method="get" action="{{ route('goto-passenger') }}" id="add">
+                    @csrf
+                    <input type="hidden" name="travel_id" value="{{ $travel->id }}">
 
 
 
-                        <a href="{{ route('goto-passenger') }}">
+                </form>
+                <a class="mega-menu" onclick="event.preventDefault(); document.getElementById('add').submit();" title="choice-travel">
                             <div class="item">
                                 <div class="infos">
                                 <div class="header">
@@ -97,6 +101,8 @@ Choisissez votre Voyage
                                     </div>
                                     </div>
                                 </div>
+
+
                                 <div class="footer">
                                     <div>
                                     <i class="fa-solid fa-star"></i>
@@ -113,9 +119,9 @@ Choisissez votre Voyage
                                 <span>F CFA</span>
                                 </div>
                             </div>
+
+
                         </a>
-
-
 
                 @endforeach
 

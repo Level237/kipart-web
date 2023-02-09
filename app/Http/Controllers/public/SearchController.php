@@ -13,6 +13,8 @@ use App\services\public\search\agencies\ListAgencyWithPathServices;
 
 class SearchController extends Controller
 {
+
+    // choice Agency
     public function stepOne(Request $request){
 
         $listAgenciesWithPath=(new ListAgencyWithPathServices())->index($request->departure,$request->arrival);
@@ -36,6 +38,7 @@ class SearchController extends Controller
 
     }
 
+    // choice SubAgency
     public function stepTwo(Request $request){
         $userCurrent=(new DetailUserService())->getCurrentUser();
         $listSubAgencies=(new ListSubAgencyServices())->index($request->agency_id);
@@ -47,6 +50,7 @@ class SearchController extends Controller
         //return $datas;
     }
 
+    // choice Travel
     public function stepThree(Request $request){
         $userCurrent=(new DetailUserService())->getCurrentUser();
         $arrayTravel=$request->session()->get('arrayTravel');
