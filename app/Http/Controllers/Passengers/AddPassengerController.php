@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Passengers;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\services\user\DetailUserService;
+use App\services\user\passengers\AddPassengerServices;
 
 class AddPassengerController extends Controller
 {
@@ -18,8 +21,19 @@ class AddPassengerController extends Controller
         }else{
             return view('passengers.add-passenger',compact('userCurrent'));
         }
-       
+
     }
 
-    public function 
+    public function add(Request $request)
+    {
+        $count = count($request->input('name'));
+        for ($i=0; $i<$count; $i++){
+            $data[] = array('name' => $request->input('name')[$i], 'cni' => $request->input('cni')[$i],'type' => 'homme','telephone'=>$request->input('telephone')[$i]);
+        }
+        $passengers = response()->json(["passengers" => $data]);
+
+        $response = (new AddPassengerServices())->add(3, json_encode($passengers->getData()));
+
+        return $response;
+    }
 }
