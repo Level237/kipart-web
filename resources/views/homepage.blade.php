@@ -58,7 +58,7 @@ Kipart
               <li><img src="{{ asset('assets/images/icon-refresh.svg') }}" alt="refresh icon"/> Mise à jour et rappels</li>
             </ul>
             <ul>
-              <li><img src="{{ asset('assets/images/play-store.png') }}" alt="play-store" /></li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.ki_part" target="_blank"><img src="{{ asset('assets/images/play-store.png') }}" alt="play-store" /></a></li>
               <li><img src="{{ asset('assets/images/apple-store.svg') }}" alt="apple-store" /></li>
             </ul>
           </div>

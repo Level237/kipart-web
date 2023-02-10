@@ -5,7 +5,7 @@
       </div>
       <div id="menu-toggle-primary">
         <a class="open-menu-primary" href="#menu-primary">
-          <img src="images/icon-hamburger-menu.svg" alt="Open this menu" />
+          <img src="{{ asset('assets/images/icon-hamburger-menu.svg') }}" alt="Open this menu" />
         </a>
         <a class="close-menu-primary" href="#">
           <img src="{{ asset('assets/images/icon-times.svg')}}" alt="Close this menu" />

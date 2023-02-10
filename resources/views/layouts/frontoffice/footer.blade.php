@@ -48,7 +48,7 @@
             <a href="#">Politique de confidentialité</a>
           </div>
           <div>
-            <a href="#"><img src="{{ asset('assets/images/play-store.png') }}" /></a>
+            <a href="https://play.google.com/store/apps/details?id=com.ki_part" target="_blank""><img src="{{ asset('assets/images/play-store.png') }}" /></a>
             <a href="#"><img src="{{ asset('assets/images/apple-store.svg') }}" /></a>
           </div>
         </div>
