@@ -57,6 +57,7 @@ class SearchController extends Controller
         $agencyName=$request->session()->get('agency_name');
         $agency_id=$request->session()->get('agency_id');
          $request->session()->put('subAgency',$request->subAgency);
+         $request->session()->put('subAgency_id',$request->subAgency_id);
          $dataSearch=(new SearchServices())->searchByAgency($agency_id,$arrayTravel['type'],$arrayTravel['departure'],$arrayTravel['arrival'],$arrayTravel['departure_time'],$arrayTravel['dateDeparture'],$arrayTravel['number_of_places'],$arrayTravel['classe']);
          $datas=json_decode($dataSearch->getBody());
          $datas=$datas->data;

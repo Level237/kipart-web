@@ -9,7 +9,7 @@ use App\services\user\DetailUserService;
 
 class PaymentWithStripeController extends Controller
 {
-    public function index(Request $request){
+    public function stepOne(Request $request){
 
         $currentPassengers = $request->session()->get('currentPassengers');
         $agency_name = $request->session()->get('agency_name');
@@ -17,5 +17,17 @@ class PaymentWithStripeController extends Controller
         $userCurrent=(new DetailUserService())->getCurrentUser();
         return view('payments.step-one',compact('userCurrent','currentPassengers','travels','agency_name'));
         //return $currentPassengers;
+    }
+
+    public function stepTwo(Request $request){
+
+        if($request->method_payment=="visa-mastercard"){
+            $currentPassengers = $request->session()->get('currentPassengers');
+        $agency_name = $request->session()->get('agency_name');
+        $travels=$request->session()->get('travels');
+        $userCurrent=(new DetailUserService())->getCurrentUser();
+            return view('payments.step-two',compact('userCurrent','currentPassengers','travels','agency_name'));
+        }
+
     }
 }

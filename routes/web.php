@@ -8,6 +8,7 @@ use App\Http\Controllers\User\auth\LogoutController;
 use App\Http\Controllers\public\ListAgencyController;
 use App\Http\Controllers\Passengers\AddPassengerController;
 use App\Http\Controllers\payments\stripe\PaymentWithStripeController;
+use App\Http\Controllers\test\payments\stripe\TestPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,7 @@ Route::post('step-one/choice-your-agency',[SearchController::class,'stepOne'])->
 Route::post('step-two/choice-your-sub-agency',[SearchController::class,'stepTwo'])->name('search.step-two');
 Route::post('step-tree/choice-your-travel',[SearchController::class,'stepThree'])->name('search.step-three');
 Route::get('step-four/add-passengers',[AddPassengerController::class,'index'])->name('goto-passenger');
-Route::get('step-five/payment-review',[PaymentWithStripeController::class,'index'])->name('payment-review');
+Route::get('step-five/payment-review',[PaymentWithStripeController::class,'stepOne'])->name('payment-review');
+Route::post('step-six/payment-final',[PaymentWithStripeController::class,'stepTwo'])->name('payment-final');
+Route::post('step-final/pay',[TestPaymentController::class,'testPayment'])->name('pay');
 Route::get('list/agencyByPath/{departure}/{arrival}',[ListAgencyController::class,'ListAgencyWithPath'])->name('list.agencyByPath');

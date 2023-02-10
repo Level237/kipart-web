@@ -1,11 +1,11 @@
-
 @extends('layouts.frontoffice.main')
 @section('title')
-Choisissez votre methode de paiement
+Renseignez vos informations et payez
 @endsection
 
 @section('content')
-<main id="resume">
+
+<main id="resume-2">
     <section id="breadcumb">
       <div class="content">
         <ul>
@@ -19,7 +19,42 @@ Choisissez votre methode de paiement
     </section>
     <section id="details">
       <div class="content">
-        <div>
+        <div class="card">
+          <header>
+            Détails de votre carte
+          </header>
+          <form action="{{ route('pay') }}" method="post">
+            @csrf
+            <fieldset>
+              {{-- <div class="input">
+                <input type="text" name="name" id="name" placeholder="Nom sur la carte" />
+              </div> --}}
+
+              <div class="input">
+                <input type="text" name="number" id="card-number" placeholder="Numéro de carte" />
+              </div>
+              <div class="group">
+                <div class="input">
+                  <input type="text" name="exp_year" id="date-expiration" placeholder="Date d'expiration" />
+                </div>
+                <div class="input">
+                  <input type="text" name="exp_month" id="exp_month" placeholder="Mois d'expiration" />
+                </div>
+                <div class="input">
+                    <input type="text" name="cvv" id="cvv" placeholder="CVV" />
+                  </div>
+                  <input type="hidden" name="amount" value="{{ $travels['price'] + 500 }}">
+              </div>
+            </fieldset>
+            <div class="actions">
+              <button type="submit">
+                Payez (<span>{{ $travels['price'] + 500 }} FCFA</span>)
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="recap">
+
             @foreach ($currentPassengers as $passenger)
                 <div id="coords">
                     <div>
@@ -74,58 +109,6 @@ Choisissez votre methode de paiement
               <div>{{ $travels['price'] + 500 }} FCFA</div>
             </div>
           </div>
-          <div id="reduction">
-            <div>
-              Appliquer une reduction (optionnel)
-            </div>
-            <div>
-              <form>
-                <div class="input">
-                  <input type="text" name="code" id="code" placeholder="Code de réduction" />
-                </div>
-                <div class="actions">
-                  <button type="submit">Appliquer</button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div id="method-payment">
-            <div>
-              Méthode de paiement
-            </div>
-            <form action="{{ route('payment-final') }}" method="post">
-                @csrf
-                <div>
-                    <div>
-                      <input type="radio" name="method_payment" value="om" />
-                      <img src="" alt="icon om" />
-                    </div>
-                    <div>
-                      <input type="radio" name="method_payment" value="momo" />
-                      <img src="" alt="icon momo" />
-                    </div>
-                    <div>
-                      <input type="radio" name="method_payment" value="visa-mastercard" />
-                      <img src="" alt="icon visa mastercard" />
-                    </div>
-                    <div>
-                      <input type="radio" name="method_payment" value="paypal" />
-                      <img src="" alt="icon paypal" />
-                    </div>
-                  </div>
-
-
-          </div>
-          <div id="actions">
-            <button type="submit">Procéder au paiement</button>
-            <p>
-              Les prix incluent les taxes et peuvent changer selon la disponibilité. Le prix sera finalisé une fois l'achat terminé. Tous les frais supplémentaires peuvent être examinés avant le paiement.
-            </p>
-          </div>
-        </form>
-        </div>
-        <div class="advert">
-          ESPACE ENCART PUB
         </div>
       </div>
     </section>
