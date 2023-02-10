@@ -30,3 +30,10 @@ Route::post('step-one/choice-your-agency',[SearchController::class,'stepOne'])->
 Route::post('step-two/choice-your-sub-agency',[SearchController::class,'stepTwo'])->name('search.step-two');
 Route::post('step-tree/choice-your-travel',[SearchController::class,'stepThree'])->name('search.step-three');
 Route::get('list/agencyByPath/{departure}/{arrival}',[ListAgencyController::class,'ListAgencyWithPath'])->name('list.agencyByPath');
+Route::get('Privacy-Policy', function (){
+    return view ('PolitiqueDeConfidentialite');
+})->name('privacy-policy');
+Route::get('cgu', function (){
+    return view ('CGU');
+})->name('cgu');
+
