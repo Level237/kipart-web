@@ -13,6 +13,8 @@ use App\services\public\search\agencies\ListAgencyWithPathServices;
 
 class SearchController extends Controller
 {
+
+    // choice Agency
     public function stepOne(Request $request){
 
         $listAgenciesWithPath=(new ListAgencyWithPathServices())->index($request->departure,$request->arrival);
@@ -36,6 +38,7 @@ class SearchController extends Controller
 
     }
 
+    // choice SubAgency
     public function stepTwo(Request $request){
         $userCurrent=(new DetailUserService())->getCurrentUser();
         $listSubAgencies=(new ListSubAgencyServices())->index($request->agency_id);
@@ -47,12 +50,14 @@ class SearchController extends Controller
         //return $datas;
     }
 
+    // choice Travel
     public function stepThree(Request $request){
         $userCurrent=(new DetailUserService())->getCurrentUser();
         $arrayTravel=$request->session()->get('arrayTravel');
         $agencyName=$request->session()->get('agency_name');
         $agency_id=$request->session()->get('agency_id');
          $request->session()->put('subAgency',$request->subAgency);
+         $request->session()->put('subAgency_id',$request->subAgency_id);
          $dataSearch=(new SearchServices())->searchByAgency($agency_id,$arrayTravel['type'],$arrayTravel['departure'],$arrayTravel['arrival'],$arrayTravel['departure_time'],$arrayTravel['dateDeparture'],$arrayTravel['number_of_places'],$arrayTravel['classe']);
          $datas=json_decode($dataSearch->getBody());
          $datas=$datas->data;

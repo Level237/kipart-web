@@ -70,10 +70,18 @@ Choisissez votre Voyage
               <div class="items">
                 @foreach ($datas as $travel)
 
-
-
-
-                        <a href="{{ route('add-passenger') }}">
+                <form method="get" action="{{ route('goto-passenger') }}" id="add">
+                    @csrf
+                    <input type="hidden" name="travel_id" value="{{ $travel->id }}">
+                    <input type="hidden" name="departure" value="{{ $travel->departure }}">
+                    <input type="hidden" name="arrival" value="{{ $travel->arrival }}">
+                    <input type="hidden" name="date" value="{{ $travel->date }}">
+                    <input type="hidden" name="hour" value="{{ $travel->hours }}">
+                    <input type="hidden" name="price" value="{{ $travel->price }}">
+                    <input type="hidden" name="places" value="{{ $travel->number_of_places }}">
+                    <input type="hidden" name="classe" value="{{ $travel->classe }}">
+                </form>
+                <a class="mega-menu" onclick="event.preventDefault(); document.getElementById('add').submit();" title="choice-travel">
                             <div class="item">
                                 <div class="infos">
                                 <div class="header">
@@ -97,6 +105,8 @@ Choisissez votre Voyage
                                     </div>
                                     </div>
                                 </div>
+
+
                                 <div class="footer">
                                     <div>
                                     <i class="fa-solid fa-star"></i>
@@ -113,9 +123,9 @@ Choisissez votre Voyage
                                 <span>F CFA</span>
                                 </div>
                             </div>
+
+
                         </a>
-
-
 
                 @endforeach
 

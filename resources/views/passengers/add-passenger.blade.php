@@ -10,9 +10,9 @@ Ajouter un passager
       <div class="content">
         <ul>
           <li>Choix du siège</li>
-          <li><img src="images/icon-arrow-right.svg" alt="icon arrow" /></li>
+          <li><img src="{{ asset('assets/images/icon-arrow-right.svg') }}" alt="icon arrow" /></li>
           <li>Informations du passager</li>
-          <li><img src="images/icon-arrow-right.svg" alt="icon arrow" /></li>
+          <li><img src="{{ asset('assets/images/icon-arrow-right.svg') }}" alt="icon arrow" /></li>
           <li>Révision et paiement</li>
         </ul>
       </div>
@@ -20,19 +20,17 @@ Ajouter un passager
     <section id="details">
       <div class="content">
         <article id="informations">
-          <form>
+          <form action="{{ route('add-passenger') }}" method="post">
+            @csrf
             <fieldset>
               <div class="input">
-                <input type="text" name="name" id="name" placeholder="Noms & Prénoms" />
+                <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" />
               </div>
               <div class="input">
-                <input type="text" name="nic" id="nic" placeholder="N CNI" />
+                <input type="text" name="cni[]" id="nic" placeholder="N CNI" />
               </div>
               <div class="input">
-                <input type="email" name="email" id="email" placeholder="E-mail" />
-              </div>
-              <div class="input">
-                <input type="text" name="phone" id="phone" placeholder="Téléphone" />
+                <input type="text" name="telephone[]" id="phone" placeholder="Téléphone" />
               </div>
             </fieldset>
             <div class="actions">

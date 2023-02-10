@@ -1233,7 +1233,7 @@
     display: flex;
     flex-direction: row;
     gap: 1em;
-
+    cursor: pointer;
     font-size: 17px;
     color: #808080;
 

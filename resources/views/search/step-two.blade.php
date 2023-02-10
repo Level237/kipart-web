@@ -68,6 +68,7 @@ Choisissez votre Sous-Agence
                                 <form method="post" action="{{ route('search.step-three') }}">
                                     @csrf
                                     <input type="hidden" name="subAgency" value="{{ $list->nom }}">
+                                    <input type="hidden" name="subAgency_id" value="{{ $list->id }}">
                                     <button type="submit">
                                         <img src="{{ $list->logo }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;">
                                     </button>
