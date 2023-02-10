@@ -42,10 +42,10 @@
             <img src="{{ asset('assets/images/logo-2.svg') }}" alt="logo 2" />
           </div>
           <div>
-            <a href="#">Conditions d'utilisation</a>
+            <a href="{{route('cgu')}}">Conditions d'utilisation</a>
           </div>
           <div>
-            <a href="#">Politique de confidentialité</a>
+            <a href="{{route('privacy-policy')}}">Politique de confidentialité</a>
           </div>
           <div>
             <a href="https://play.google.com/store/apps/details?id=com.ki_part" target="_blank""><img src="{{ asset('assets/images/play-store.png') }}" /></a>

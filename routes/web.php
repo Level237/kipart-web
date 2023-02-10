@@ -38,3 +38,10 @@ Route::get('step-five/payment-review',[PaymentWithStripeController::class,'stepO
 Route::post('step-six/payment-final',[PaymentWithStripeController::class,'stepTwo'])->name('payment-final');
 Route::post('step-final/pay',[TestPaymentController::class,'testPayment'])->name('pay');
 Route::get('list/agencyByPath/{departure}/{arrival}',[ListAgencyController::class,'ListAgencyWithPath'])->name('list.agencyByPath');
+Route::get('Privacy-Policy', function (){
+    return view ('PolitiqueDeConfidentialite');
+})->name('privacy-policy');
+Route::get('cgu', function (){
+    return view ('CGU');
+})->name('cgu');
+
