@@ -33,12 +33,12 @@ class LoginController extends Controller
         //return $userCurrent;
     }
 
-   
+
     }
 
     public function index(){
 
         return view('auth.login');
-        
+
     }
 }

@@ -1053,6 +1053,8 @@
 
   main#departures #search > .content > form .group .input button {
     color: #B2B2B2;
+    display: flex;
+    justify-content: space-around;
   }
 
   main#departures #search > .content > form .group .input button.no-bg {
@@ -1233,7 +1235,7 @@
     display: flex;
     flex-direction: row;
     gap: 1em;
-    cursor: pointer;
+
     font-size: 17px;
     color: #808080;
 
