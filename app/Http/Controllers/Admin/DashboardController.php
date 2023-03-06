@@ -15,10 +15,16 @@ class DashboardController extends Controller
     public function index(){
 
         $detailsUser=(new DetailsServices())->getUserDetails();
+        $response=json_decode($detailsUser->getBody());
         $countResource=$this->getCountResource();
 
+        if(isset($response->errors)){
+            return to_route('admin.login');
 
-        return view('admin.dashboard',compact('countResource','detailsUser'));
+        }else{
+            return view('admin.dashboard',compact('countResource','detailsUser'));
+        }
+
         //return $countResource;
     }
 

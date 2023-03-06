@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\services\admin\DetailsServices;
 
 class BrandAmbassadorController extends Controller
 {
@@ -14,7 +15,18 @@ class BrandAmbassadorController extends Controller
      */
     public function index()
     {
-        return view('admin.brand.index');
+        $detailsUser=(new DetailsServices())->getUserDetails();
+
+
+        if(isset($detailsUser)){
+
+            //return $detailsUser;
+            return view('admin.brand.index',compact('detailsUser'));
+        }else{
+            return to_route('admin.login');
+        }
+
+
     }
 
     /**
