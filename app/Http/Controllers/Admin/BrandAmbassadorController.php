@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\services\api\brandAmbassador\ListBrandServices;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\services\admin\DetailsServices;
@@ -16,12 +17,13 @@ class BrandAmbassadorController extends Controller
     public function index()
     {
         $detailsUser=(new DetailsServices())->getUserDetails();
-
+        $listBrand=(new ListBrandServices())->list();
+        $datas=json_decode($listBrand->getBody());
 
         if(isset($detailsUser)){
 
             //return $detailsUser;
-            return view('admin.brand.index',compact('detailsUser'));
+            return view('admin.brand.index',compact('detailsUser','datas'));
         }else{
             return to_route('admin.login');
         }

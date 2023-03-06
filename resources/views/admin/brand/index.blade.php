@@ -34,16 +34,19 @@ Listes des BrandGirls
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    @foreach($datas->brandGirls as $brand)
+                                        <tr>
 
-                                        <td><span class="list-name">Linked In</span>
-                                            <span class="text-muted">Florida, United States</span>
-                                        </td>
+                                            <td><span class="list-name">{{ $brand->nameB }}</span>
+                                                {{-- <span class="text-muted">Florida, United States</span> --}}
+                                            </td>
 
-                                        <td>
-                                            <span class="badge badge-success">2341</span>
-                                        </td>
-                                    </tr>
+                                            <td>
+                                                <span class="badge badge-success">{{ $brand->count }}</span>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
                                 </tbody>
                             </table>
                         </div>
