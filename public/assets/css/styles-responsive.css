@@ -1,5 +1,6 @@
 /* NAV */
 @media screen and (max-width: 1080px) {
+<<<<<<< HEAD
     header nav {
       width: 90%;
     }
@@ -759,3 +760,764 @@
       gap: 0;
     }
   }
+=======
+  header nav {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  header nav ul {
+    display: none;
+  }
+
+  header nav #menu-toggle-primary {
+    display: block;
+  }
+
+  header nav #menu-toggle-primary img {
+    filter: invert(43%) sepia(98%) saturate(509%) hue-rotate(360deg) brightness(100%) contrast(89%);
+    width: 45px;
+    height: 45px;
+  }
+  header nav #menu-toggle-primary a.close-menu-primary {
+    display: none;
+  }
+
+  header nav:target ul {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    height: auto;
+    z-index: 4000;
+
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+  }
+
+  header nav:target #menu-toggle-primary a.close-menu-primary {
+    display: block;
+    padding-top: 2em;
+    padding-right: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5000;
+  }
+
+  header nav:target #menu-toggle-primary a.open-menu-primary {
+    display: none;
+  }
+}
+
+/* LOGIN, REGISTER */
+
+@media screen and (max-width: 1024px) {
+  #login .content > .dialog-content,
+  #register .content > .dialog-content {
+    flex-direction: column;
+  }
+
+  #login .content .details,
+  #register .content .details {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  #login .content, #register .content {
+    flex-direction: column;
+    width: 90%;
+    margin: 1em;
+  }
+
+  #login .content .advert, #register .content .advert {
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1em;
+  }
+
+  #login .content .advert > div,
+  #register .content .advert > div {
+    width: 85%;
+  }
+
+  #login .content .details form,
+  #register .content .details form {
+    padding: 1em;
+  }
+
+  #login .content .details form fieldset .title,
+  #register .content .details form fieldset .title {
+    width: 100%;
+  }
+
+  #login .content .details form .actions,
+  #register .content .details form .actions {
+    width: 100%;
+  }
+
+  #login .content .details form .actions button,
+  #register .content .details form .actions button {
+    width: 100%;
+  }
+
+  #register .content form .actions div {
+    width: 100%;
+  }
+}
+
+/* FOOTER */
+
+@media screen and (max-width: 1024px) {
+  footer article:first-child > .content,
+  footer article:last-child > .content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
+    row-gap: 1em;
+    column-gap: 2em;
+  }
+
+  footer article:first-child > .content > div:nth-child(1),
+  footer article:last-child > .content > div:nth-child(1) {
+    margin: auto;
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  footer article:first-child > .content > div:nth-child(4) {
+    grid-column: 2/3;
+  }
+
+  footer article:first-child > .content > div:nth-child(5) {
+    grid-column: 3/4;
+  }
+
+  footer article:first-child > .content > div {
+    margin: auto;
+    width: 100%;
+  }
+
+  footer article:last-child > .content > div:nth-child(4) {
+    grid-column: 2/4;
+    grid-row: 2/3;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer article:first-child > .content,
+  footer article:last-child > .content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0;
+    gap: 1em;
+  }
+
+  footer article:first-child > .content > div:nth-child(5) {
+    margin: 0;
+  }
+
+  footer article:first-child > .content > div > div ~ ul {
+    justify-content: space-between;
+  }
+
+  footer article:first-child > .content > div > div ~ ul img {
+    width: 45px;
+    height: 45px;
+  }
+
+  footer article:last-child > .content > div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  footer article:last-child > .content > div:last-child img {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+/* HOME  */
+
+@media screen and (max-width: 1024px) {
+  main#homepage #hero > .content, main#homepage #agencies > .content, main#homepage #app > .content, main#homepage #newsletter > .content {
+    width: 90%;
+    margin: auto;
+  }
+
+  main#homepage #hero {
+    background-image: url(../images/bg-header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+
+    width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  main#homepage #hero > .content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  main#homepage #hero > .content .overlay {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  main#homepage #agencies > .content article {
+    width: 100%;
+  }
+
+  main#homepage #agencies > .content > article:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  main#homepage #app {
+    padding: 2em 0;
+  }
+
+  main#homepage #app > .content > article {
+    display: none;
+  }
+
+  main#homepage #app > .content > article:last-child {
+    margin-top: 0;
+  }
+
+  main#homepage #newsletter > .content {
+    padding: 2em 0;
+  }
+
+  main#homepage #newsletter > .content > form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  main#homepage #agencies > .content {
+    width: 90%;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  main#homepage #agencies > .content article {
+    width: 100%;
+  }
+
+  main#homepage #agencies > .content > article:last-child {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    gap: 3em;
+  }
+
+  main#homepage #agencies > .content > article:first-child {
+    gap: 1em;
+  }
+
+  main#homepage #agencies > .content > article:last-child div.agency-item {
+    padding: 1em; /* Remove it when using real images */
+  }
+
+  main#homepage #app {
+    padding: 2em 0;
+  }
+
+  main#homepage #app > .content {
+    width: 90%;
+  }
+
+  main#homepage #app > .content > article {
+    display: none;
+  }
+
+  main#homepage #app > .content > article:last-child {
+    gap: 1em;
+    margin: 0;
+  }
+
+  main#homepage #app > .content > article:last-child div {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  main#homepage #app > .content > article:last-child div ul {
+    width: 100%;
+    height: auto;
+  }
+
+  main#homepage #app > .content > article:last-child div ul:first-child li {
+    justify-content: space-between;
+  }
+
+  main#homepage #app > .content > article:last-of-type img {
+    width: 100%;
+    height: auto;
+  }
+
+  main#homepage #newsletter > .content {
+    width: 90%;
+    padding: 2em 0;
+  }
+
+  main#homepage #newsletter > .content > h2 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  main#homepage #newsletter > .content > form {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  main#homepage #newsletter > .content > form > .input input,
+  main#homepage #newsletter > .content > form > button {
+    height: 90px;
+    flex: auto;
+  }
+
+  main#homepage #hero > .content article:first-of-type > form > .group {
+    flex-direction: column;
+  }
+
+  main#homepage #hero > .content article:first-of-type > form .actions button[type="submit"] {
+    width: 100%;
+  }
+
+  main#homepage #hero > .content {
+    gap: 1em;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main#homepage #agencies > .content {
+    flex-direction: row;
+  }
+}
+
+/* CHOICE OF SEATS */
+@media screen and (max-width: 1080px) {
+  main #breadcumb > .content {
+    width: 90%;
+    margin: auto;
+    padding: 1em 0;
+  }
+
+  main#seats #details > .content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 465px) {
+
+  main#seats #breadcumb > .content ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  main#seats #breadcumb > .content ul li img {
+    display: none;
+  }
+
+  main#seats #details > .content > #seat-selection .place {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  main#seats #details > .content > #seat-selection .legend > div {
+    gap: 10px;
+    text-align: center;
+  }
+
+  main#seats #details > .content > #seat-selection .legend > div span {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  main#seats #details > .content > #seat-selection .rank {
+    row-gap: 1em;
+    column-gap: 0.5em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  main#seats #details > .content {
+    width: 90%;
+    flex-direction: column-reverse;
+  }
+
+  main#seats #details > .content > #seat-selection {
+    flex-grow: 1;
+    width: 100%
+  }
+
+  main#seats #details > .content > #travel {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  main#seats #details > .content > #seat-selection > div:first-of-type > .selections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  main#seats #details > .content > #seat-selection .legend {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1em;
+  }
+
+  main#seats #details > .content > #seat-selection .rank {
+    row-gap: 2em;
+    column-gap: 2em;
+  }
+
+  main#seats #details > .content > #seat-selection .nav {
+    width: 100%;
+  }
+
+  main#seats #details > .content > #seat-selection > div:first-of-type,
+  main#seats #details > .content > #travel #ticket,
+  main#seats #details > .content > #travel #choosen {
+    padding: 1em;
+  }
+}
+
+/* INFORMATIONS ABOUT PASSENGERS */
+@media screen and (max-width: 1080px) {
+  main#passenger-data #details > .content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main#passenger-data #details > .content > #informations form .actions {
+    width: 100%;
+    gap: 0;
+  }
+
+  main#passenger-data #details > .content > #informations form .actions > div:first-of-type {
+    margin: 1em 0;
+  }
+
+  main#passenger-data #details > .content > #informations form .actions button {
+    width: 100%;
+  }
+
+  main#passenger-data #details > .content > #travel #ticket,
+  main#passenger-data #details > .content > #travel #choosen {
+    padding: 1em;
+  }
+
+  main#passenger-data #details > .content > #travel #choosen > div.infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  main#passenger-data #breadcumb > .content ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  main#passenger-data #breadcumb > .content ul li img {
+    display: none;
+  }
+
+  main#passenger-data #details > .content,
+  main#passenger-data #breadcumb > .content {
+    flex-direction: column-reverse;
+  }
+
+  main#passenger-data #details > .content > #travel,
+  main#passenger-data #details > .content > #informations {
+    width: 100%;
+  }
+}
+
+/* RESUME AND PAYMENT */
+@media screen and (max-width: 1080px) {
+  main#resume #details > .content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main#resume #details > .content > div:first-of-type > #reduction > div:last-of-type form {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  main#resume #details > .content > div:first-of-type > #reduction > div:last-of-type form > div {
+    width: 100%;
+  }
+
+  main#resume #details > .content > div:first-of-type > #actions {
+    padding: 0 !important;
+  }
+
+  main#resume #details > .content > div:first-of-type > #actions button {
+    width: 100%;
+  }
+
+  main#resume #details > .content > div:first-of-type > #coords,
+  main#resume #details > .content > div:first-of-type > #actions,
+  main#resume #details > .content > div:first-of-type > #method-payment,
+  main#resume #details > .content > div:first-of-type > #reduction,
+  main#resume #details > .content > div:first-of-type > #ticket,
+  main#resume #details > .content > div:first-of-type > #choosen {
+    padding: 1em;
+  }
+
+  main#resume #details > .content > div:first-of-type > #reduction > div:last-of-type form .input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  main#resume #breadcumb > .content ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  main#resume #breadcumb > .content ul li img {
+    display: none;
+  }
+
+  main#resume #details > .content > div:last-of-type {
+    display: none;
+  }
+
+  main#resume #details > .content > div:first-of-type {
+    width: 100%;
+  }
+
+  main#resume #details > .content > div:first-of-type > #choosen > div.infos {
+    flex-direction: column;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+  }
+}
+
+/* RESUME AND PAYMENT - 2 */
+@media screen and (max-width: 1080px) {
+  main#resume-2 #details > .content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main#resume-2 #details > .content, main#resume-2 #breadcumb > .content {
+    flex-direction: column-reverse;
+  }
+
+  main#resume-2 #details > .content > div.recap > #coords,
+  main#resume-2 #details > .content > div.recap > #actions,
+  main#resume-2 #details > .content > div.recap > #method-payment,
+  main#resume-2 #details > .content > div.recap > #reduction,
+  main#resume-2 #details > .content > div.recap > #ticket,
+  main#resume-2 #details > .content > div.recap > #choosen {
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  main#resume-2 #breadcumb > .content ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  main#resume-2 #breadcumb > .content ul li img {
+    display: none;
+  }
+
+  main#resume-2 #details > .content > div.recap > #choosen > div.infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  main#resume-2 #details > .content > div.card header {
+    text-align: center;
+    line-height: 38px;
+  }
+
+  main#resume-2 #details > .content > div.card form fieldset .group {
+    flex-direction: column;
+  }
+
+  main#resume-2 #details > .content > div.card form .actions {
+    margin: 0;
+  }
+
+  main#resume-2 #details > .content > div.card form .actions button {
+    padding: 1em 0;
+    width: 100%;
+  }
+}
+
+/* DEPARTURES */
+
+@media screen and (max-width: 1080px) {
+  main#departures #search > .content,
+  main#departures #details > .content {
+    width: 90%;
+  }
+
+  main#departures #search > .content > form .input {
+    flex: 100%;
+  }
+
+  main#departures #search > .content > form .group .input button {
+    width: 100%;
+  }
+
+  main#departures #search > .content > form > .group div:last-of-type button span {
+    display: none;
+  }
+
+  main#departures #search > .content > form .actions {
+    width: 100%;
+  }
+
+  main#departures #search > .content > form .actions button[type="submit"] {
+    width: 100%;
+    padding: 1.5em;
+  }
+
+  main#departures #search > .content > form .input.left {
+    flex: 100%;
+  }
+
+  main#departures #details > .content {
+    flex-direction: column;
+  }
+
+  main#departures #details > .content > div {
+    width: 100% !important;
+  }
+
+  main#departures #details > .content #all-departures .items .item {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  main#departures #search > .content > form > .group {
+    width: 100% !important;
+  }
+
+  main#departures #search > .content > form > .group > div {
+    width: 50%;
+  }
+
+  main#departures #search > .content > form .group > div select {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  main#departures #search > .content > form {
+    flex-direction: column;
+  }
+
+  main#departures #search > .content > form .group > div select {
+    width: 100%;
+  }
+
+  main#departures #details > .content > div:last-of-type {
+    display: none;
+  }
+
+  main#departures #details > .content #by-agencies header {
+    padding: 0.5em 0;
+  }
+
+  main#departures #details > .content #all-departures .items .item {
+    flex-direction: column;
+    padding: 1em;
+    gap: 10px;
+  }
+
+  main#departures #details > .content #all-departures .items .item .infos {
+    gap: 10px;
+  }
+
+  main#departures #details > .content #all-departures .items .item .body {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  main#departures #details > .content #all-departures .items .item .body .others {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  main#departures #details > .content > div:first-of-type {
+    width: 100%;
+    gap: 10px;
+  }
+
+  main#departures #details > .content #all-departures header {
+    flex-direction: column;
+  }
+
+  main#departures #details > .content #all-departures .items .item .body .others > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  main#departures #details > .content #all-departures .items .item .body .hour {
+    text-align: center;
+  }
+
+  main#departures #details > .content #all-departures .items .item .footer {
+    flex-direction: column;
+    align-items: self-start;
+    gap: 0;
+  }
+}
+>>>>>>> 93d9dbdcc8cf6d3fba90164ba1a90705cf396064
