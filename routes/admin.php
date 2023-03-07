@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AgenciesController;
 use App\Http\Controllers\Admin\auth\loginController;
 use App\Http\Controllers\Admin\auth\LogoutController;
+use App\Http\Controllers\Admin\BrandAmbassadorController;
 use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
     });
     Route::resource('agencies', AgenciesController::class);
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
-
+    Route::resource('brandGirls',BrandAmbassadorController::class);
     Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 });

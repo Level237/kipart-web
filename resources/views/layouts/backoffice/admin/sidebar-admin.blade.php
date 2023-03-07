@@ -49,8 +49,8 @@
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Brand Ambassador</span></a>
                 <ul class="ml-menu">
-                    <li><a href="">Tout les Brand</a></li>
-                    <li><a href="">Ajouter une Brand Ambassador</a></li>
+                    <li><a href="{{ route('admin.brandGirls.index') }}">Listes</a></li>
+                    <li><a href="{{ route('admin.brandGirls.create') }}">Ajouter une Brand Ambassador</a></li>
 
                 </ul>
             </li>

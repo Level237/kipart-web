@@ -25,7 +25,12 @@ class AgenciesController extends Controller
             $result=Http::withToken($accessToken)->get($url.'/api/admin/v1/agencies');
             $detailsUser=(new DetailsServices())->getUserDetails();
             $datas=json_decode($result->getBody());
-        return view('admin.agencies.index',compact('datas','detailsUser'));
+            if(isset($detailsUser)){
+                return view('admin.agencies.index',compact('datas','detailsUser'));
+            }else{
+                return to_route('admin.login');
+            }
+
     }
 
     /**

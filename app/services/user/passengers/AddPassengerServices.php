@@ -19,8 +19,11 @@ class AddPassengerServices{
 
         $client = new \GuzzleHttp\Client();
     $response = $client->post($url.'/api/v1/add/passengers/'.$travel_id, [
-        'headers' => ['Content-Type'=>'application/json','Authorization' => "Bearer $accessToken"],
+        'headers' => ['Content-Type'=>'application/json','Authorization' => "Bearer
+         $accessToken"],
         'body'    => $params
+        
+        
     ]);
 
 
