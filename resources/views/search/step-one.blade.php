@@ -55,11 +55,11 @@ Choisissez votre Agence
         <div class="content">
           <div class="">
             <div id="by-agencies">
-              <header>
-                <h6>Départs par agence de voyage</h6>
-              </header>
-              <div class="items">
-                @foreach ($datas as $data)
+                <header>
+                  <h6>Départs par agence de voyage</h6>
+                </header>
+                <div class="items">
+                    @foreach ($datas as $data)
 
                     @foreach ($data as $agency)
                         <div class="item">
@@ -68,13 +68,13 @@ Choisissez votre Agence
                                     @csrf
                                     <input type="hidden" name="agency_id" value="{{ $agency->id }}">
                                     <input type="hidden" name="agency_name" value="{{ $agency->name }}">
-                                    <button type="submit">
-                                        <img src="{{ $agency->logo }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;">
+                                    <button type="submit" style="border-style:none;">
+                                        <img src="{{ $agency->logo }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;">
                                     </button>
                                 </form>
-                                <p style="color:black;">{{ $agency->name }}</p>
                                
-                        </a>
+                               
+                        
 
                             </div>
 
@@ -89,181 +89,179 @@ Choisissez votre Agence
                     @endforeach
 
                 @endforeach
-
-
+                </div>
               </div>
-            </div>
             <hr />
             <div id="all-departures">
-              <header>
-                <h6>Tous les départs</h6>
-                <div>
-                  <span>Trié par</span>
-                  <select>
-                    <option value="">Heure de départ</option>
-                    <option value="">Heure d'arrivée</option>
-                  </select>
-                </div>
-              </header>
-              <div class="items">
-                <div class="item">
-                  <div class="infos">
-                    <div class="header">
-                      <div>Nom de l'agence</div>
-                      <div class="name">Douala - Yaoundé</div>
-                    </div>
-                    <div class="body">
-                      <div class="hour">04:00</div>
-                      <div class="others">
-                        <div>
-                          <div>Type de vehicule</div>
-                          <div class="type-of-car">Gros porteur</div>
-                        </div>
-                        <div>
-                          <div>Classe</div>
-                          <div class="class">VIP</div>
-                        </div>
-                        <div>
-                          <div>Nombre de places</div>
-                          <div class="seats">70</div>
+                <header>
+                  <h6>Tous les départs</h6>
+                  <div>
+                    <span>Trié par</span>
+                    <select>
+                      <option value="">Heure de départ</option>
+                      <option value="">Heure d'arrivée</option>
+                    </select>
+                  </div>
+                </header>
+                <div class="items">
+                  <div class="item">
+                    <div class="infos">
+                      <div class="header">
+                        <div>Nom de l'agence</div>
+                        <div class="name">Douala - Yaoundé</div>
+                      </div>
+                      <div class="body">
+                        <div class="hour">04:00</div>
+                        <div class="others">
+                          <div>
+                            <div>Type de vehicule</div>
+                            <div class="type-of-car">Gros porteur</div>
+                          </div>
+                          <div>
+                            <div>Classe</div>
+                            <div class="class">VIP</div>
+                          </div>
+                          <div>
+                            <div>Nombre de places</div>
+                            <div class="seats">70</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="footer">
-                      <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
+                      <div class="footer">
+                        <div>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div> <a href="#">Notez l'agence</a></div>
                       </div>
-                      <div> <a href="#">Notez l'agence</a></div>
+                    </div>
+                    <div class="price">
+                      <span>3 500</span>
+                      <span>F CFA</span>
                     </div>
                   </div>
-                  <div class="price">
-                    <span>3 500</span>
-                    <span>F CFA</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="infos">
-                    <div class="header">
-                      <div>Nom de l'agence</div>
-                      <div class="name">Douala - Yaoundé</div>
-                    </div>
-                    <div class="body">
-                      <div class="hour">04:00</div>
-                      <div class="others">
-                        <div>
-                          <div>Type de vehicule</div>
-                          <div class="type-of-car">Gros porteur</div>
-                        </div>
-                        <div>
-                          <div>Classe</div>
-                          <div class="class">VIP</div>
-                        </div>
-                        <div>
-                          <div>Nombre de places</div>
-                          <div class="seats">70</div>
+                  <div class="item">
+                    <div class="infos">
+                      <div class="header">
+                        <div>Nom de l'agence</div>
+                        <div class="name">Douala - Yaoundé</div>
+                      </div>
+                      <div class="body">
+                        <div class="hour">04:00</div>
+                        <div class="others">
+                          <div>
+                            <div>Type de vehicule</div>
+                            <div class="type-of-car">Gros porteur</div>
+                          </div>
+                          <div>
+                            <div>Classe</div>
+                            <div class="class">VIP</div>
+                          </div>
+                          <div>
+                            <div>Nombre de places</div>
+                            <div class="seats">70</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="footer">
-                      <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                      </div>
-                      <div> <a href="#">Notez l'agence</a></div>
-                    </div>
-                  </div>
-                  <div class="price">
-                    <span>3 500</span>
-                    <span>F CFA</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="infos">
-                    <div class="header">
-                      <div>Nom de l'agence</div>
-                      <div class="name">Douala - Yaoundé</div>
-                    </div>
-                    <div class="body">
-                      <div class="hour">04:00</div>
-                      <div class="others">
+                      <div class="footer">
                         <div>
-                          <div>Type de vehicule</div>
-                          <div class="type-of-car">Gros porteur</div>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
                         </div>
-                        <div>
-                          <div>Classe</div>
-                          <div class="class">VIP</div>
-                        </div>
-                        <div>
-                          <div>Nombre de places</div>
-                          <div class="seats">70</div>
-                        </div>
+                        <div> <a href="#">Notez l'agence</a></div>
                       </div>
                     </div>
-                    <div class="footer">
-                      <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                      </div>
-                      <div> <a href="#">Notez l'agence</a></div>
+                    <div class="price">
+                      <span>3 500</span>
+                      <span>F CFA</span>
                     </div>
                   </div>
-                  <div class="price">
-                    <span>3 500</span>
-                    <span>F CFA</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="infos">
-                    <div class="header">
-                      <div>Nom de l'agence</div>
-                      <div class="name">Douala - Yaoundé</div>
-                    </div>
-                    <div class="body">
-                      <div class="hour">04:00</div>
-                      <div class="others">
-                        <div>
-                          <div>Type de vehicule</div>
-                          <div class="type-of-car">Gros porteur</div>
-                        </div>
-                        <div>
-                          <div>Classe</div>
-                          <div class="class">VIP</div>
-                        </div>
-                        <div>
-                          <div>Nombre de places</div>
-                          <div class="seats">70</div>
+                  <div class="item">
+                    <div class="infos">
+                      <div class="header">
+                        <div>Nom de l'agence</div>
+                        <div class="name">Douala - Yaoundé</div>
+                      </div>
+                      <div class="body">
+                        <div class="hour">04:00</div>
+                        <div class="others">
+                          <div>
+                            <div>Type de vehicule</div>
+                            <div class="type-of-car">Gros porteur</div>
+                          </div>
+                          <div>
+                            <div>Classe</div>
+                            <div class="class">VIP</div>
+                          </div>
+                          <div>
+                            <div>Nombre de places</div>
+                            <div class="seats">70</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="footer">
-                      <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
+                      <div class="footer">
+                        <div>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div> <a href="#">Notez l'agence</a></div>
                       </div>
-                      <div> <a href="#">Notez l'agence</a></div>
+                    </div>
+                    <div class="price">
+                      <span>3 500</span>
+                      <span>F CFA</span>
                     </div>
                   </div>
-                  <div class="price">
-                    <span>3 500</span>
-                    <span>F CFA</span>
+                  <div class="item">
+                    <div class="infos">
+                      <div class="header">
+                        <div>Nom de l'agence</div>
+                        <div class="name">Douala - Yaoundé</div>
+                      </div>
+                      <div class="body">
+                        <div class="hour">04:00</div>
+                        <div class="others">
+                          <div>
+                            <div>Type de vehicule</div>
+                            <div class="type-of-car">Gros porteur</div>
+                          </div>
+                          <div>
+                            <div>Classe</div>
+                            <div class="class">VIP</div>
+                          </div>
+                          <div>
+                            <div>Nombre de places</div>
+                            <div class="seats">70</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="footer">
+                        <div>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div> <a href="#">Notez l'agence</a></div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span>3 500</span>
+                      <span>F CFA</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             <div class="message">
               Les prix peuvent changer selon la disponibilité des bus. Tous les frais supplémentaires peuvent être examinés avant le paiement. Le prix total sera finalisé une fois l'achat terminé.
             </div>
