@@ -1,58 +1,50 @@
-<form method="post" action="{{ route('search.step-one') }}">
-    @csrf
+<form method="post" action="#">
     <div class="input select">
-      <select name="type">
+      <select>
         <option value="aller-simple">Aller Simple</option>
         <option value="aller-retour">Aller et Retour</option>
       </select>
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-departure.svg')}}" alt="departure icon" />
-      <input type="text" placeholder="Douala" name="departure"/>
+      <input type="text" placeholder="Douala" />
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-location.svg')}}" alt="location icon" />
-      <input type="text" placeholder="Yaounde" name="arrival" />
+      <input type="text" placeholder="Yaounde" />
     </div>
     <div class="group">
       <div class="input left">
-        <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" />
-        <input type="date" name="dateDeparture" />
+        <img src="images/icon-calendar.svg" alt="calendar icon" />
+        <input type="date" />
       </div>
       <div class="input">
-
-          <select name="departure_time" id="">
-            <option value="05:00">05:00</option>
-            <option value="06:00">06:00</option>
-            <option value="07:30">07:30</option>
-            <option value="08:30">08:30</option>
-            <option value="09:30">09:30</option>
-          </select>
-
+        <button type="button">
+          <span>+</span>
+          Ajouter un retour
+        </button>
       </div>
     </div>
     <div class="group">
       <div>
         <label>
-          <img src="{{asset('assets/images/icon-user.svg')}}" alt="user icon" class="colored"/>
+          <img src="images/icon-user.svg" alt="user icon" class="colored"/>
           Nombre de passager
         </label>
         <div class="input right">
-          <input type="number" placeholder="1" id="number-of-passengers" name="number_of_places"/>
-
+          <input type="number" placeholder="0" id="number-of-passengers"/>
           <button type="button" class="no-bg" onclick="increaseNumberOfPassengers()">
-            <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" />
+            <img src="images/icon-plus.svg" alt="plus icon" />
           </button>
-
         </div>
       </div>
       <div>
         <label>
-          <img src="{{asset('assets/images/icon-star.svg')}}" alt="icon start" class="colored"/> Classe
+          <img src="images/icon-star.svg" alt="icon start" class="colored"/> Classe
         </label>
-        <select name="classe">
-          <option value="Vip">Vip</option>
-          <option value="Classique">Classique</option>
+        <select>
+          <option value="vip">VIP</option>
+          <option value="eco">ECO</option>
         </select>
       </div>
     </div>

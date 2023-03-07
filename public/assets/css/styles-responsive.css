@@ -1,8 +1,11 @@
 /* NAV */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1080px) {
   header nav {
     width: 90%;
   }
+}
+
+@media screen and (max-width: 768px) {
 
   header nav ul {
     display: none;
@@ -52,15 +55,20 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
-  header nav {
-    width: 90%;
-  }
-}
-
 /* LOGIN, REGISTER */
 
 @media screen and (max-width: 1024px) {
+  #login .content > .dialog-content,
+  #register .content > .dialog-content {
+    flex-direction: column;
+  }
+
+  #login .content .details,
+  #register .content .details {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
   #login .content, #register .content {
     flex-direction: column;
     width: 90%;
@@ -104,12 +112,6 @@
 }
 
 /* FOOTER */
-@media screen and (max-width: 1280px) {
-  footer article > .content,
-  footer article > .content {
-    width: 90% !important;
-  }
-}
 
 @media screen and (max-width: 1024px) {
   footer article:first-child > .content,
@@ -186,16 +188,12 @@
 
 /* HOME  */
 
-@media screen and (max-width: 1280px) {
-  main#homepage #hero > .content,
-  main#homepage #agencies > .content,
-  main#homepage #app > .content,
-  main#homepage #newsletter > .content {
-    width: 90%;
-  }
-}
-
 @media screen and (max-width: 1024px) {
+  main#homepage #hero > .content, main#homepage #agencies > .content, main#homepage #app > .content, main#homepage #newsletter > .content {
+    width: 90%;
+    margin: auto;
+  }
+
   main#homepage #hero {
     background-image: url(../images/bg-header.png);
     background-size: cover;
@@ -222,10 +220,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-  }
-
-  main#homepage #agencies > .content {
-    flex-direction: column;
   }
 
   main#homepage #agencies > .content article {
@@ -310,6 +304,7 @@
 
   main#homepage #app > .content > article:last-child div ul {
     width: 100%;
+    height: auto;
   }
 
   main#homepage #app > .content > article:last-child div ul:first-child li {
@@ -340,6 +335,7 @@
   main#homepage #newsletter > .content > form > .input input,
   main#homepage #newsletter > .content > form > button {
     height: 90px;
+    flex: auto;
   }
 
   main#homepage #hero > .content article:first-of-type > form > .group {
@@ -352,10 +348,29 @@
 
   main#homepage #hero > .content {
     gap: 1em;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main#homepage #agencies > .content {
+    flex-direction: row;
   }
 }
 
 /* CHOICE OF SEATS */
+@media screen and (max-width: 1080px) {
+  main #breadcumb > .content {
+    width: 90%;
+    margin: auto;
+    padding: 1em 0;
+  }
+
+  main#seats #details > .content {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 465px) {
 
   main#seats #breadcumb > .content ul {
@@ -437,17 +452,9 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
-  main#seats #details > .content,
-  main#seats #breadcumb > .content {
-    width: 90%;
-  }
-}
-
 /* INFORMATIONS ABOUT PASSENGERS */
-@media screen and (max-width: 1280px) {
-  main#passenger-data #details > .content,
-  main#passenger-data #breadcumb > .content {
+@media screen and (max-width: 1080px) {
+  main#passenger-data #details > .content {
     width: 90%;
   }
 }
@@ -502,9 +509,8 @@
 }
 
 /* RESUME AND PAYMENT */
-@media screen and (max-width: 1280px) {
-  main#resume #details > .content,
-  main#resume #breadcumb > .content {
+@media screen and (max-width: 1080px) {
+  main#resume #details > .content {
     width: 90%;
   }
 }
@@ -534,6 +540,10 @@
   main#resume #details > .content > div:first-of-type > #ticket,
   main#resume #details > .content > div:first-of-type > #choosen {
     padding: 1em;
+  }
+
+  main#resume #details > .content > div:first-of-type > #reduction > div:last-of-type form .input {
+    width: 100%;
   }
 }
 
@@ -565,9 +575,8 @@
 }
 
 /* RESUME AND PAYMENT - 2 */
-@media screen and (max-width: 1280px) {
-  main#resume-2 #details > .content,
-  main#resume-2 #breadcumb > .content {
+@media screen and (max-width: 1080px) {
+  main#resume-2 #details > .content {
     width: 90%;
   }
 }
@@ -625,28 +634,13 @@
 }
 
 /* DEPARTURES */
-@media screen and (max-width: 1280px) {
+
+@media screen and (max-width: 1080px) {
   main#departures #search > .content,
   main#departures #details > .content {
     width: 90%;
   }
 
-  main#departures #search > .content > form {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  main#departures #details > .content #by-agencies .items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 1em;
-    column-gap: 1em;
-  }
-}
-
-@media screen and (max-width: 1024px) {
   main#departures #search > .content > form .input {
     flex: 100%;
   }
@@ -687,7 +681,11 @@
 
 @media screen and (max-width: 775px) {
   main#departures #search > .content > form > .group {
-    width: 100%;
+    width: 100% !important;
+  }
+
+  main#departures #search > .content > form > .group > div {
+    width: 50%;
   }
 
   main#departures #search > .content > form .group > div select {
