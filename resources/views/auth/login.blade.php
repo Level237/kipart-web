@@ -1,6 +1,6 @@
 @extends('layouts.frontoffice.main')
 @section('title')
-Choisissez votre Sous-Agence
+Connexion
 @endsection
 
 @section('content')
@@ -21,7 +21,6 @@ Choisissez votre Sous-Agence
         <!-- 6. Dialog content -->
         <div class="content">
             <div class="dialog-content">
-               
               <div class="advert">
                 <div>
                   <span class="white">Connectez-vous</span>

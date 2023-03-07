@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class AddPassengerServices{
 
-    public function add($travel_id,$params){
+    public function add($travel_id,$params,$subAgency_id){
 
         $url = (new UrlServices())->getUrl();
         $accessToken=Session::get('tokenUser');
@@ -18,9 +18,8 @@ class AddPassengerServices{
         // ->post($url.'/api/v1/add/passengers/'.$travel_id,$params);
 
         $client = new \GuzzleHttp\Client();
-    $response = $client->post($url.'/api/v1/add/passengers/'.$travel_id, [
-        'headers' => ['Content-Type'=>'application/json','Authorization' => "Bearer
-         $accessToken"],
+    $response = $client->post($url.'/api/v1/add/passengers/'.$travel_id.'/'.$subAgency_id, [
+        'headers' => ['Content-Type'=>'application/json','Authorization' => "Bearer $accessToken"],
         'body'    => $params
         
         
