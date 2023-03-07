@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\services\api\brandAmbassador\ListBrandServices;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\services\admin\DetailsServices;
+use App\services\api\brandAmbassador\ListBrandServices;
+use App\services\api\brandAmbassador\CreateBrandServices;
 
 class BrandAmbassadorController extends Controller
 {
@@ -17,10 +18,11 @@ class BrandAmbassadorController extends Controller
     public function index()
     {
         $detailsUser=(new DetailsServices())->getUserDetails();
+        $response=json_decode($detailsUser->getBody());
         $listBrand=(new ListBrandServices())->list();
         $datas=json_decode($listBrand->getBody());
 
-        if(isset($detailsUser)){
+        if(!isset($response->errors)){
 
             //return $detailsUser;
             return view('admin.brand.index',compact('detailsUser','datas'));
@@ -38,7 +40,16 @@ class BrandAmbassadorController extends Controller
      */
     public function create()
     {
-        //
+        $detailsUser=(new DetailsServices())->getUserDetails();
+        $response=json_decode($detailsUser->getBody());
+        if(!isset($response->errors)){
+
+            //return $detailsUser;
+            return view('admin.brand.create',compact('detailsUser'));
+        }else{
+            return to_route('admin.login');
+        }
+
     }
 
     /**
@@ -49,7 +60,9 @@ class BrandAmbassadorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $createBrand=(new CreateBrandServices())->create($request);
+
+        return to_route('admin.brandGirls.index');
     }
 
     /**
