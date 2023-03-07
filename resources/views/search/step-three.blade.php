@@ -100,8 +100,8 @@ Choisissez votre Voyage
                                         <div class="class">{{ $travel->classe }}</div>
                                     </div>
                                     <div>
-                                        <div>Nombre de places</div>
-                                        <div class="seats">{{ $travel->number_of_places }}</div>
+                                        <div>Nombre de places restante</div>
+                                        <div class="seats">{{ $travel->placeAvailable }}</div>
                                     </div>
                                     </div>
                                 </div>

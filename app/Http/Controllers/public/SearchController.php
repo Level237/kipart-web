@@ -62,6 +62,7 @@ class SearchController extends Controller
          $datas=json_decode($dataSearch->getBody());
          $datas=$datas->data;
 
+         //return $datas;
          return view("search.step-three",compact('agencyName',"datas",'userCurrent'));
         //return $arrayTravel;
 

@@ -69,24 +69,18 @@ Choisissez votre Sous-Agence
                                     @csrf
                                     <input type="hidden" name="subAgency" value="{{ $list->nom }}">
                                     <input type="hidden" name="subAgency_id" value="{{ $list->id }}">
-                                    <button type="submit">
-                                        <img src="{{ $list->logo }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;">
+                                    <button type="submit" style="border-style:none;">
+                                        <img src="{{ $list->logo }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;">
                                     </button>
 
                                 </form>
-                                <p style="color:black;">{{ $list->nom }}</p>
+                                
 
                         </a>
-
+                        
                             </div>
-
-                            <div class="star">
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-regular fa-star fa-xs"></i>
-                            </div>
+                            <p style="color:black;font-size:1rem;">{{ $list->nom }}</p>
+                           
                         </div>
                         @endforeach
 

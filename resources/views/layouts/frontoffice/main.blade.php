@@ -30,18 +30,24 @@
         <!-- 5. The dialog title -->
         <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
         <!-- 6. Dialog content -->
-        <div class="content dialog-content">
-          <div class="advert">
-            <div>
-              <span class="white">Connectez-vous</span>
-              <span class="colored">et vivez pleinement l'expérience</span>
-              <span class="white">Ki</span><span class="colored">Part</span>
-            </div>
-          </div>
-          <div class="details">
-            @include("layouts.frontoffice.popup.Login")
-          </div>
+        <div class="content">
+            <button type="button" data-a11y-dialog-hide aria-label="Close dialog">
+              <img src="{{ asset('assets/images/icon-times.svg') }}" alt="Close this dialog" />
+            </button>
+            <div class="dialog-content">
+                <div class="advert">
+                  <div>
+                    <span class="white">Connectez-vous</span>
+                    <span class="colored">et vivez pleinement l'expérience</span>
+                    <span class="white">Ki</span><span class="colored">Part</span>
+                  </div>
+                </div>
+                <div class="details">
+                  @include("layouts.frontoffice.popup.Login")
+                </div>
+              </div>
         </div>
+        
       </div>
     </div>
     <div
@@ -61,38 +67,44 @@
         <!-- 5. The dialog title -->
         <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
         <!-- 6. Dialog content -->
-        <div class="content dialog-content">
-          <div class="advert">
-            <div>
-              <span class="white">Connectez-vous</span>
-              <span class="colored">et vivez pleinement l'expérience</span>
-              <span class="white">Ki</span><span class="colored">Part</span>
-            </div>
-          </div>
-          <div class="details">
-            <form>
-              <fieldset>
-                <div class="input">
-                  <input type="text" name="name" id="name" placeholder="Noms & Prénoms" />
+        <div class="content">
+            <button type="button" data-a11y-dialog-hide aria-label="Close dialog">
+              <img src="{{ asset('assets/images/icon-times.svg') }}" alt="Close this dialog" />
+            </button>
+            <div class="dialog-content">
+                <div class="advert">
+                  <div>
+                    <span class="white">Connectez-vous</span>
+                    <span class="colored">et vivez pleinement l'expérience</span>
+                    <span class="white">Ki</span><span class="colored">Part</span>
+                  </div>
                 </div>
-                <div class="input">
-                  <input type="text" name="email" id="email" placeholder="E-mail" />
+                <div class="details">
+                  <form>
+                    <fieldset>
+                      <div class="input">
+                        <input type="text" name="name" id="name" placeholder="Noms & Prénoms" />
+                      </div>
+                      <div class="input">
+                        <input type="text" name="email" id="email" placeholder="E-mail" />
+                      </div>
+                      <div class="input">
+                        <input type="text" name="phone" id="phone" placeholder="Téléphone" />
+                      </div>
+                      <div class="input right">
+                        <input type="password" name="password" id="password" placeholder="Mot de passe" />
+                        <button type="button"><img src="{{ asset('assets/images/icon-eye.svg') }}" alt="eye icon" /></button>
+                      </div>
+                    </fieldset>
+                    <div class="actions">
+                      <button type="submit">Créer un compte</button>
+                      <div>En créeant votre compte vous acceptez nos <a href="#">conditions d'utilisation</a> et notre <a href="#">politique de confidentialité</a></div>
+                    </div>
+                  </form>
                 </div>
-                <div class="input">
-                  <input type="text" name="phone" id="phone" placeholder="Téléphone" />
-                </div>
-                <div class="input right">
-                  <input type="password" name="password" id="password" placeholder="Mot de passe" />
-                  <button type="button"><img src="{{ asset('assets/images/icon-eye.svg') }}" alt="eye icon" /></button>
-                </div>
-              </fieldset>
-              <div class="actions">
-                <button type="submit">Créer un compte</button>
-                <div>En créeant votre compte vous acceptez nos <a href="#">conditions d'utilisation</a> et notre <a href="#">politique de confidentialité</a></div>
               </div>
-            </form>
-          </div>
-        </div>
+            <div>
+        
       </div>
     </div>
 
