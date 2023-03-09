@@ -9,7 +9,7 @@ class ListSubAgencyServices{
 
     public function index($id){
         $url=(new UrlServices())->getUrl();
-    $response=Http::get($url.'/api/list/subAgencies/'.$id);
+    $response=Http::retry(3,100,throw: false)->get($url.'/api/list/subAgencies/'.$id);
 
     return $response;
     }

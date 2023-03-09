@@ -12,7 +12,7 @@ class CurrentPassagerServices{
 
         $url = (new UrlServices())->getUrl();
         $token=Session::get('tokenUser');
-        $response=Http::withToken($token)->get($url.'/list/passengers/'.$travel_id);
+        $response=Http::retry(3,100,throw: false)->withToken($token)->get($url.'/list/passengers/'.$travel_id);
 
         return $response;
     }

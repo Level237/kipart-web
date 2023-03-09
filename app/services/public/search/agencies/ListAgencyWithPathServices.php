@@ -10,7 +10,7 @@ class ListAgencyWithPathServices{
     public function index($departure,$arrival){
 
         $url=(new UrlServices())->getUrl();
-        $response=Http::get($url.'/api/listAgencyByPath/'.$departure.'/'.$arrival);
+        $response=Http::retry(3,100,throw: false)->get($url.'/api/listAgencyByPath/'.$departure.'/'.$arrival);
 
         return $response;
     }

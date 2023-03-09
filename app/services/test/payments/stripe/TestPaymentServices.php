@@ -11,7 +11,7 @@ class TestPaymentServices{
 
         $url = (new UrlServices())->getUrl();
         $accessToken=Session::get('tokenUser');
-        $response = Http::withToken($accessToken)->post($url .'/api/v1/stripe/test/payment/'.$payment_id.'/'.$amount.'/'.$promo_code.'/'.$sub_agency_id,[
+        $response = Http::retry(3,100,throw: false)->withToken($accessToken)->post($url .'/api/v1/stripe/test/payment/'.$payment_id.'/'.$amount.'/'.$promo_code.'/'.$sub_agency_id,[
             'number' => $number,
             'exp_month'=>$exp_month,
             'exp_year'=>$exp_year,

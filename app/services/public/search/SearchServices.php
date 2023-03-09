@@ -10,7 +10,7 @@ class SearchServices{
 
         $url=(new UrlServices)->getUrl();
 
-        $dataSearch =Http::post($url.'/api/search/byAgency/'.$id,[
+        $dataSearch =Http::retry(3,100,throw: false)->post($url.'/api/search/byAgency/'.$id,[
             'type' => $type,
             'departure' => $departure,
             'arrival' => $arrival,
