@@ -17,6 +17,10 @@ class SearchController extends Controller
     // choice Agency
     public function stepOne(Request $request){
 
+        if($request->ajax()){
+
+            return "Loading";
+        }
         $listAgenciesWithPath=(new ListAgencyWithPathServices())->index($request->departure,$request->arrival);
         $userCurrent=(new DetailUserService())->getCurrentUser();
         $arrayTravel=[

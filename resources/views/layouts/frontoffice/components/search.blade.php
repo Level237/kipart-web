@@ -20,10 +20,15 @@
         <input type="date" name="dateDeparture" />
       </div>
       <div class="input">
-        <button type="button">
-          <span>+</span>
-          Ajouter un retour
-        </button>
+
+          <select name="departure_time" id="">
+            <option value="05:00">05:00</option>
+            <option value="06:00">06:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:30">08:30</option>
+            <option value="09:30">09:30</option>
+          </select>
+
       </div>
     </div>
     <div class="group">
