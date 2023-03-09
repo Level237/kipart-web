@@ -66,17 +66,20 @@ Kipart
       </div>
     </section>
     <section id="newsletter">
-      <div class="content">
-        <h2>Vous souhaitez recevoir des remises exclusives et des mises à jour directement dans votre boite de réceptions?</h2>
-        <hr/>
-        <form method="POST" action="#">
-          <div class="input">
-            <img src="{{ asset('assets/images/icon-email.svg') }}" alt="email icon" />
-            <input type="email" placeholder="Votre email" name="email" id="email" />
-          </div>
-          <button type="submit">Je m'enregistre</button>
-        </form>
-      </div>
-    </section>
+        <div class="content">
+          <header>
+            <div class="section-title">Newsletter</div>
+            <h2>Vous souhaitez recevoir des remises exclusives et des mises à jour directement dans votre boite de réceptions?</h2>
+          </header>
+          <hr/>
+          <form method="POST" action="#">
+            <div class="input">
+              <img src="{{asset('assets/images/icon-email.svg')}}" alt="email icon" />
+              <input type="email" placeholder="Votre email" name="email" id="email" />
+            </div>
+            <button type="submit">Je m'enregistre</button>
+          </form>
+        </div>
+      </section>
   </main>
 @endsection

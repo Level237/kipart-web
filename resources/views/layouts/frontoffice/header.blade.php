@@ -24,6 +24,7 @@
                 Deconnexion
             </a></li>
         @else
+        <li>Vos réservations</li>
         <li><a href="#" data-a11y-dialog-show="login">S'identifier</a></li>
         <li><a href="#" data-a11y-dialog-show="register">Créer un compte</a></li>
         @endif
