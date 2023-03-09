@@ -30,15 +30,15 @@ Kipart
             </p>
           </article>
           <article>
-            <div class="agency-item 1"><img src="{{ asset('admin/assets/images/buca.jpg') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
-            <div class="agency-item 2"><img src="{{ asset('assets/images/agences/generalVoyages.jpeg') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
-            <div class="agency-item 3"><img src="{{ asset('assets/images/agences/global.jpeg') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
-            <div class="agency-item 4"><img src="{{ asset('assets/images/agences/mentravel.jpeg') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
-            <div class="agency-item 5"><img src="{{ asset('assets/images/agences/touristiques.jpeg') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
-            <div class="agency-item 6"><img src="{{ asset('assets/images/agences/united.jpg') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
-            <div class="agency-item 7"><img src="{{ asset('assets/images/agences/fitness.png') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
-            <div class="agency-item 8"><img src="{{ asset('assets/images/agences/Inter-City_1960s.webp') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
-            <div class="agency-item 9"><img src="{{ asset('assets/images/agences/camrail.png') }}" alt="logo-agence" style="width: 123px; height:123px;border-radius: 1em;"></div>
+            <div class="agency-item 1"><img src="{{ asset('admin/assets/images/buca.jpg') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
+            <div class="agency-item 2"><img src="{{ asset('assets/images/agences/generalVoyages.jpeg') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
+            <div class="agency-item 3"><img src="{{ asset('assets/images/agences/global.jpeg') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
+            <div class="agency-item 4"><img src="{{ asset('assets/images/agences/mentravel.jpeg') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
+            <div class="agency-item 5"><img src="{{ asset('assets/images/agences/touristiques.jpeg') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
+            <div class="agency-item 6"><img src="{{ asset('assets/images/agences/united.jpg') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
+            <div class="agency-item 7"><img src="{{ asset('assets/images/agences/fitness.png') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
+            <div class="agency-item 8"><img src="{{ asset('assets/images/agences/Inter-City_1960s.webp') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
+            <div class="agency-item 9"><img src="{{ asset('assets/images/agences/camrail.png') }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;"></div>
           </article>
         <!-- </div> -->
       </div>
