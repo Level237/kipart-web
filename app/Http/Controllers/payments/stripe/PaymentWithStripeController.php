@@ -28,6 +28,10 @@ class PaymentWithStripeController extends Controller
         $userCurrent=(new DetailUserService())->getCurrentUser();
             return view('payments.step-two',compact('userCurrent','currentPassengers','travels','agency_name'));
         }
+        if($request->method_payment=="om"){
+
+            return to_route("payment.withOm");
+        }
 
     }
 }
