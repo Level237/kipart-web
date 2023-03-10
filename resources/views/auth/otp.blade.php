@@ -85,7 +85,7 @@ form input{
 
                   <form action="{{ route('otp.verify') }}" method="POST" class="mt-5">
                     @csrf
-                    <input  class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1 >
+                    <input name="otp[]" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1 >
                     <input name="otp[]" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1 >
                     <input name="otp[]" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1 >
                     <input name="otp[]" class="otp" type="text" oninput='digitValidate(this)'onkeyup='tabChange(4)' maxlength=1 >

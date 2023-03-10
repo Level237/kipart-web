@@ -16,14 +16,15 @@ class RegisterController extends Controller
             'name'=>$request->name,
             'password'=>$request->password,
             'email'=>$request->email,
-            'phone_number'=>$request->phone_number
+            'phone_number'=>$request->phone_number,
+            'brand_ambassadors_id'=>null
         ]);
         $data=json_decode($response->getBody());
         if(isset($data->error)){
             //return redirect()->back()->with('error',"une erreur a ete survenu");
             return $data;
         }else{
-            Session::put('number',$request->number);
+            Session::put('number',$request->phone_number);
             Session::save();
 
             return to_route('otp.index');
