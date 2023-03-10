@@ -10,7 +10,7 @@ use App\Http\Controllers\Passengers\AddPassengerController;
 use App\Http\Controllers\payments\stripe\PaymentWithStripeController;
 use App\Http\Controllers\test\payments\stripe\TestPaymentController;
 use App\Http\Controllers\User\OtpVerificationController;
-
+use App\Http\Controllers\User\auth\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

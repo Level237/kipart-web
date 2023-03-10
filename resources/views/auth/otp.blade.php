@@ -69,14 +69,18 @@ form input{
           </ul>
         </nav>
       </header>
-
+      @if(Session::get("error"))
+      <div class="alert alert-danger">
+          {{ Session::get('error') }}
+      </div>
+  @endif
     <div class="container mb-5">
         <div class="row justify-content-md-center">
             <div class="col-md-4 text-center">
               <div class="row">
                 <div class="col-sm-12 mt-5 bgWhite">
                   <div class="title">
-                    Nous avions envoyer un code au numero
+                    Nous avions envoyer un code au numero +237{{ $numberFirst }}*******{{ $number_last }}
                   </div>
 
                   <form action="{{ route('otp.verify') }}" method="POST" class="mt-5">

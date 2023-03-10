@@ -12,10 +12,12 @@ class OtpVerificationController extends Controller
 {
     public function index(){
         $phone_number=Session::get("number");
-        $phone_array=explode("",$phone_number);
-        //return view('auth.otp');
-
-
+        $phone_array=str_split($phone_number);
+        $arrayLast=array($phone_array[count($phone_array) - 2],$phone_array[count($phone_array) - 1]);
+        $arrayFirst=array($phone_array[0],$phone_array[1]);
+        $numberFirst=implode($arrayFirst);
+        $number_last=implode($arrayLast);
+        return view('auth.otp',compact('number_last','numberFirst'));
     }
 
     public function verify(Request $request){
