@@ -1,6 +1,6 @@
 @extends('layouts.frontoffice.main')
 @section('title')
-Kipart
+KiPART
 @endsection
 
 @section('content')
