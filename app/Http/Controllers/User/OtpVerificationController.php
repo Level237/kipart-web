@@ -35,7 +35,7 @@ class OtpVerificationController extends Controller
             return redirect()->back()->with('error',"Code Incorrect");
         }else{
 
-            return $message;
+            return to_route('login');
         }
 
     }
