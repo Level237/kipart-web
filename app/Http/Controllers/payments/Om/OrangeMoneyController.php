@@ -6,9 +6,19 @@ use App\Http\Controllers\Controller;
 use App\services\payments\om\InitPaymentServices;
 use App\services\payments\om\StatusPaymentServices;
 use Illuminate\Http\Request;
-
+use App\services\user\DetailUserService;
 class OrangeMoneyController extends Controller
 {
+
+    public function index(Request $request){
+
+        $currentPassengers = $request->session()->get('currentPassengers');
+        $agency_name = $request->session()->get('agency_name');
+        $travels=$request->session()->get('travels');
+        $userCurrent=(new DetailUserService())->getCurrentUser();
+
+        return view('payments.payment-with-om',compact('userCurrent','currentPassengers','travels','agency_name'));
+    }
     public function pay(Request $request){
 
         $sub_agency_id= $request->session()->get('subAgency_id');

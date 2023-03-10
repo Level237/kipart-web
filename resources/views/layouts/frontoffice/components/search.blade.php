@@ -8,19 +8,19 @@
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-departure.svg')}}" alt="departure icon" />
-      <input type="text" placeholder="Douala" name="departure"/>
+      <input class="typeahead form-control" type="text" placeholder="Douala" name="departure" />
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-location.svg')}}" alt="location icon" />
-      <input type="text" placeholder="Yaounde" name="arrival" />
+      <input class="typeahead form-control" type="text" placeholder="Yaounde" name="arrival" />
     </div>
     <div class="group">
       <div class="input left">
         <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" />
         <input type="date" name="dateDeparture" />
       </div>
-      <div class="input">
-
+      <div class="input left">
+        
           <select name="departure_time" id="">
             <option value="05:00">05:00</option>
             <option value="06:00">06:00</option>
