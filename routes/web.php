@@ -9,6 +9,7 @@ use App\Http\Controllers\public\ListAgencyController;
 use App\Http\Controllers\Passengers\AddPassengerController;
 use App\Http\Controllers\payments\stripe\PaymentWithStripeController;
 use App\Http\Controllers\test\payments\stripe\TestPaymentController;
+use App\Http\Controllers\User\OtpVerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,9 @@ Route::get('/',[HomePageController::class,'homepage'])->name('homepage');
 Route::post('login',[LoginController::class,'login'])->name('login');
 Route::get('login',[LoginController::class,'index'])->name('go-to-login');
 
-
+Route::post('register',[RegisterController::class,'register'])->name('register');
+Route::get('verify-your-account',[OtpVerificationController::class,'index'])->name('otp.index');
+Route::post('verify-your-account',[OtpVerificationController::class,'verify'])->name('otp.verify');
 Route::post('add-passenger',[AddPassengerController::class,'add'])->name('add-passenger');
 Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 
