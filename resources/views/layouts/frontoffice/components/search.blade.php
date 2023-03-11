@@ -8,20 +8,20 @@
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-departure.svg')}}" alt="departure icon" />
-      <input class="typeahead form-control" type="text" placeholder="Douala" name="departure" />
+      <input class="typeahead form-control" type="text" placeholder="Douala" name="departure" required />
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-location.svg')}}" alt="location icon" />
-      <input class="typeahead form-control" type="text" placeholder="Yaounde" name="arrival" />
+      <input class="typeahead form-control" type="text" placeholder="Yaounde" name="arrival" required />
     </div>
     <div class="group">
       <div class="input left">
-        <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" />
-        <input type="date" name="dateDeparture" />
+        <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" required />
+        <input type="date" name="dateDeparture" required />
       </div>
       <div class="input left">
-        
-          <select name="departure_time" id="">
+
+          <select name="departure_time" id="" required>
             <option value="05:00">05:00</option>
             <option value="06:00">06:00</option>
             <option value="07:30">07:30</option>
@@ -38,11 +38,14 @@
           Nombre de passager
         </label>
         <div class="input right">
-          <input type="number" placeholder="1" id="number-of-passengers" name="number_of_places"/>
+          <input type="number" placeholder="1" id="number-of-passengers" name="number_of_places" required />
 
-          <button type="button" class="no-bg" onclick="increaseNumberOfPassengers()">
-            <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" />
+          <button type="button" class="no-bg" >
+
+            <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" onclick="increaseNumberOfPassengers()"/>
+            <img src="{{asset('assets/images/icon-substract.svg')}}" alt="plus icon" onclick="decreaseNumberOfPassengers()" />
           </button>
+
 
         </div>
       </div>

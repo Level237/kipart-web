@@ -122,7 +122,9 @@
       function increaseNumberOfPassengers() {
         var numberOfPassengers = document.getElementById("number-of-passengers");
         numberOfPassengers.value = +numberOfPassengers.value + 1;
+
       }
+
 
       const containerLogin = document.querySelector('#login');
       const dialogLogin = new A11yDialog(containerLogin);
