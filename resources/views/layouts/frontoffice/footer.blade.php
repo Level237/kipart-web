@@ -23,7 +23,7 @@
           <div>
             <div>Besoin de notre aide?</div>
             <div>
-              <a href="#">Centre d'aide</a>
+              <a href="{{route('FAQ')}}">Centre d'aide</a>
             </div>
           </div>
           <div>

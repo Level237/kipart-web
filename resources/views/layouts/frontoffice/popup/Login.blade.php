@@ -11,7 +11,7 @@
         <button type="button"><img src="{{ asset('assets/images/icon-eye.svg') }}" alt="eye icon" /></button>
       </div>
       <div class="group">
-        <div><a href="#">Mot de passe oublié?</a></div>
+        <div><a href= {{route('reset')}}>Mot de passe oublié?</a></div>
         <div>
           <input type="checkbox" />
           Se souvenir de moi
