@@ -20,7 +20,7 @@ Renseignez vos informations et payez
       <div class="content">
         <div class="card">
           <header>
-            Détails de votre carte
+            Detail Orange Money
           </header>
           <form action="{{ route('payment.withOm') }}" method="post">
             @csrf
@@ -30,19 +30,7 @@ Renseignez vos informations et payez
               </div> --}}
 
               <div class="input">
-                <input type="text" name="number" id="card-number" placeholder="Numéro de carte" />
-              </div>
-              <div class="group">
-                <div class="input">
-                  <input type="text" name="exp_year" id="date-expiration" placeholder="Date d'expiration" />
-                </div>
-                <div class="input">
-                  <input type="text" name="exp_month" id="exp_month" placeholder="Mois d'expiration" />
-                </div>
-                <div class="input">
-                    <input type="text" name="cvv" id="cvv" placeholder="CVV" />
-                  </div>
-                  <input type="hidden" name="amount" value="{{ $travels['price'] + 500 }}">
+                <input type="text" name="number" id="card-number" placeholder="Entrez votre numero de Telephone" />
               </div>
             </fieldset>
             <div class="actions">

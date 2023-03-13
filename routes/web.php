@@ -36,6 +36,7 @@ Route::post('verify-your-account',[OtpVerificationController::class,'verify'])->
 Route::post('add-passenger',[AddPassengerController::class,'add'])->name('add-passenger');
 Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 Route::post('step-final/pay/withOm',[OrangeMoneyController::class,'pay'])->name('payment.withOm');
+Route::get('step-final/pay/withOm',[OrangeMoneyController::class,'index'])->name('index.om');
 Route::post('step-one/choice-your-agency',[SearchController::class,'stepOne'])->name('search.step-one');
 Route::post('step-two/choice-your-sub-agency',[SearchController::class,'stepTwo'])->name('search.step-two');
 Route::get('step-tree/choice-your-travel',[SearchController::class,'stepThree'])->name('search.step-three');

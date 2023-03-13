@@ -30,7 +30,7 @@ class PaymentWithStripeController extends Controller
         }
         if($request->method_payment=="om"){
 
-            return to_route("payment.withOm");
+            return to_route("index.om");
         }
 
     }

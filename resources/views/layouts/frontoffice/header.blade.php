@@ -1,8 +1,11 @@
 <header>
     <nav id="menu-primary">
-      <div class="logo">
-        <img src="{{asset('assets/images/logo.svg')}}" alt="logo">
-      </div>
+        <a href="{{ route('homepage') }}">
+            <div class="logo">
+                <img src="{{asset('assets/images/logo.svg')}}" alt="logo">
+              </div>
+        </a>
+
       <div id="menu-toggle-primary">
         <a class="open-menu-primary" href="#menu-primary">
           <img src="{{ asset('assets/images/icon-hamburger-menu.svg') }}" alt="Open this menu" />
