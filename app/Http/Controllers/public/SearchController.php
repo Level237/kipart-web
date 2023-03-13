@@ -22,7 +22,7 @@ class SearchController extends Controller
             return "Loading";
         }
         if($request->departure==$request->arrival){
-            return "Erreur:la destination et l'arrivée ne doivent pas etre similaire";
+            return redirect()->back()->with('error',"Erreur:la destination et l'arrivée ne doivent pas etre similaire");
         }else{
             $listAgenciesWithPath=(new ListAgencyWithPathServices())->index($request->departure,$request->arrival);
             $userCurrent=(new DetailUserService())->getCurrentUser();

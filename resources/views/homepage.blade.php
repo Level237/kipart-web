@@ -17,6 +17,20 @@ KiPART
                 {{ $userCurrent['name'] ?? '' }} !</div>
           <div class="subtitle">Où désirez-vous voyager ?</div>
         </article>
+
+        @if(Session::get("error"))
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="text-align: center;color:white">{{ Session::get("error") }}</p>
+            </div>
+
+        </div>
+        @endif
+
+
         <div class="overlay"></div>
       </div>
     </section>
