@@ -19,7 +19,7 @@
         <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" required />
         <input type="date" name="dateDeparture" required />
       </div>
-      <div class="input left">
+      <div class="input">
 
           <select name="departure_time" id="" required>
             <option value="05:00">05:00</option>
