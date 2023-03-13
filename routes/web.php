@@ -38,7 +38,7 @@ Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 Route::post('step-final/pay/withOm',[OrangeMoneyController::class,'pay'])->name('payment.withOm');
 Route::post('step-one/choice-your-agency',[SearchController::class,'stepOne'])->name('search.step-one');
 Route::post('step-two/choice-your-sub-agency',[SearchController::class,'stepTwo'])->name('search.step-two');
-Route::post('step-tree/choice-your-travel',[SearchController::class,'stepThree'])->name('search.step-three');
+Route::get('step-tree/choice-your-travel',[SearchController::class,'stepThree'])->name('search.step-three');
 Route::get('step-four/add-passengers',[AddPassengerController::class,'index'])->name('goto-passenger');
 Route::get('step-five/payment-review',[PaymentWithStripeController::class,'stepOne'])->name('payment-review');
 Route::post('step-six/payment-final',[PaymentWithStripeController::class,'stepTwo'])->name('payment-final');

@@ -61,31 +61,31 @@ Choisissez votre Sous-Agence
               <div class="items">
 
 
-                    @foreach ($datas as $subAgencies)
-                        @foreach ($subAgencies as $list)
+
+                        @foreach ($arrayList as $list)
                         <div class="item">
                             <div class="logo">
-                                <form method="post" action="{{ route('search.step-three') }}">
+                                <form method="get" action="{{ route('search.step-three') }}">
                                     @csrf
-                                    <input type="hidden" name="subAgency" value="{{ $list->nom }}">
+                                    <input type="hidden" name="subAgencyName" value="{{ $list->nom }}">
                                     <input type="hidden" name="subAgency_id" value="{{ $list->id }}">
                                     <button type="submit" style="border-style:none;">
                                         <img src="{{ $list->logo }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;">
                                     </button>
 
                                 </form>
-                                
+
 
                         </a>
-                        
+
                             </div>
                             <p style="color:black;font-size:1rem;">{{ $list->nom }}</p>
-                           
+
                         </div>
                         @endforeach
 
 
-                @endforeach
+
 
 
               </div>

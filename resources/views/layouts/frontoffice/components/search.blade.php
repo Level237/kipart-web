@@ -17,7 +17,8 @@
     <div class="group">
       <div class="input left">
         <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" required />
-        <input type="date" name="dateDeparture" required />
+        <input type="date" name="dateDeparture" id="date" min='13-03-2023' required />
+
       </div>
       <div class="input">
 
@@ -47,7 +48,7 @@
           Nombre de passager
         </label>
         <div class="input right">
-          <input type="number" placeholder="1" id="number-of-passengers" name="number_of_places" required />
+          <input type="number" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
 
           <button type="button" class="no-bg" >
 

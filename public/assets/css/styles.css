@@ -955,7 +955,8 @@ main#homepage #hero > .content article:first-of-type > form input {
 }
 
 main#homepage #hero > .content article:first-of-type > form input,
-main#homepage #hero > .content article:first-of-type > form .group .input select {
+main#homepage #hero > .content article:first-of-type > form .group .input select,
+main#homepage #hero > .content article:first-of-type > form .group .input button {
   width: 100%;
   height: 55px;
 }

@@ -122,9 +122,17 @@
       function increaseNumberOfPassengers() {
         var numberOfPassengers = document.getElementById("number-of-passengers");
         numberOfPassengers.value = +numberOfPassengers.value + 1;
+      }
+      function decreaseNumberOfPassengers() {
+        var numberOfPassengers = document.getElementById("number-of-passengers");
+
+
+
+            if(numberOfPassengers.value == 0){
+                numberOfPassengers.value = +numberOfPassengers.value - 1;
+        }
 
       }
-
 
       const containerLogin = document.querySelector('#login');
       const dialogLogin = new A11yDialog(containerLogin);

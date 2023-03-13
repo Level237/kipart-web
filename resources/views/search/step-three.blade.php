@@ -85,7 +85,7 @@ Choisissez votre Voyage
                             <div class="item">
                                 <div class="infos">
                                 <div class="header">
-                                    <div>{{ $travel->name }}</div>
+                                    <div>{{ $subAgencyName }}</div>
                                     <div class="name">{{ $travel->departure }} - {{ $travel->arrival }}</div>
                                 </div>
                                 <div class="body">
