@@ -1,5 +1,16 @@
 <form action="{{ route('login') }}" method="post">
     @csrf
+    @if(Session::get("success"))
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="text-align: center;color:white">{{ Session::get("success") }}</p>
+            </div>
+
+        </div>
+        @endif
     <fieldset>
       <div class="title">Profitez de réservations et de remboursements plus rapides ainsi que les réductions</div>
 

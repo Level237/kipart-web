@@ -58,9 +58,9 @@ Route::get('cgu', function (){
 Route::get('User/ListTicket', [CustomerTicketController::class, 'ListTicket'])->name('list');
 Route::get('User/DisplayTicket/{id}', [CustomerTicketController::class, 'DisplayTicket'])->name ('Display');
 Route::post('User/sendCode', [PasswordResetController::class, 'SendCode'])->name('send');
-Route::post('User/checkCode', [PasswordResetController::class, 'CheckCode'])->name('check');
-Route::get('User/resetPassword', [PasswordResetController::class, 'resetPassword']) ->name('reset');
-Route::get ('User/checkOtp', [PasswordResetController::class, 'CheckOtp'])-> name('checkOtp');
-Route::get('User/newPassword', [PasswordResetController::class, 'newPassword'])-> name('newPassword');
-Route::post('User/Password', [PasswordResetController::class,'Password'])->name('Password');
+Route::get('User/checkCode', [PasswordResetController::class, 'CheckCode'])->name('check');
+Route::get('step-one/give-your-number', [PasswordResetController::class, 'resetPassword']) ->name('reset');
+Route::get ('step-two/give-otp', [PasswordResetController::class, 'CheckOtp'])-> name('checkOtp');
+Route::get('step-three/reset-your-password', [PasswordResetController::class, 'newPassword'])-> name('newPassword');
+//Route::post('User/Password', [PasswordResetController::class,'newPassword'])->name('Password');
 Route::get('FAQ', function(){return view ('FAQ');})->name('FAQ');

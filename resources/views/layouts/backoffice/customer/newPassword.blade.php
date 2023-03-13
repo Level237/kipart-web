@@ -83,14 +83,18 @@ form input{
                   </div>
 
 
-                    <form action="{{route('Password')}}", method="post" class="mt-5">
+                    <form action="{{route("newPassword")}}" method="get" class="mt-5">
                         @csrf
                         <div class="title">Entrez votre Nouveau mot de passe</div>
 
-                        <div class="input">
-                          <input type="text" name="newPassword" class="form-control"  placeholder= "Nouveau mot de passe" />
+                        <div class="input mt-2">
+                          <input type="text" name="password" class="form-control"  placeholder= "Nouveau mot de passe" required />
 
                         </div>
+                        <div class="input mt-3">
+                            <input type="text" name="password_confirmation" class="form-control"  placeholder= "confirmez votre mot de passe" required/>
+
+                          </div>
                         <hr class="mt-4">
                         <button type="submit" class='btn-block mt-4 mb-4 customBtn' >Soumettre</button>
                     </form>

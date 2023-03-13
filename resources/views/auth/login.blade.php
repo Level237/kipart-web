@@ -33,7 +33,8 @@ Connexion
               </div>
             </div>
         <div>
-        
+
       </div>
     </div>
+    <script src="{{ asset('assets/js/function.js') }}"></script>
 @endsection

@@ -83,8 +83,8 @@ form input{
                   </div>
 
 
-                    <form action="{{route('check')}}", method="post" class="mt-5">
-                        @csrf
+                    <form action="{{route('check')}}", method="get" class="mt-5">
+
                         <div class="title">Entrez votre code de verification</div>
 
                         <div class="input">
