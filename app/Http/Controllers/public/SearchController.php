@@ -68,7 +68,7 @@ class SearchController extends Controller
         if(count($arrayList)==1){
             $request->session()->put('subagency',$arrayList);
             $request->session()->forget('subagencyName');
-            $request->session()->forget('subagencyId');
+            $request->session()->forget('subAgency_id');
             return to_route('search.step-three');
         }else{
             $request->session()->forget('subagency');
@@ -92,7 +92,7 @@ class SearchController extends Controller
             }
         }else{
             $request->session()->put('subagencyName',$request->subAgencyName);
-            $request->session()->put('subagencyId',$request->subAgency_id);
+            $request->session()->put('subAgency_id',$request->subAgency_id);
             $subAgencyName=$request->session()->get('subagencyName');
         }
 

@@ -46,8 +46,15 @@ class AddPassengerController extends Controller
         }
         $passengers = response()->json(["passengers" => $data]);
         $request->session()->put('currentPassengers',$data);
-        $subAgency_id=$request->session()->get('subAgency_id');
-        $response = (new AddPassengerServices())->add($travel_id, json_encode($passengers->getData()),$subAgency_id);
+        if($request->session()->has('subagency')){
+            $subAgency=$request->session()->get('subagency');
+            foreach($subAgency as $s){
+                $subAgencyId=$s->id;
+            }
+        }else{
+            $subAgencyId= $request->session()->get('subAgency_id');
+        }
+        $response = (new AddPassengerServices())->add($travel_id, json_encode($passengers->getData()),$subAgencyId);
         $request->session()->put('payment_id',$response->payment_id);
 
         return to_route('payment-review');

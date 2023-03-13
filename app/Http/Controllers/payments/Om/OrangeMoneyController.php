@@ -21,14 +21,21 @@ class OrangeMoneyController extends Controller
     }
     public function pay(Request $request){
 
-        $sub_agency_id= $request->session()->get('subAgency_id');
+        if($request->session()->has('subagency')){
+            $subAgency=$request->session()->get('subagency');
+            foreach($subAgency as $s){
+                $subAgencyId=$s->id;
+            }
+        }else{
+            $subAgencyId= $request->session()->get('subAgency_id');
+        }
         $payment_id= $request->session()->get('payment_id');
         $code=null;
         $travels=$request->session()->get('travels');
-        $initPayment=(new InitPaymentServices())->init($request->number,$travels['price'],$sub_agency_id);
+        $initPayment=(new InitPaymentServices())->init($request->number,$travels['price'],$subAgencyId);
         $initresponse=json_decode($initPayment->getBody());
         if(isset($initresponse->accessToken)){
-            $statusPayment=(new StatusPaymentServices())->payStatus($initresponse->accessToken,$initresponse->payToken,$payment_id,$code,$sub_agency_id,$travels['price']);
+            $statusPayment=(new StatusPaymentServices())->payStatus($initresponse->accessToken,$initresponse->payToken,$payment_id,$code,$subAgencyId,$travels['price']);
             $statusresponse=json_decode($statusPayment->getBody());
 
             if(isset($statusresponse->status)){
@@ -47,6 +54,6 @@ class OrangeMoneyController extends Controller
             }
 
         }
-       
+
     }
 }
