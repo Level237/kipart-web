@@ -2,6 +2,7 @@
 @section('title')
 Choisissez votre Agence
 @endsection
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 <style>
  .loader {
   border: 16px solid #f3f3f3;
@@ -34,11 +35,11 @@ Choisissez votre Agence
           <form method="post">
             <div class="input left">
               <img src="{{ asset('assets/images/icon-departure.svg') }}" alt="departure icon" />
-              <input type="text" placeholder="Douala" />
+              <input type="text" class="typeahead form-control" type="text" placeholder="Douala" name="departure" required />
             </div>
             <div class="input left">
               <img src="{{ asset('assets/images/icon-location.svg') }}" alt="location icon" />
-              <input type="text" placeholder="Yaounde" />
+              <input class="typeahead form-control" type="text" placeholder="Yaounde" name="arrival" required />
             </div>
             <div class="group">
               <div class="input left">
@@ -46,29 +47,49 @@ Choisissez votre Agence
                 <input type="date" />
               </div>
               <div class="input">
-                <button type="button">
-                  <!-- <span>+</span> -->
-                  <img src="{{ asset('assets/images/icon-plus.svg') }}" alt="plus icon" />
-                  Ajouter un retour
-                </button>
-              </div>
+
+                <select name="departure_time" id="" required>
+                  <option value="05:00">05:00</option>
+                  <option value="06:00">06:00</option>
+                  <option value="07:30">07:30</option>
+                  <option value="08:30">08:30</option>
+                  <option value="09:30">09:30</option>
+                  <option value="10:30">10:30</option>
+                  <option value="11:30">11:30</option>
+                  <option value="12:30">12:30</option>
+                  <option value="10:30">13:30</option>
+                  <option value="10:30">14:30</option>
+                  <option value="10:30">15:30</option>
+                  <option value="10:30">17:30</option>
+                  <option value="10:30">18:45</option>
+                  <option value="10:30">19:30</option>
+                </select>
+
+            </div>
             </div>
             <div class="group">
-              <div>
-                <div class="input right">
-                  <input type="number" placeholder="0" id="number-of-passengers"/>
-                  <button type="button" class="no-bg" onclick="increaseNumberOfPassengers()">
-                    <img src="images/icon-plus.svg" alt="plus icon" />
-                  </button>
+                <div>
+
+                  <div class="input right">
+                    <input type="number" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
+
+                    <button type="button" class="no-bg" >
+
+                      <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" onclick="increaseNumberOfPassengers()"/>
+                      <img src="{{asset('assets/images/icon-substract.svg')}}" alt="plus icon" onclick="decreaseNumberOfPassengers()" />
+                    </button>
+
+
+                  </div>
+                </div>
+                <div>
+
+                  <select name="classe">
+                    <option value="Vip">VIP</option>
+                    <option value="Classique">Classique</option>
+                  </select>
                 </div>
               </div>
-              <div>
-                <select>
-                  <option value="vip">VIP</option>
-                  <option value="eco">ECO</option>
-                </select>
-              </div>
-            </div>
             <div class="actions">
               <button type="submit">CHERCHER</button>
             </div>
@@ -302,4 +323,17 @@ Choisissez votre Agence
         </div>
       </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+      <script type="text/javascript">
+        var path = "{{ route('list.departure') }}";
+        $('input.typeahead').typeahead({
+            source:  function (query, process) {
+            return $.get(path, { query: query }, function (data) {
+                console.log(data);
+                    return process(data);
+                });
+            }
+        });
+    </script>
 @endsection
