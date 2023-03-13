@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Agent\TicketController;
+use App\Http\Controllers\customer\PasswordResetController;
+use App\Http\Controllers\Customer\TicketController as CustomerTicketController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ListController;
@@ -52,3 +55,12 @@ Route::get('cgu', function (){
     return view ('CGU');
 })->name('cgu');
 
+Route::get('User/ListTicket', [CustomerTicketController::class, 'ListTicket'])->name('list');
+Route::get('User/DisplayTicket/{id}', [CustomerTicketController::class, 'DisplayTicket'])->name ('Display');
+Route::post('User/sendCode', [PasswordResetController::class, 'SendCode'])->name('send');
+Route::post('User/checkCode', [PasswordResetController::class, 'CheckCode'])->name('check');
+Route::get('User/resetPassword', [PasswordResetController::class, 'resetPassword']) ->name('reset');
+Route::get ('User/checkOtp', [PasswordResetController::class, 'CheckOtp'])-> name('checkOtp');
+Route::get('User/newPassword', [PasswordResetController::class, 'newPassword'])-> name('newPassword');
+Route::post('User/Password', [PasswordResetController::class,'Password'])->name('Password');
+Route::get('FAQ', function(){return view ('FAQ');})->name('FAQ');
