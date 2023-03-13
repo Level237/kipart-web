@@ -62,3 +62,4 @@ Route::get('User/resetPassword', [PasswordResetController::class, 'resetPassword
 Route::get ('User/checkOtp', [PasswordResetController::class, 'CheckOtp'])-> name('checkOtp');
 Route::get('User/newPassword', [PasswordResetController::class, 'newPassword'])-> name('newPassword');
 Route::post('User/Password', [PasswordResetController::class,'Password'])->name('Password');
+Route::get('FAQ', function(){return view ('FAQ');})->name('FAQ');
