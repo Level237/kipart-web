@@ -2,8 +2,32 @@
 @section('title')
 Choisissez votre Agence
 @endsection
+<style>
+ .loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
 
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
 @section('content')
+
+
+
     <main id="departures">
       <section id="search">
         <div class="content">
@@ -61,32 +85,37 @@ Choisissez votre Agence
                 <div class="items">
                     @foreach ($datas as $data)
 
-                    @foreach ($data as $agency)
-                        <div class="item">
-                            <div class="logo">
-                                <form method="post" action="{{ route('search.step-two') }}">
-                                    @csrf
-                                    <input type="hidden" name="agency_id" value="{{ $agency->id }}">
-                                    <input type="hidden" name="agency_name" value="{{ $agency->name }}">
-                                    <button type="submit" style="border-style:none;">
-                                        <img src="{{ $agency->logo }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;">
-                                    </button>
-                                </form>
-                               
-                               
-                        
+                    @forelse ($data as $agency)
+                    <div class="item">
+                        <div class="logo">
+                            <form method="post" action="{{ route('search.step-two') }}">
+                                @csrf
+                                <input type="hidden" name="agency_id" value="{{ $agency->id }}">
+                                <input type="hidden" name="agency_name" value="{{ $agency->name }}">
+                                <button type="submit" style="border-style:none;">
+                                    <img src="{{ $agency->logo }}" alt="logo-agence" style="width: 75px; height:75px;border-radius: 1em;">
+                                </button>
+                            </form>
 
-                            </div>
 
-                            <div class="star">
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-solid fa-star fa-xs"></i>
-                            <i class="fa-regular fa-star fa-xs"></i>
-                            </div>
+
+
                         </div>
-                    @endforeach
+
+                        <div class="star">
+                        <i class="fa-solid fa-star fa-xs"></i>
+                        <i class="fa-solid fa-star fa-xs"></i>
+                        <i class="fa-solid fa-star fa-xs"></i>
+                        <i class="fa-solid fa-star fa-xs"></i>
+                        <i class="fa-regular fa-star fa-xs"></i>
+                        </div>
+                    </div>
+                    @empty
+                        <div style="color:gray;text-align:justify;">Aucune Agence disponible Pour ce voyage</div>
+                    @endforelse
+
+
+
 
                 @endforeach
                 </div>

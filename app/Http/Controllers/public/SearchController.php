@@ -36,7 +36,7 @@ class SearchController extends Controller
         $request->session()->put('arrayTravel',$arrayTravel);
 
         $datas=json_decode($listAgenciesWithPath->getBody());
-
+        //return $listAgenciesWithPath;
         return view('search.step-one',compact('datas','userCurrent'));
         //return $request->dateDeparture;
 
