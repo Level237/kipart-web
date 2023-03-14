@@ -28,11 +28,27 @@ Choisissez votre Agence
 @section('content')
 
 
+@if(Session::get("error"))
+        <div id="myModal" class="modal">
 
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="text-align: center;color:white">{{ Session::get("error") }}</p>
+            </div>
+
+        </div>
+        @endif
     <main id="departures">
       <section id="search">
         <div class="content">
-          <form method="post">
+          <form method="get" action="{{ route('search.step-one') }}">
+            <div class="input select">
+                <select name="type">
+                  <option value="aller-simple">Aller Simple</option>
+                  <option value="aller-retour">Aller et Retour</option>
+                </select>
+              </div>
             <div class="input left">
               <img src="{{ asset('assets/images/icon-departure.svg') }}" alt="departure icon" />
               <input type="text" class="typeahead form-control" type="text" placeholder="Douala" name="departure" required />
@@ -44,7 +60,7 @@ Choisissez votre Agence
             <div class="group">
               <div class="input left">
                 <img src="{{ asset('assets/images/icon-calendar.svg') }}" alt="calendar icon" />
-                <input type="date" />
+                <input type="date" name="dateDeparture" id="date"  required  />
               </div>
               <div class="input">
 

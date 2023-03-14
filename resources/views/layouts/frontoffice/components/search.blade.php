@@ -1,5 +1,5 @@
-<form method="post" action="{{ route('search.step-one') }}">
-    @csrf
+<form method="get" action="{{ route('search.step-one') }}">
+
     <div class="input select">
       <select name="type">
         <option value="aller-simple">Aller Simple</option>

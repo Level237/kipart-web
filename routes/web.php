@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Agent\TicketController;
-use App\Http\Controllers\customer\PasswordResetController;
+use App\Http\Controllers\Customer\PasswordResetController;
 use App\Http\Controllers\Customer\TicketController as CustomerTicketController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
@@ -40,7 +40,7 @@ Route::post('add-passenger',[AddPassengerController::class,'add'])->name('add-pa
 Route::post('logout',[LogoutController::class,'logout'])->name('logout');
 Route::post('step-final/pay/withOm',[OrangeMoneyController::class,'pay'])->name('payment.withOm');
 Route::get('step-final/pay/withOm',[OrangeMoneyController::class,'index'])->name('index.om');
-Route::post('step-one/choice-your-agency',[SearchController::class,'stepOne'])->name('search.step-one');
+Route::get('step-one/choice-your-agency',[SearchController::class,'stepOne'])->name('search.step-one');
 Route::post('step-two/choice-your-sub-agency',[SearchController::class,'stepTwo'])->name('search.step-two');
 Route::get('step-tree/choice-your-travel',[SearchController::class,'stepThree'])->name('search.step-three');
 Route::get('step-four/add-passengers',[AddPassengerController::class,'index'])->name('goto-passenger');
