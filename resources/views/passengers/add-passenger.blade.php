@@ -35,7 +35,7 @@ Ajouter un passager
             </fieldset>
             <div class="actions">
 
-              <button type="submit">Vérifier et payer</button>
+              <button type="submit" style="margin-top: 10px;">Ajouter</button>
             </div>
           </form>
         </article>
