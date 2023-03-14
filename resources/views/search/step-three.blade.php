@@ -4,53 +4,92 @@ Choisissez votre Voyage
 @endsection
 
 @section('content')
-    <main id="departures">
-      <section id="search">
-        <div class="content">
-          <form method="post">
-            <div class="input left">
-              <img src="{{ asset('assets/images/icon-departure.svg') }}" alt="departure icon" />
-              <input type="text" placeholder="Douala" />
+
+
+@if(Session::get("error"))
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="text-align: center;color:white">{{ Session::get("error") }}</p>
             </div>
-            <div class="input left">
-              <img src="{{ asset('assets/images/icon-location.svg') }}" alt="location icon" />
-              <input type="text" placeholder="Yaounde" />
-            </div>
-            <div class="group">
-              <div class="input left">
-                <img src="{{ asset('assets/images/icon-calendar.svg') }}" alt="calendar icon" />
-                <input type="date" />
-              </div>
-              <div class="input">
-                <button type="button">
-                  <!-- <span>+</span> -->
-                  <img src="{{ asset('assets/images/icon-plus.svg') }}" alt="plus icon" />
-                  Ajouter un retour
-                </button>
-              </div>
-            </div>
-            <div class="group">
-              <div>
-                <div class="input right">
-                  <input type="number" placeholder="0" id="number-of-passengers"/>
-                  <button type="button" class="no-bg" onclick="increaseNumberOfPassengers()">
-                    <img src="images/icon-plus.svg" alt="plus icon" />
-                  </button>
-                </div>
-              </div>
-              <div>
-                <select>
-                  <option value="vip">VIP</option>
-                  <option value="eco">ECO</option>
-                </select>
-              </div>
-            </div>
-            <div class="actions">
-              <button type="submit">CHERCHER</button>
-            </div>
-          </form>
+
         </div>
-      </section>
+        @endif
+    <main id="departures">
+        <section id="search">
+            <div class="content">
+              <form method="get" action="{{ route('search.step-one') }}">
+                <div class="input select">
+                    <select name="type">
+                      <option value="aller-simple">Aller Simple</option>
+                      <option value="aller-retour">Aller et Retour</option>
+                    </select>
+                  </div>
+                <div class="input left">
+                  <img src="{{ asset('assets/images/icon-departure.svg') }}" alt="departure icon" />
+                  <input type="text" class="typeahead form-control" type="text" placeholder="Douala" name="departure" required />
+                </div>
+                <div class="input left">
+                  <img src="{{ asset('assets/images/icon-location.svg') }}" alt="location icon" />
+                  <input class="typeahead form-control" type="text" placeholder="Yaounde" name="arrival" required />
+                </div>
+                <div class="group">
+                  <div class="input left">
+                    <img src="{{ asset('assets/images/icon-calendar.svg') }}" alt="calendar icon" />
+                    <input type="date" name="dateDeparture" id="date"  required  />
+                  </div>
+                  <div class="input">
+
+                    <select name="departure_time" id="" required>
+                      <option value="05:00">05:00</option>
+                      <option value="06:00">06:00</option>
+                      <option value="07:30">07:30</option>
+                      <option value="08:30">08:30</option>
+                      <option value="09:30">09:30</option>
+                      <option value="10:30">10:30</option>
+                      <option value="11:30">11:30</option>
+                      <option value="12:30">12:30</option>
+                      <option value="10:30">13:30</option>
+                      <option value="10:30">14:30</option>
+                      <option value="10:30">15:30</option>
+                      <option value="10:30">17:30</option>
+                      <option value="10:30">18:45</option>
+                      <option value="10:30">19:30</option>
+                    </select>
+
+                </div>
+                </div>
+                <div class="group">
+                    <div>
+
+                      <div class="input right">
+                        <input type="number" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
+
+                        <button type="button" class="no-bg" >
+
+                          <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" onclick="increaseNumberOfPassengers()"/>
+                          <img src="{{asset('assets/images/icon-substract.svg')}}" alt="plus icon" onclick="decreaseNumberOfPassengers()" />
+                        </button>
+
+
+                      </div>
+                    </div>
+                    <div>
+
+                      <select name="classe">
+                        <option value="Vip">VIP</option>
+                        <option value="Classique">Classique</option>
+                      </select>
+                    </div>
+                  </div>
+                <div class="actions">
+                  <button type="submit">CHERCHER</button>
+                </div>
+              </form>
+            </div>
+          </section>
       <section id="details">
         <div class="content">
           <div class="">
