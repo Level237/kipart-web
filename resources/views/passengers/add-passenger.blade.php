@@ -34,7 +34,7 @@ Ajouter un passager
               </div>
             </fieldset>
             <div class="actions">
-              <div><a href="#">Créer un compte pour une réservation plus rapide</a></div>
+
               <button type="submit">Vérifier et payer</button>
             </div>
           </form>
@@ -45,7 +45,7 @@ Ajouter un passager
             <div class="infos">
               <div class="towns">Douala - Yaounde</div>
               <div class="date-seats">
-                <span class="date">Ven, 18 déc</span>, 
+                <span class="date">Ven, 18 déc</span>,
                 <span class="number-of-seats">1 place</span>
               </div>
               <div class="agency">Nom de l'agence</div>

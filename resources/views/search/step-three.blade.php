@@ -80,6 +80,7 @@ Choisissez votre Voyage
                     <input type="hidden" name="price" value="{{ $travel->price }}">
                     <input type="hidden" name="places" value="{{ $travel->number_of_places }}">
                     <input type="hidden" name="classe" value="{{ $travel->classe }}">
+
                 </form>
                 <a class="mega-menu" onclick="event.preventDefault(); document.getElementById('add').submit();" title="choice-travel">
                             <div class="item">

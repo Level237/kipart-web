@@ -31,7 +31,6 @@ Route::get('/',[HomePageController::class,'homepage'])->name('homepage');
 
 Route::post('login',[LoginController::class,'login'])->name('login');
 Route::get('login',[LoginController::class,'index'])->name('go-to-login');
-
 Route::get('list/departure',[ListController::class,'listDeparture'])->name('list.departure');
 Route::post('register',[RegisterController::class,'register'])->name('register');
 Route::get('verify-your-account',[OtpVerificationController::class,'index'])->name('otp.index');

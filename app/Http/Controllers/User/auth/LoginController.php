@@ -20,15 +20,16 @@ class LoginController extends Controller
             'password' => $request->password,
         ]);
 
+        $currentRoute=$request->session()->get('currentRoute');
         if(isset($response['error'])){
-            return back()->with('fail',"Email ou mot de passe invalide");
+            return back()->with('error',"Numero de telephone ou mot de passe invalide");
         }else{
         $access_token = json_decode((string) $response->getBody(), true)['access_token'];
         Session::put('tokenUser', $access_token);
         Session::save();
 
 
-            return redirect()->back();
+            return to_route($currentRoute);
 
         //return $userCurrent;
     }

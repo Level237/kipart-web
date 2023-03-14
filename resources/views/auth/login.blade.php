@@ -5,36 +5,46 @@ Connexion
 
 @section('content')
 
-<div
-      id="login"
-      aria-hidden="false">
-      <!-- 2. The dialog overlay -->
-      <div class="dialog-overlay" data-a11y-dialog-hide></div>
-      <!-- 3. The actual dialog -->
-      <div class="dialog-content" role="document">
-        <!-- 4. The close button -->
-        <!-- <button type="button" data-a11y-dialog-hide aria-label="Close dialog">
-          &times;
-        </button> -->
-        <!-- 5. The dialog title -->
-        <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
-        <!-- 6. Dialog content -->
-        <div class="content">
-            <div class="dialog-content">
-              <div class="advert">
-                <div>
-                  <span class="white">Connectez-vous</span>
-                  <span class="colored">et vivez pleinement l'expérience</span>
-                  <span class="white">Ki</span><span class="colored">Part</span>
-                </div>
+@if(Session::get("error"))
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p style="text-align: center;color:white">{{ Session::get("error") }}</p>
+    </div>
+
+</div>
+@endif
+<main id="passenger-data">
+    <section id="breadcumb">
+      <div class="content">
+       <h1 style="color: white;text-align:center">Connexion</h1>
+      </div>
+    </section>
+    <section id="details">
+      <div class="content">
+        <article id="informations">
+          <form action="{{ route('login') }}" method="post" style="max-width:900px;margin-top:2rem;">
+            @csrf
+            <fieldset>
+              <div class="input">
+                <input type="text" name="phone_number" id="username" placeholder="Téléphone"  />
               </div>
-              <div class="details">
-                @include("layouts.frontoffice.popup.Login")
+              <div class="input">
+                <input type="password" name="password" id="password" placeholder="Mot de passe" />
+
               </div>
+
+            </fieldset>
+            <div class="actions" style="margin-top: 10px">
+
+              <button type="submit">Connexion</button>
             </div>
-        <div>
+          </form>
+        </article>
 
       </div>
-    </div>
-    <script src="{{ asset('assets/js/function.js') }}"></script>
+    </section>
+  </main>
 @endsection
