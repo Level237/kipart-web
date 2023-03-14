@@ -8,7 +8,7 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\services\user\DetailUserService;
 use App\services\user\passengers\AddPassengerServices;
-use Illuminate\Support\Facades\Route;
+
 class AddPassengerController extends Controller
 {
     public function index(Request $request){
@@ -25,14 +25,11 @@ class AddPassengerController extends Controller
             'classe'=>$request->classe,
             'price'=>$request->price,
         ];
-        if($request->session()->has('currentRoute')){
-            $request->session()->forget('currentRoute');
-        }
+
         $request->session()->put('travels',$myTravel);
         $request->session()->put('travel_id',$request->travel_id);
         if(isset($userCurrent['errors'])){
-            $currentRoute=Route::currentRouteName();
-            $request->session()->put('currentRoute',$currentRoute);
+
             return to_route('go-to-login');
         }else{
             return view('passengers.add-passenger',compact('userCurrent'));

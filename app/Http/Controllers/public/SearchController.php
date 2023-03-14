@@ -10,7 +10,7 @@ use App\services\user\DetailUserService;
 use App\services\public\search\SearchServices;
 use App\services\public\search\agencies\ListSubAgencyServices;
 use App\services\public\search\agencies\ListAgencyWithPathServices;
-
+use Illuminate\Support\Facades\Route;
 class SearchController extends Controller
 {
 
@@ -85,6 +85,9 @@ class SearchController extends Controller
         $agencyName=$request->session()->get('agency_name');
         $agency_id=$request->session()->get('agency_id');
 
+        if($request->session()->has('currentRoute')){
+            $request->session()->forget('currentRoute');
+        }
         if($request->session()->has('subagency')){
             $subAgency=$request->session()->get('subagency');
             foreach($subAgency as $s){
@@ -100,7 +103,8 @@ class SearchController extends Controller
          $dataSearch=(new SearchServices())->searchByAgency($agency_id,$arrayTravel['type'],$arrayTravel['departure'],$arrayTravel['arrival'],$arrayTravel['departure_time'],$arrayTravel['dateDeparture'],$arrayTravel['number_of_places'],$arrayTravel['classe']);
          $datas=json_decode($dataSearch->getBody());
          $datas=$datas->data;
-
+         $currentRoute=Route::currentRouteName();
+         $request->session()->put('currentRoute',$currentRoute);
         //return $subAgency;
          return view("search.step-three",compact('agencyName',"datas",'userCurrent','subAgencyName'));
         //return $arrayTravel;

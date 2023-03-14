@@ -24,13 +24,13 @@ Ajouter un passager
             @csrf
             <fieldset>
               <div class="input">
-                <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" />
+                <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" value="{{ $userCurrent['name'] }}">
               </div>
               <div class="input">
                 <input type="text" name="cni[]" id="nic" placeholder="N CNI" />
               </div>
               <div class="input">
-                <input type="text" name="telephone[]" id="phone" placeholder="Téléphone" />
+                <input type="text" name="telephone[]" id="phone" placeholder="Téléphone" value="{{ $userCurrent['phone_number'] }}" />
               </div>
             </fieldset>
             <div class="actions">
