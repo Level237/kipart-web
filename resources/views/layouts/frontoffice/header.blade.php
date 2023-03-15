@@ -27,12 +27,38 @@
                 Deconnexion
             </a></li>
         @else
-        <li>Vos réservations</li>
+        <li>{{ __("My tickets")}}</li>
         <li><a href="#" data-a11y-dialog-show="login">S'identifier</a></li>
         <li><a href="#" data-a11y-dialog-show="register">Créer un compte</a></li>
         @endif
 
-        <li>En</li>
+        <li style="margin-top:-7px">
+         <!-- Dropdown -->
+         <div class="dropdown">
+          <a href="#" class="dropdown-toggle no-arrow d-flex align-items-center justify-content-center bg-white rounded-circle shadow-sm mx-1 mx-lg-2 w-40px h-40px" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-offset="0,0">
+              <span class="avatar avatar-circle avatar-xxs"><img class="avatar-img" src="assets/svg/{{ App::getLocale()}}.svg" style="border-radius:10px" alt="..." width="12" height="12"></span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                  <h6 class="dropdown-header text-uppercase">Selectionnez une langue</h6>
+              </li>
+              <li>
+                  <a href="lang/en" class="dropdown-item active">
+                      <span class="avatar avatar-circle avatar-xxs"><img class="avatar-img" src="{{asset('assets/svg/en.svg')}}" style="border-radius:9px" alt="English" width="18" height="18"></span><span class="text-truncate ms-2">Anglais</span>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="lang/fr" class="dropdown-item">
+                      <span class="avatar avatar-circle avatar-xxs"><img class="avatar-img" src="{{asset('assets/svg/fr.svg')}}" alt="Français" style="border-radius:9px" width="18" height="18"></span><span class="text-truncate ms-2">Français</span>
+                  </a>
+              </li>
+
+
+          </ul>
+      </div>
+    </li>
       </ul>
     </nav>
   </header>

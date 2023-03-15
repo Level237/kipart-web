@@ -17,6 +17,7 @@ use App\Http\Controllers\payments\stripe\PaymentWithStripeController;
 use App\Http\Controllers\test\payments\stripe\TestPaymentController;
 use App\Http\Controllers\User\OtpVerificationController;
 use App\Http\Controllers\User\auth\RegisterController;
+use App\Http\Controllers\LocalizationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,9 @@ use App\Http\Controllers\User\auth\RegisterController;
 */
 
 Route::get('/',[HomePageController::class,'homepage'])->name('homepage');
+
+//Setting local
+Route::get('lang/{locale}', [LocalizationController::class,'index']);
 
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 Route::post('login',[LoginController::class,'login'])->name('login');
