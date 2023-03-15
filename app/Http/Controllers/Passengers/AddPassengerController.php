@@ -38,7 +38,8 @@ class AddPassengerController extends Controller
 
             return to_route('go-to-login');
         }else{
-            return view('passengers.add-passenger',compact('userCurrent','myTravel','agency_name'));
+            return $myTravel;
+            //return view('passengers.add-passenger',compact('userCurrent','myTravel','agency_name'));
             //return $request->travel_id;
         }
 

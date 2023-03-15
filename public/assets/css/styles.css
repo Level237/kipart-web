@@ -1439,7 +1439,7 @@ main#departures #details > .content #all-departures .items {
   gap: 1em;
 }
 
-main#departures #details > .content #all-departures .items .item {
+main#departures #details > .content #all-departures  .items .item {
   display: flex;
   flex-direction: row;
   gap: 1em;
