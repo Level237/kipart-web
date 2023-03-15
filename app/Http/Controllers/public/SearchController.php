@@ -35,12 +35,14 @@ class SearchController extends Controller
                 'number_of_places'=>$request->number_of_places,
                 'classe'=>$request->classe,
             ];
-
+            $url=(new UrlServices())->getUrl();
+            $hours=Http::retry(3,400,throw: false)->get($url.'/api/list/hours');
+            $hours=json_decode($hours);
             $request->session()->put('arrayTravel',$arrayTravel);
 
             $datas=json_decode($listAgenciesWithPath->getBody());
             //return $listAgenciesWithPath;
-            return view('search.step-one',compact('datas','userCurrent'));
+            return view('search.step-one',compact('datas','userCurrent','arrayTravel','hours'));
             //return $request->dateDeparture;
         }
 
@@ -56,7 +58,9 @@ class SearchController extends Controller
         $request->session()->put('agency_id',$request->agency_id);
         $datas=json_decode($listSubAgencies);
         $arrayTravel=$request->session()->get('arrayTravel');
-
+        $url=(new UrlServices())->getUrl();
+            $hours=Http::retry(3,400,throw: false)->get($url.'/api/list/hours');
+            $hours=json_decode($hours);
         foreach($datas as $list){
             foreach($list as $item){
                 if($item->localisation==$arrayTravel['departure']){
@@ -72,7 +76,7 @@ class SearchController extends Controller
             return to_route('search.step-three');
         }else{
             $request->session()->forget('subagency');
-            return view('search.step-two',compact('arrayList','userCurrent'));
+            return view('search.step-two',compact('arrayList','userCurrent','hours','arrayTravel'));
         }
 
 
