@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Agent\TicketController;
+use App\Http\Controllers\Customer\DashboardController;
 use App\Http\Controllers\Customer\PasswordResetController;
 use App\Http\Controllers\Customer\TicketController as CustomerTicketController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,7 @@ use App\Http\Controllers\User\auth\RegisterController;
 
 Route::get('/',[HomePageController::class,'homepage'])->name('homepage');
 
+Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 Route::post('login',[LoginController::class,'login'])->name('login');
 Route::get('login',[LoginController::class,'index'])->name('go-to-login');
 Route::get('list/departure',[ListController::class,'listDeparture'])->name('list.departure');

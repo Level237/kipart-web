@@ -10,7 +10,7 @@ class InitPaymentServices{
 
         $url=(new UrlServices())->getUrl();
         $accessToken=Session::get('tokenUser');
-        $response=Http::retry(3,100,throw: false)->withToken($accessToken)->post($url.'/api/pay/withOrangeMoney'.$number.'/'.$amount.'/'.$subId);
+        $response=Http::retry(3,100,throw: false)->withToken($accessToken)->post($url.'/api/v1/pay/withOrangeMoney/'.$number.'/'.$amount.'/'.$subId);
 
         return $response;
     }

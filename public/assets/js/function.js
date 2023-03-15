@@ -1,3 +1,5 @@
+var date = new Date();
+
 function increaseNumberOfPassengers(){
     var numberOfPassengers = document.getElementById("number-of-passengers");
     numberOfPassengers.value = +numberOfPassengers.value + 1;
@@ -25,7 +27,7 @@ Date.prototype.addDays = function(days) {
     return date;
 }
 
-var date = new Date();
+
 
 console.log(date.addDays(31).toISOString().split('T')[0]);
 date=date.addDays(31).toISOString().split('T')[0]
@@ -37,12 +39,11 @@ date=date.addDays(31).toISOString().split('T')[0]
   document.getElementsByName("dateDeparture")[0].setAttribute('max', date);
   document.getElementsByName("dateDeparture")[0].value=today;
 
-
-
   var modal = document.getElementById("myModal");
   var span = document.getElementsByClassName("close")[0];
   span.onclick = function() {
     modal.style.display = "none";
+    console.log("eed");
   }
 
   window.onclick = function(event) {
@@ -50,6 +51,8 @@ date=date.addDays(31).toISOString().split('T')[0]
       modal.style.display = "none";
     }
   }
+
+
 
 
 

@@ -4,7 +4,83 @@ Renseignez vos informations et payez
 @endsection
 
 @section('content')
+
 <main id="resume-2">
+
+    @if(Session::get("cancel"))
+<div id="cancel" class="modal">
+
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <p style="text-align: center;color:white">{{ Session::get("cancel") }}</p>
+        </div>
+
+    </div>
+    @endif
+    @if(Session::get("expired"))
+    <div id="cancel" class="modal">
+
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="text-align: center;color:white">{{ Session::get("expired") }}</p>
+            </div>
+
+        </div>
+        @endif
+
+        @if(Session::get("expired"))
+    <div id="cancel" class="modal">
+
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="text-align: center;color:white">{{ Session::get("expired") }}</p>
+            </div>
+
+        </div>
+        @endif
+
+        @if(Session::get("error"))
+    <div id="cancel" class="modal">
+
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="text-align: center;color:white">{{ Session::get("error") }}</p>
+            </div>
+
+        </div>
+        @endif
+
+        @if(Session::get("fail"))
+    <div id="cancel" class="modal">
+
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="text-align: center;color:white">{{ Session::get("fail") }}</p>
+            </div>
+
+        </div>
+        @endif
+</div>
     <section id="breadcumb">
       <div class="content">
         <ul>
@@ -100,4 +176,18 @@ Renseignez vos informations et payez
       </div>
     </section>
   </main>
+<script>
+let modal = document.getElementById("cancel");
+  let span = document.getElementsByClassName("close")[0];
+  span.onclick = function() {
+    modal.style.display = "none";
+    console.log("eed");
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
 @endsection

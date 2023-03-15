@@ -30,21 +30,22 @@ class OrangeMoneyController extends Controller
             $subAgencyId= $request->session()->get('subAgency_id');
         }
         $payment_id= $request->session()->get('payment_id');
-        $code=null;
+        $code="123";
         $travels=$request->session()->get('travels');
-        $initPayment=(new InitPaymentServices())->init($request->number,$travels['price'],$subAgencyId);
+        $initPayment=(new InitPaymentServices())->init($request->number,1,$subAgencyId);
         $initresponse=json_decode($initPayment->getBody());
+
         if(isset($initresponse->accessToken)){
-            $statusPayment=(new StatusPaymentServices())->payStatus($initresponse->accessToken,$initresponse->payToken,$payment_id,$code,$subAgencyId,$travels['price']);
+            $statusPayment=(new StatusPaymentServices())->payStatus($initresponse->accessToken,$initresponse->payToken,$payment_id,$code,$subAgencyId,1);
             $statusresponse=json_decode($statusPayment->getBody());
 
             if(isset($statusresponse->status)){
 
                 if($statusresponse->status=="CANCELLED"){
-                    return redirect()->back()->with("error","transaction annulée");
+                    return redirect()->back()->with("cancel","votre transaction a été annulée");
                 }
                 if($statusresponse->status=="EXPIRED"){
-                    return redirect()->back()->with("error","votre transaction à expiré");
+                    return redirect()->back()->with("expired","votre transaction à expiré");
                 }
                 if($statusresponse->status=="SUCCESSFULL"){
 
@@ -52,7 +53,11 @@ class OrangeMoneyController extends Controller
                 }
                 return redirect()->back()->with("error","une erreur s'est produit");
             }
+            return $statusPayment;
+        }
 
+        if($initresponse->message="Votre Credit est insuffisant"){
+            return redirect()->back()->with("fail","Credit insuffisant!");
         }
 
     }
