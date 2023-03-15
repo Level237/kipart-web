@@ -17,7 +17,7 @@
     <div class="group">
       <div class="input left">
         <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" required />
-        <input type="date" name="dateDeparture" id="date"  required />
+        <input type="date" name="dateDeparture" class="date"  required />
 
       </div>
       <div class="input">

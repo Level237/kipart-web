@@ -43,20 +43,20 @@ Ajouter un passager
           <div id="choosen">
             <div>départ choisi</div>
             <div class="infos">
-              <div class="towns">{{ $travels['departure'] }} - {{ $travels['arrival'] }}</div>
+              <div class="towns">{{ $myTravel['departure'] }} - {{ $myTravel['arrival'] }}</div>
               <div class="date-seats">
-                <span class="date">{{ $travels['date'] }}</span>,
+                <span class="date">{{ $myTravel['date'] }}</span>,
                 <span class="number-of-seats">1 place</span>
               </div>
               <div class="agency">{{ $agency_name }}</div>
-              <div class="hour">{{ $travels['hour'] }}</div>
-              <div class="class">{{ $travels['classe'] }}</div>
+              <div class="hour">{{ $myTravel['hour'] }}</div>
+              <div class="class">{{ $myTravel['classe'] }}</div>
             </div>
           </div>
           <div id="ticket">
             <div>
               <div>Tickets (1)</div>
-              <div>{{ $travels['price'] }} FCFA</div>
+              <div>{{ $myTravel['price'] }} FCFA</div>
             </div>
             <div>
               <div>Frais KiPART</div>
@@ -64,7 +64,7 @@ Ajouter un passager
             </div>
             <div>
               <div>Net à payer</div>
-              <div>{{ $travels['price'] + 500 }} FCFA</div>
+              <div>{{ $myTravel['price'] + 500 }} FCFA</div>
             </div>
           </div>
           <div id="more">

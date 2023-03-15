@@ -35,9 +35,9 @@ date=date.addDays(31).toISOString().split('T')[0]
     var today = new Date().toISOString().split('T')[0];
     var lastDay=today + 30;
 
-  document.getElementsByName("dateDeparture")[0].setAttribute('min', today);
-  document.getElementsByName("dateDeparture")[0].setAttribute('max', date);
-  document.getElementsByName("dateDeparture")[0].value=today;
+  document.querySelector('.date').setAttribute('min', today);
+  document.querySelector('.date').setAttribute('max', date);
+  document.querySelector('.date').value=today;
 
   var modal = document.getElementById("myModal");
   var span = document.getElementsByClassName("close")[0];

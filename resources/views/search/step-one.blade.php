@@ -45,7 +45,7 @@ Choisissez votre Agence
           <form method="get" action="{{ route('search.step-one') }}">
             <div class="input select">
                 <select name="type" value="{{ $arrayTravel['type'] }}">
-                  <option value="aller-simple">Aller Simple</option>
+                  <option value="aller-simple" >Aller Simple</option>
                   <option value="aller-retour">Aller et Retour</option>
                 </select>
               </div>
@@ -60,13 +60,13 @@ Choisissez votre Agence
             <div class="group">
               <div class="input left">
                 <img src="{{ asset('assets/images/icon-calendar.svg') }}" alt="calendar icon" />
-                <input type="date" name="dateDeparture" id="date" value="{{ $arrayTravel['dateDeparture'] }}"  required  />
+                <input type="date" name="dateDeparture"  value="{{ $arrayTravel['dateDeparture'] }}"  required  />
               </div>
               <div class="input">
 
                 <select name="departure_time" id="" value="{{ $arrayTravel['departure_time'] }}" required>
                     @foreach ($hours as $hour)
-                    <option value="{{ $hour->hours }}">{{ $hour->hours }}</option>
+                    <option value="{{ $hour->hours }}" @selected($arrayTravel['departure_time'] ==$hour->hours)>{{ $hour->hours }}</option>
                 @endforeach
                 </select>
 
@@ -90,8 +90,8 @@ Choisissez votre Agence
                 <div>
 
                   <select name="classe" value="{{ $arrayTravel['classe'] }}">
-                    <option value="Vip">VIP</option>
-                    <option value="Classique">Classique</option>
+                    <option value="Vip" @selected($arrayTravel['classe'] =="Vip")>VIP</option>
+                    <option value="Classique"  @selected($arrayTravel['classe'] =="Classique")>Classique</option>
                   </select>
                 </div>
               </div>

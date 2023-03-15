@@ -15,7 +15,11 @@ class AddPassengerController extends Controller
 
         $userCurrent=(new DetailUserService())->getCurrentUser();
         $agency_name = $request->session()->get('agency_name');
-        $travels=$request->session()->get('travels');
+        $myTravel = [];
+
+        if($request->session()->has('travels')){
+            $request->session()->forget('travels');
+        }
         $myTravel = [];
 
         $myTravel=[
@@ -34,7 +38,7 @@ class AddPassengerController extends Controller
 
             return to_route('go-to-login');
         }else{
-            return view('passengers.add-passenger',compact('userCurrent','travels','agency_name'));
+            return view('passengers.add-passenger',compact('userCurrent','myTravel','agency_name'));
             //return $request->travel_id;
         }
 

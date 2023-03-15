@@ -23,7 +23,7 @@ Choisissez votre Voyage
               <form method="get" action="{{ route('search.step-one') }}">
                 <div class="input select">
                     <select name="type" value="{{ $arrayTravel['type'] }}">
-                      <option value="aller-simple">Aller Simple</option>
+                      <option value="aller-simple" >Aller Simple</option>
                       <option value="aller-retour">Aller et Retour</option>
                     </select>
                   </div>
@@ -38,38 +38,38 @@ Choisissez votre Voyage
                 <div class="group">
                   <div class="input left">
                     <img src="{{ asset('assets/images/icon-calendar.svg') }}" alt="calendar icon" />
-                    <input type="date" name="dateDeparture" id="date" value="{{ $arrayTravel['dateDeparture'] }}"  required  />
+                    <input type="date" name="dateDeparture"  value="{{ $arrayTravel['dateDeparture'] }}"  required  />
                   </div>
                   <div class="input">
-
+    
                     <select name="departure_time" id="" value="{{ $arrayTravel['departure_time'] }}" required>
                         @foreach ($hours as $hour)
-                        <option value="{{ $hour->hours }}">{{ $hour->hours }}</option>
+                        <option value="{{ $hour->hours }}" @selected($arrayTravel['departure_time'] ==$hour->hours)>{{ $hour->hours }}</option>
                     @endforeach
                     </select>
-
+    
                 </div>
                 </div>
                 <div class="group">
                     <div>
-
+    
                       <div class="input right">
                         <input type="number" value="{{ $arrayTravel['number_of_places']  }}" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
-
+    
                         <button type="button" class="no-bg" >
-
+    
                           <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" onclick="increaseNumberOfPassengers()"/>
                           <img src="{{asset('assets/images/icon-substract.svg')}}" alt="plus icon" onclick="decreaseNumberOfPassengers()" />
                         </button>
-
-
+    
+    
                       </div>
                     </div>
                     <div>
-
+    
                       <select name="classe" value="{{ $arrayTravel['classe'] }}">
-                        <option value="Vip">VIP</option>
-                        <option value="Classique">Classique</option>
+                        <option value="Vip" @selected($arrayTravel['classe'] =="Vip")>VIP</option>
+                        <option value="Classique"  @selected($arrayTravel['classe'] =="Classique")>Classique</option>
                       </select>
                     </div>
                   </div>
