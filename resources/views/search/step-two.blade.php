@@ -22,41 +22,30 @@ Choisissez votre Sous-Agence
             <div class="content">
               <form method="get" action="{{ route('search.step-one') }}">
                 <div class="input select">
-                    <select name="type">
+                    <select name="type" value="{{ $arrayTravel['type'] }}>
                       <option value="aller-simple">Aller Simple</option>
                       <option value="aller-retour">Aller et Retour</option>
                     </select>
                   </div>
                 <div class="input left">
                   <img src="{{ asset('assets/images/icon-departure.svg') }}" alt="departure icon" />
-                  <input type="text" class="typeahead form-control" type="text" placeholder="Douala" name="departure" required />
+                  <input type="text" class="typeahead form-control" type="text"  value="{{ $arrayTravel['departure'] }}" placeholder="Douala" name="departure" required />
                 </div>
                 <div class="input left">
                   <img src="{{ asset('assets/images/icon-location.svg') }}" alt="location icon" />
-                  <input class="typeahead form-control" type="text" placeholder="Yaounde" name="arrival" required />
+                  <input class="typeahead form-control" type="text" value="{{ $arrayTravel['arrival'] }}" placeholder="Yaounde" name="arrival" required />
                 </div>
                 <div class="group">
                   <div class="input left">
                     <img src="{{ asset('assets/images/icon-calendar.svg') }}" alt="calendar icon" />
-                    <input type="date" name="dateDeparture" id="date"  required  />
+                    <input type="date" name="dateDeparture" id="date" value="{{ $arrayTravel['dateDeparture'] }}"  required  />
                   </div>
                   <div class="input">
 
-                    <select name="departure_time" id="" required>
-                      <option value="05:00">05:00</option>
-                      <option value="06:00">06:00</option>
-                      <option value="07:30">07:30</option>
-                      <option value="08:30">08:30</option>
-                      <option value="09:30">09:30</option>
-                      <option value="10:30">10:30</option>
-                      <option value="11:30">11:30</option>
-                      <option value="12:30">12:30</option>
-                      <option value="10:30">13:30</option>
-                      <option value="10:30">14:30</option>
-                      <option value="10:30">15:30</option>
-                      <option value="10:30">17:30</option>
-                      <option value="10:30">18:45</option>
-                      <option value="10:30">19:30</option>
+                    <select name="departure_time" id="" value="{{ $arrayTravel['departure_time'] }}" required>
+                        @foreach ($hours as $hour)
+                        <option value="{{ $hour->hours }}">{{ $hour->hours }}</option>
+                    @endforeach
                     </select>
 
                 </div>
@@ -65,7 +54,7 @@ Choisissez votre Sous-Agence
                     <div>
 
                       <div class="input right">
-                        <input type="number" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
+                        <input type="number" value="{{ $arrayTravel['number_of_places']  }}" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
 
                         <button type="button" class="no-bg" >
 
@@ -78,7 +67,7 @@ Choisissez votre Sous-Agence
                     </div>
                     <div>
 
-                      <select name="classe">
+                      <select name="classe" value="{{ $arrayTravel['classe'] }}">
                         <option value="Vip">VIP</option>
                         <option value="Classique">Classique</option>
                       </select>

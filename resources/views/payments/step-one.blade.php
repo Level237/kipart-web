@@ -89,28 +89,28 @@ Choisissez votre methode de paiement
               </form>
             </div>
           </div>
-          
+
           <div id="method-payment">
             <div>
               Méthode de paiement
             </div>
-            
-            <form action="{{ route('payment-final') }}" method="post">
+
+            <form action="{{ route('payment-final') }}" method="post" >
                 @csrf
-                <div>
-                    <div>
+                <div style="display: flex">
+                    <div style="width: 72px;height: 39px;margin-right:40px">
                       <input type="radio" name="method_payment" value="om" />
                       <img src="{{ asset('assets/images/orange.png') }}" alt="icon om" style="width: 50px; height:50px;vertical-align:middle" />
                     </div>
-                    <div>
+                    <div style="width: 72px;height: 39px;margin-right:40px">
                       <input type="radio" name="method_payment" value="momo" />
                       <img src="{{ asset('assets/images/mtn.jpg') }}" alt="icon momo" style="width: 50px; height:50px;vertical-align:middle" />
                     </div>
-                    <div>
+                    <div style="margin-right:40px">
                       <input type="radio" name="method_payment" value="visa-mastercard"  />
-                      <img src="{{ asset('assets/images/visa.png') }}" alt="icon visa mastercard"  />
+                      <img src="{{ asset('assets/images/visa.png') }}" style="width: 72px;height: 40px" alt="icon visa mastercard"  />
                     </div>
-                    <div>
+                    <div style="width: 72px;height: 39px;margin-right:40px">
                       <input type="radio" name="method_payment" value="paypal" />
                       <img src="{{ asset('assets/images/paypal.png') }}" alt="icon paypal" style="width: 50px; height:50px;vertical-align:middle" />
                     </div>

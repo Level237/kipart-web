@@ -23,20 +23,9 @@
       <div class="input">
 
           <select name="departure_time" id="" required>
-            <option value="05:00">05:00</option>
-            <option value="06:00">06:00</option>
-            <option value="07:30">07:30</option>
-            <option value="08:30">08:30</option>
-            <option value="09:30">09:30</option>
-            <option value="10:30">10:30</option>
-            <option value="11:30">11:30</option>
-            <option value="12:30">12:30</option>
-            <option value="10:30">13:30</option>
-            <option value="10:30">14:30</option>
-            <option value="10:30">15:30</option>
-            <option value="10:30">17:30</option>
-            <option value="10:30">18:45</option>
-            <option value="10:30">19:30</option>
+            @foreach ($hours as $hour)
+                <option value="{{ $hour->hours }}">{{ $hour->hours }}</option>
+            @endforeach
           </select>
 
       </div>

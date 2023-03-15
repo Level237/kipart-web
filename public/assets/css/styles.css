@@ -2528,21 +2528,21 @@ main#resume #details > .content > div:first-of-type > #method-payment > div:firs
   margin-bottom: 0.5em;
 }
 
-main#resume #details > .content > div:first-of-type > #method-payment > div:last-of-type {
+main#resume #details > .content > div:first-of-type > #method-payment > div:last-of-type > form {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 10px;
 }
 
-main#resume #details > .content > div:first-of-type > #method-payment > div:last-of-type > div {
+main#resume #details > .content > div:first-of-type > #method-payment > div:last-of-type > div  {
   flex: 33%;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-main#resume #details > .content > div:first-of-type > #method-payment > div:last-of-type > div:nth-child(1) img {
+main#resume #details > .content > div:first-of-type > #method-payment > div:last-of-type >  div:nth-child(1) img {
   width: 55px;
   height: 39px;
 }
