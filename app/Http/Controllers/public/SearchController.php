@@ -88,7 +88,10 @@ class SearchController extends Controller
         $arrayTravel=$request->session()->get('arrayTravel');
         $agencyName=$request->session()->get('agency_name');
         $agency_id=$request->session()->get('agency_id');
-
+        $arrayTravel=$request->session()->get('arrayTravel');
+        $url=(new UrlServices())->getUrl();
+            $hours=Http::retry(3,400,throw: false)->get($url.'/api/list/hours');
+            $hours=json_decode($hours);
         if($request->session()->has('currentRoute')){
             $request->session()->forget('currentRoute');
         }
@@ -110,7 +113,7 @@ class SearchController extends Controller
          $currentRoute=Route::currentRouteName();
          $request->session()->put('currentRoute',$currentRoute);
         //return $subAgency;
-         return view("search.step-three",compact('agencyName',"datas",'userCurrent','subAgencyName'));
+         return view("search.step-three",compact('agencyName',"datas",'userCurrent','subAgencyName','hours','arrayTravel'));
         //return $arrayTravel;
 
         // foreach($datas as $travel){

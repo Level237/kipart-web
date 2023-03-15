@@ -6,7 +6,7 @@ Connexion
 @section('content')
 
 @if(Session::get("error"))
-<div id="myModal" class="modal">
+<div id="error" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
@@ -47,4 +47,19 @@ Connexion
       </div>
     </section>
   </main>
+
+  <script>
+    let modal = document.getElementById("error");
+      let span = document.getElementsByClassName("close")[0];
+      span.onclick = function() {
+        modal.style.display = "none";
+        console.log("eed");
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
 @endsection
