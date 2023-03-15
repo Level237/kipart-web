@@ -43,20 +43,20 @@ Ajouter un passager
           <div id="choosen">
             <div>départ choisi</div>
             <div class="infos">
-              <div class="towns">Douala - Yaounde</div>
+              <div class="towns">{{ $travels['departure'] }} - {{ $travels['arrival'] }}</div>
               <div class="date-seats">
-                <span class="date">Ven, 18 déc</span>,
+                <span class="date">{{ $travels['date'] }}</span>,
                 <span class="number-of-seats">1 place</span>
               </div>
-              <div class="agency">Nom de l'agence</div>
-              <div class="hour">04:00</div>
-              <div class="class">VIP</div>
+              <div class="agency">{{ $agency_name }}</div>
+              <div class="hour">{{ $travels['hour'] }}</div>
+              <div class="class">{{ $travels['classe'] }}</div>
             </div>
           </div>
           <div id="ticket">
             <div>
               <div>Tickets (1)</div>
-              <div>8 000 FCFA</div>
+              <div>{{ $travels['price'] }} FCFA</div>
             </div>
             <div>
               <div>Frais KiPART</div>
@@ -64,7 +64,7 @@ Ajouter un passager
             </div>
             <div>
               <div>Net à payer</div>
-              <div>8 500 FCFA</div>
+              <div>{{ $travels['price'] + 500 }} FCFA</div>
             </div>
           </div>
           <div id="more">

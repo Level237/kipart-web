@@ -95,7 +95,7 @@ Renseignez vos informations et payez
     <section id="details">
       <div class="content">
         <div class="card">
-          <header>
+          <header style="background: url({{ asset('assets/images/orange.png') }});;width:100%;">
             Detail Orange Money
           </header>
           <form action="{{ route('payment.withOm') }}" method="post">
