@@ -41,32 +41,32 @@ Choisissez votre Sous-Agence
                     <input type="date" name="dateDeparture"  value="{{ $arrayTravel['dateDeparture'] }}"  required  />
                   </div>
                   <div class="input">
-    
+
                     <select name="departure_time" id="" value="{{ $arrayTravel['departure_time'] }}" required>
                         @foreach ($hours as $hour)
                         <option value="{{ $hour->hours }}" @selected($arrayTravel['departure_time'] ==$hour->hours)>{{ $hour->hours }}</option>
                     @endforeach
                     </select>
-    
+
                 </div>
                 </div>
                 <div class="group">
                     <div>
-    
+
                       <div class="input right">
                         <input type="number" value="{{ $arrayTravel['number_of_places']  }}" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
-    
+
                         <button type="button" class="no-bg" >
-    
+
                           <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" onclick="increaseNumberOfPassengers()"/>
                           <img src="{{asset('assets/images/icon-substract.svg')}}" alt="plus icon" onclick="decreaseNumberOfPassengers()" />
                         </button>
-    
-    
+
+
                       </div>
                     </div>
                     <div>
-    
+
                       <select name="classe" value="{{ $arrayTravel['classe'] }}">
                         <option value="Vip" @selected($arrayTravel['classe'] =="Vip")>VIP</option>
                         <option value="Classique"  @selected($arrayTravel['classe'] =="Classique")>Classique</option>
@@ -201,7 +201,7 @@ Choisissez votre Sous-Agence
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                       </div>
-                      <div> <a href="#">Notez l'agence</a></div>
+                      <div> <a href="#">{{ __("Rate the agency")}}</a></div>
                     </div>
                   </div>
                   <div class="price">
@@ -240,7 +240,7 @@ Choisissez votre Sous-Agence
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                       </div>
-                      <div> <a href="#">Notez l'agence</a></div>
+                      <div> <a href="#">{{ __("Rate the agency")}}</a></div>
                     </div>
                   </div>
                   <div class="price">
@@ -258,7 +258,7 @@ Choisissez votre Sous-Agence
                       <div class="hour">04:00</div>
                       <div class="others">
                         <div>
-                          <div>Type de vehicule</div>
+                          <div>{{ __("Vehicle Type")}}</div>
                           <div class="type-of-car">Gros porteur</div>
                         </div>
                         <div>
@@ -266,7 +266,7 @@ Choisissez votre Sous-Agence
                           <div class="class">VIP</div>
                         </div>
                         <div>
-                          <div>Nombre de places</div>
+                          <div>{{ __("Number of places")}}</div>
                           <div class="seats">70</div>
                         </div>
                       </div>
@@ -279,7 +279,7 @@ Choisissez votre Sous-Agence
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                       </div>
-                      <div> <a href="#">Notez l'agence</a></div>
+                      <div> <a href="#">{{ __("Rate the agency")}}</a></div>
                     </div>
                   </div>
                   <div class="price">
@@ -290,12 +290,12 @@ Choisissez votre Sous-Agence
               </div>
             </div>
             <div class="message">
-              Les prix peuvent changer selon la disponibilité des bus. Tous les frais supplémentaires peuvent être examinés avant le paiement. Le prix total sera finalisé une fois l'achat terminé.
+                {{ __("Prices include taxes and may change based on availability. Pricing will be finalized once purchase is complete. Any additional charges can be reviewed prior to payment.")}}
             </div>
           </div>
           <div class="advertising">
-            <div>Espace encart PUB</div>
-            <div>Espace encore PUB</div>
+            <div>{{ __("Pub Space")}}</div>
+            <div>{{ __("Pub Space")}}</div>
           </div>
         </div>
       </section>

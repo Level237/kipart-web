@@ -1,25 +1,23 @@
 @extends('layouts.frontoffice.main')
 
 @section('title')
-Conditions Generales d'utilisation
+{{ __("Terms of use")}}
 @endsection
 
 @section('content')
 <main id="privacy-policy">
     <header>
       <div class="content">
-        <h1>Conditions Generales d'utilisation</h1>
+        <h1>{{ __("Terms of use")}}</h1>
       </div>
     </header>
     <section class="content">
       <p>
-          Les présentes conditions générales d'utilisation (dites « CGU ») ont pour objet l'encadrement juridique des modalités de mise à disposition de l’application et des services par K-SOFT  et de définir les conditions d’accès et d’utilisation des services par « l'Utilisateur ».
-          Les présentes CGU sont accessibles sur l’application à la rubrique «CGU».
+        {{ __("Terms of use")}}
       </p>
 
       <p>
-          Toute inscription ou utilisation de l’application implique l'acceptation sans aucune réserve ni restriction des présentes CGU par l’utilisateur. Lors de l'inscription sur l’application via le Formulaire d’inscription, chaque utilisateur accepte expressément les présentes CGU en cochant la case précédant le texte suivant : « Je reconnais avoir lu et compris les CGU et je les accepte ».
-          En cas de non-acceptation des CGU stipulées dans le présent contrat, l'Utilisateur se doit de renoncer à l'accès des services proposés par l’application KiPART se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes CGU.
+        {{ __("The purpose of these general terms and conditions of use (known as GCU) is to provide a legal framework for the terms and conditions for the provision of the application and services by K-SOFT and to define the conditions of access and use of the services by the User.These GCU are accessible on the application under the GCU section.")}}
 
       </p>
 
