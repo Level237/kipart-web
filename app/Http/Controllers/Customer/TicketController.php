@@ -14,9 +14,10 @@ class TicketController extends Controller
         $accessToken= Session::get('tokenUser');
         $response=Http::withToken($accessToken)->get('http://api.mykipart.com/api/v1/list/tickets');
         $tickets=json_decode($response->body());
-        
+        //return $tickets;
 
-        return $tickets;
+
+        return view ('customer.ListTicket', compact('tickets'));
     }
 
     public function DisplayTicket($id){
@@ -24,7 +25,9 @@ class TicketController extends Controller
         $response=Http::retry(3,300,throw:false)->withToken($accessToken)->get('http://api.mykipart.com/api/v1/get/qrCode/'.$id);
         $ticket=json_decode($response->body());
 
-        return $response;
+        //return $response;
+
+        return view('customer.DisplayTicket', compact('response'));
     }
 }
 
