@@ -29,11 +29,11 @@ Choisissez votre Sous-Agence
                   </div>
                 <div class="input left">
                   <img src="{{ asset('assets/images/icon-departure.svg') }}" alt="departure icon" />
-                  <input type="text" class="typeahead form-control" value="{{ $arrayTravel['departure'] }}" type="text" placeholder="Douala" name="departure" required />
+                  <input type="text" class="typeahead form-control" value="{{ $arrayTravel['departure'] }}" autocomplete="off" type="text" placeholder="Destination" name="departure" required />
                 </div>
                 <div class="input left">
                   <img src="{{ asset('assets/images/icon-location.svg') }}" alt="location icon" />
-                  <input class="typeahead form-control" type="text" value="{{ $arrayTravel['arrival'] }}" placeholder="Yaounde" name="arrival" required />
+                  <input class="typeahead form-control" type="text" value="{{ $arrayTravel['arrival'] }}" autocomplete="off" placeholder="Arrivée" name="arrival" required />
                 </div>
                 <div class="group">
                   <div class="input left">
@@ -54,7 +54,7 @@ Choisissez votre Sous-Agence
                     <div>
     
                       <div class="input right">
-                        <input type="number" value="{{ $arrayTravel['number_of_places']  }}" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
+                        <input type="number" value="{{ $arrayTravel['number_of_places']  }}" autocomplete="off" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
     
                         <button type="button" class="no-bg" >
     
