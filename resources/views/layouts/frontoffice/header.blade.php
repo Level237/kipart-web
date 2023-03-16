@@ -17,19 +17,19 @@
       <ul>
 
         @if(!isset($userCurrent['errors']))
-            <li>Tableau de bord</li>
-            <li> <a href={{route('list')}}> Mes Tickets</a></li>
+            <li>{{ __("Dashboard")}}</li>
+            <li> <a href={{route('list')}}> {{ __("My tickets")}}</a></li>
             <form method="POST" action="{{ route('logout') }}" id="logout">
                 @csrf
             </form>
 
             <li><a href="" class="mega-menu" onclick="event.preventDefault(); document.getElementById('logout').submit();" title="Sign Out">
-                Deconnexion
+                {{ __("Logout")}}
             </a></li>
         @else
         <li>{{ __("My tickets")}}</li>
-        <li><a href="#" data-a11y-dialog-show="login">S'identifier</a></li>
-        <li><a href="#" data-a11y-dialog-show="register">Créer un compte</a></li>
+        <li><a href="#" data-a11y-dialog-show="login">{{ __("Login")}}</a></li>
+        <li><a href="#" data-a11y-dialog-show="register">{{ __("Create account")}}</a></li>
         @endif
 
         <li style="margin-top:-7px">
@@ -41,7 +41,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                  <h6 class="dropdown-header text-uppercase">Selectionnez une langue</h6>
+                  <h6 class="dropdown-header text-uppercase">{{ __("Select a language")}}</h6>
               </li>
               <li>
                   <a href="lang/en" class="dropdown-item active">

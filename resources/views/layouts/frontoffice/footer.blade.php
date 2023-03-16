@@ -6,28 +6,28 @@
           </div>
           <div>
             <ul>
-              <li>Pret à partir</li>
-              <li> <a href="#">Vos réservations</a> </li>
-              <li> <a href="#">Créer un compte</a></li>
-              <li> <a href="#">Obtenir l'application</a></li>
+              <li>{{ __("Ready to go")}}</li>
+              <li> <a href="#">{{ __("Your reservations")}}</a> </li>
+              <li> <a href="#">{{ __("Create account")}}</a></li>
+              <li> <a href="#">{{ __("Get the app")}}</a></li>
             </ul>
           </div>
           <div>
             <ul>
-              <li>Dans le bureau</li>
-              <li><a href="#">À propos de nous</a></li>
-              <li><a href="#">Carrières</a></li>
-              <li><a href="#">Devenir un partenaire</a></li>
+              <li>{{ __("In the office")}}</li>
+              <li><a href="#">{{ __("About us")}}</a></li>
+              <li><a href="#">{{ __("Careers ")}}</a></li>
+              <li><a href="#">{{ __("Become a partner ")}}</a></li>
             </ul>
           </div>
           <div>
-            <div>Besoin de notre aide?</div>
+            <div>{{ __("Need our help?")}}</div>
             <div>
-              <a href="{{route('FAQ')}}">Centre d'aide</a>
+              <a href="{{route('FAQ')}}">{{ __("Help Center")}}</a>
             </div>
           </div>
           <div>
-            <div>Suivez-nous</div>
+            <div>{{ __("Follow us ")}}</div>
             <ul>
               <li><a href="https://www.tiktok.com/@kipart2023?_t=8aWYe2Uep3V&_r=1" target="_blank"><img src="{{ asset('assets/images/linkedin.svg') }}"  alt="TikTok"/></a></li>
               <li><a href="https://www.facebook.com/profile.php?id=100090647243119" target="_blank"><img src="{{ asset('assets/images/facebook.svg') }}" alt="facebook"/></a></li>
@@ -42,10 +42,10 @@
             <img src="{{ asset('assets/images/logo-2.svg') }}" alt="logo 2" />
           </div>
           <div>
-            <a href="{{route('cgu')}}">Conditions d'utilisation</a>
+            <a href="{{route('cgu')}}">{{ __("Terms of use")}}</a>
           </div>
           <div>
-            <a href="{{route('privacy-policy')}}">Politique de confidentialité</a>
+            <a href="{{route('privacy-policy')}}">{{ __("Privacy Policy")}}</a>
           </div>
           <div>
             <a href="https://play.google.com/store/apps/details?id=com.ki_part" target="_blank">

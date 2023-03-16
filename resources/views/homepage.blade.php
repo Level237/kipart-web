@@ -12,10 +12,10 @@ KiPART
           @include('layouts.frontoffice.components.search')
         </article>
         <article>
-          <div class="title">Salut
+          <div class="title">{{ __("Hello")}}
 
                 {{ $userCurrent['name'] ?? '' }} !</div>
-          <div class="subtitle">Où désirez-vous voyager ?</div>
+          <div class="subtitle">{{ __("Where do you want to travel?")}}</div>
         </article>
 
         @if(Session::get("error"))
@@ -38,10 +38,10 @@ KiPART
       <div class="content">
         <!-- <div> -->
           <article>
-            <h2>Toutes vos agences de voyages préférés sur une seule plateforme</h2>
+            <h2>{{ __("All your favorite travel agencies on one platform")}}</h2>
             <p>
-              Plus de 10 agences de voyage de confiance, afin que vous puissiez vous concentrer uniquement sur le voyage. </br>
-              Trouvez les horaires, les prix, l'emplacement des gares routières, les services, les promotions et les bons plans.
+                {{ __("More than 10 trusted travel agencies")}}, {{ __("so you can just focus on the trip")}} </br>
+                {{ __("Find timetables, prices, location of bus stations, services, promotions and tips.")}}
             </p>
           </article>
           <article>
@@ -64,17 +64,17 @@ KiPART
           <img src="{{ asset('assets/images/app.png') }}" alt="app section" />
         </article>
         <article>
-          <h2>L'application tout-en-un des voyageurs</h2>
-          <p>Télécharger l'application KiPART gratuitement pour bénéficier d'une expertise sur laquelle vous pouvez compter et voyagez en toute confiance</p>
+          <h2>{{ __("The all-in-one app for travelers")}}</h2>
+          <p>{{ __("Download the KiPART app for free to benefit from expertise you can rely on and travel with confidence")}}</p>
           <div>
             <ul>
-              <li><img src="{{ asset('assets/images/icon-info.svg') }}" alt="info icon"/> Assistance voyage</li>
-              <li><img src="{{ asset('assets/images/icon-square.svg') }}" alt="square icon"/> Billets sur mobile</li>
-              <li><img src="{{ asset('assets/images/icon-refresh.svg') }}" alt="refresh icon"/> Mise à jour et rappels</li>
+              <li><img src="{{ asset('assets/images/icon-info.svg') }}" alt="info icon"/> {{ __("Travel assistance")}}</li>
+              <li><img src="{{ asset('assets/images/icon-square.svg') }}" alt="square icon"/> {{ __("Mobile tickets")}}</li>
+              <li><img src="{{ asset('assets/images/icon-refresh.svg') }}" alt="refresh icon"/> {{ __("Updates and Reminders")}}</li>
             </ul>
             <ul>
               <li><a href="https://play.google.com/store/apps/details?id=com.ki_part" target="_blank"><img src="{{ asset('assets/images/play-store.png') }}" alt="play-store" /></a></li>
-              <li><img src="{{ asset('assets/images/apple-store.svg') }}" alt="apple-store" /></li>
+              <li><a href="https://apps.apple.com/us/app/kipart/id1671331889"><img src="{{ asset('assets/images/apple-store.svg') }}" alt="apple-store" /></a></li>
             </ul>
           </div>
         </article>
@@ -84,7 +84,7 @@ KiPART
         <div class="content">
           <header>
             <div class="section-title">Newsletter</div>
-            <h2>Vous souhaitez recevoir des remises exclusives et des mises à jour directement dans votre boite de réceptions?</h2>
+            <h2>{{ __("Do you want to receive exclusive discounts and updates straight to your inbox?")}}</h2>
           </header>
           <hr/>
           <form method="POST" action="#">
@@ -92,7 +92,7 @@ KiPART
               <img src="{{asset('assets/images/icon-email.svg')}}" alt="email icon" />
               <input type="email" placeholder="Votre email" name="email" id="email" />
             </div>
-            <button type="submit">Je m'enregistre</button>
+            <button type="submit">{{ __("I register")}}</button>
           </form>
         </div>
       </section>
