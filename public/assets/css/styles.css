@@ -1472,7 +1472,7 @@ main#departures #details > .content #all-departures .items .item .price {
 }
 
 main#departures #details > .content #all-departures .items .item .price span:first-of-type {
-  font-size: 26px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 31px;
 }
