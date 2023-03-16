@@ -18,7 +18,7 @@
 
         @if(!isset($userCurrent['errors']))
             <li>Tableau de bord</li>
-            <li>Mes Tickets</li>
+            <li> <a href={{route('list')}}> Mes Tickets</a></li>
             <form method="POST" action="{{ route('logout') }}" id="logout">
                 @csrf
             </form>
