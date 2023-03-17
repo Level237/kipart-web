@@ -1,6 +1,6 @@
 @extends('layouts.frontoffice.main')
 @section('title')
-Choisissez votre Sous-Agence
+{{ __("Choose your sub-agency")}}
 @endsection
 
 @section('content')
@@ -23,8 +23,8 @@ Choisissez votre Sous-Agence
               <form method="get" action="{{ route('search.step-one') }}">
                 <div class="input select">
                     <select name="type" value="{{ $arrayTravel['type'] }}">
-                      <option value="aller-simple" >Aller Simple</option>
-                      <option value="aller-retour">Aller et Retour</option>
+                      <option value="aller-simple" >{{ __("One way")}}</option>
+                      <option value="aller-retour">{{ __("Round Trip")}}</option>
                     </select>
                   </div>
                 <div class="input left">
@@ -74,7 +74,7 @@ Choisissez votre Sous-Agence
                     </div>
                   </div>
                 <div class="actions">
-                  <button type="submit">CHERCHER</button>
+                  <button type="submit">{{ __("SEARCH")}}</button>
                 </div>
               </form>
             </div>
@@ -84,7 +84,7 @@ Choisissez votre Sous-Agence
           <div class="">
             <div id="by-agencies">
               <header>
-                <h6>Choisissez votre sous Agence</h6>
+                <h6>{{ __("Choose your sub-agency")}}</h6>
               </header>
               <div class="items">
 
@@ -121,12 +121,12 @@ Choisissez votre Sous-Agence
             <hr />
             <div id="all-departures">
               <header>
-                <h6>Tous les départs</h6>
+                <h6>{{ __("All departures")}}</h6>
                 <div>
-                  <span>Trié par</span>
+                  <span>{{ __("sort by")}}</span>
                   <select>
-                    <option value="">Heure de départ</option>
-                    <option value="">Heure d'arrivée</option>
+                    <option value="">{{ __("Departure time")}}</option>
+                    <option value="">{{ __("Arrival time")}}</option>
                   </select>
                 </div>
               </header>
@@ -134,124 +134,7 @@ Choisissez votre Sous-Agence
                 <div class="item">
                   <div class="infos">
                     <div class="header">
-                      <div>Nom de l'agence</div>
-                      <div class="name">Douala - Yaoundé</div>
-                    </div>
-                    <div class="body">
-                      <div class="hour">04:00</div>
-                      <div class="others">
-                        <div>
-                          <div>Type de vehicule</div>
-                          <div class="type-of-car">Gros porteur</div>
-                        </div>
-                        <div>
-                          <div>Classe</div>
-                          <div class="class">VIP</div>
-                        </div>
-                        <div>
-                          <div>Nombre de places</div>
-                          <div class="seats">70</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="footer">
-                      <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                      </div>
-                      <div> <a href="#">Notez l'agence</a></div>
-                    </div>
-                  </div>
-                  <div class="price">
-                    <span>3 500</span>
-                    <span>F CFA</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="infos">
-                    <div class="header">
-                      <div>Nom de l'agence</div>
-                      <div class="name">Douala - Yaoundé</div>
-                    </div>
-                    <div class="body">
-                      <div class="hour">04:00</div>
-                      <div class="others">
-                        <div>
-                          <div>Type de vehicule</div>
-                          <div class="type-of-car">Gros porteur</div>
-                        </div>
-                        <div>
-                          <div>Classe</div>
-                          <div class="class">VIP</div>
-                        </div>
-                        <div>
-                          <div>Nombre de places</div>
-                          <div class="seats">70</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="footer">
-                      <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                      </div>
-                      <div> <a href="#">{{ __("Rate the agency")}}</a></div>
-                    </div>
-                  </div>
-                  <div class="price">
-                    <span>3 500</span>
-                    <span>F CFA</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="infos">
-                    <div class="header">
-                      <div>Nom de l'agence</div>
-                      <div class="name">Douala - Yaoundé</div>
-                    </div>
-                    <div class="body">
-                      <div class="hour">04:00</div>
-                      <div class="others">
-                        <div>
-                          <div>Type de vehicule</div>
-                          <div class="type-of-car">Gros porteur</div>
-                        </div>
-                        <div>
-                          <div>Classe</div>
-                          <div class="class">VIP</div>
-                        </div>
-                        <div>
-                          <div>Nombre de places</div>
-                          <div class="seats">70</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="footer">
-                      <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                      </div>
-                      <div> <a href="#">{{ __("Rate the agency")}}</a></div>
-                    </div>
-                  </div>
-                  <div class="price">
-                    <span>3 500</span>
-                    <span>F CFA</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="infos">
-                    <div class="header">
-                      <div>Nom de l'agence</div>
+                      <div>{{ __("Agency name")}}</div>
                       <div class="name">Douala - Yaoundé</div>
                     </div>
                     <div class="body">
@@ -263,6 +146,123 @@ Choisissez votre Sous-Agence
                         </div>
                         <div>
                           <div>Classe</div>
+                          <div class="class">VIP</div>
+                        </div>
+                        <div>
+                          <div>{{ __("Number of places")}}</div>
+                          <div class="seats">70</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <div>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <div> <a href="#">{{ __("Rate the agency")}}</a></div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span>3 500</span>
+                    <span>F CFA</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="infos">
+                    <div class="header">
+                      <div>{{ __("Agency name")}}</div>
+                      <div class="name">Douala - Yaoundé</div>
+                    </div>
+                    <div class="body">
+                      <div class="hour">04:00</div>
+                      <div class="others">
+                        <div>
+                          <div>{{ __("Vehicle Type")}}</div>
+                          <div class="type-of-car">Gros porteur</div>
+                        </div>
+                        <div>
+                          <div>Classe</div>
+                          <div class="class">VIP</div>
+                        </div>
+                        <div>
+                          <div>{{ __("Number of places")}}</div>
+                          <div class="seats">70</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <div>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <div> <a href="#">{{ __("Rate the agency")}}</a></div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span>3 500</span>
+                    <span>F CFA</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="infos">
+                    <div class="header">
+                      <div>{{ __("Agency name")}}</div>
+                      <div class="name">Douala - Yaoundé</div>
+                    </div>
+                    <div class="body">
+                      <div class="hour">04:00</div>
+                      <div class="others">
+                        <div>
+                          <div>{{ __("Vehicle Type")}}</div>
+                          <div class="type-of-car">Gros porteur</div>
+                        </div>
+                        <div>
+                          <div>{{ __("Class")}}</div>
+                          <div class="class">VIP</div>
+                        </div>
+                        <div>
+                          <div>{{ __("Number of places")}}</div>
+                          <div class="seats">70</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <div>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <div> <a href="#">{{ __("Rate the agency")}}</a></div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span>3 500</span>
+                    <span>F CFA</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="infos">
+                    <div class="header">
+                      <div>{{ __("Agency name")}}</div>
+                      <div class="name">Douala - Yaoundé</div>
+                    </div>
+                    <div class="body">
+                      <div class="hour">04:00</div>
+                      <div class="others">
+                        <div>
+                          <div>{{ __("Vehicle Type")}}</div>
+                          <div class="type-of-car">Gros porteur</div>
+                        </div>
+                        <div>
+                          <div>{{ __("Class")}}</div>
                           <div class="class">VIP</div>
                         </div>
                         <div>
