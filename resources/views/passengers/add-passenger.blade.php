@@ -20,9 +20,10 @@
     <section id="details">
       <div class="content">
         <article id="informations">
-          <form action="{{ route('add-passenger') }}" method="post">
+          <form action="{{ route('add-passenger') }}" method="post" >
             @csrf
-            <fieldset>
+            <fieldset id="form">
+
               <div class="input">
                 <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" value="{{ $userCurrent['name'] }}">
               </div>
@@ -32,7 +33,14 @@
               <div class="input">
                 <input type="text" name="telephone[]" id="phone" placeholder="Téléphone" value="{{ $userCurrent['phone_number'] }}" />
               </div>
+              <hr>
+
             </fieldset>
+            <div style="margin-top: 15px; text-align:center;cursor:pointer" onclick="addPassenger()">
+                <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon"/>Ajouter une Personne
+            </div>
+
+
             <div class="actions">
 
               <button type="submit" style="margin-top: 10px;">{{ __("Add")}}</button>
@@ -74,4 +82,24 @@
       </div>
     </section>
   </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script>
+    let i=0;
+    function addPassenger(){
+        i=i+1;
+        const newDiv = document.createElement(`fieldset`);
+        newDiv.setAttribute('id',`fieldset-${i}`);
+        const div=document.getElementById('form');
+        newDiv.innerHTML=`<div onclick="closeBtn(${i})"><button type="button" style="border: none;"><img src="{{ asset('assets/images/icon-times.svg') }}" alt="Close this dialog" /></button></div><div class="input"><input type="text" name="name[]" id="name" placeholder="Noms & Prénoms"></div><div class="input"><input type="text" style="margin-top: 15px;" name="cni[]" id="nic" placeholder="N CNI" /></div><div class="input"><input type="text" style="margin-top: 15px;" name="telephone[]" id="phone" placeholder="Téléphone"  /></div><hr>`
+        div.appendChild(newDiv);
+
+
+    }
+   function closeBtn(i){
+    const div=document.getElementById(`fieldset-${i}`);
+    div.remove();
+
+   }
+  </script>
 @endsection

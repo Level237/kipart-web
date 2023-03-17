@@ -3,6 +3,19 @@
 {{ __("Choose your trip")}}
 @endsection
 
+<style>
+    .reservationBtn{
+        display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+
+  background: linear-gradient(90deg, rgba(236,154,29,1) 0%, rgba(201,128,16,1) 76%);
+  padding: 1em 1em;
+  border-radius: 2em;
+    }
+</style>
 @section('content')
 
 
@@ -29,11 +42,11 @@
                   </div>
                 <div class="input left">
                   <img src="{{ asset('assets/images/icon-departure.svg') }}" alt="departure icon" />
-                  <input type="text" class="typeahead form-control" value="{{ $arrayTravel['departure'] }}" type="text" placeholder="Douala" name="departure" required />
+                  <input type="text" class="typeahead form-control" value="{{ $arrayTravel['departure'] }}" autocomplete="off" type="text" placeholder="Destination" name="departure" required />
                 </div>
                 <div class="input left">
                   <img src="{{ asset('assets/images/icon-location.svg') }}" alt="location icon" />
-                  <input class="typeahead form-control" type="text" value="{{ $arrayTravel['arrival'] }}" placeholder="Yaounde" name="arrival" required />
+                  <input class="typeahead form-control" type="text" value="{{ $arrayTravel['arrival'] }}" autocomplete="off" placeholder="Arrivée" name="arrival" required />
                 </div>
                 <div class="group">
                   <div class="input left">
@@ -54,8 +67,13 @@
                     <div>
 
                       <div class="input right">
+<<<<<<< HEAD
                         <input type="number" value="{{ $arrayTravel['number_of_places']  }}" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
 
+=======
+                        <input type="number" value="{{ $arrayTravel['number_of_places']  }}" autocomplete="off" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
+    
+>>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
                         <button type="button" class="no-bg" >
 
                           <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" onclick="increaseNumberOfPassengers()"/>
@@ -99,6 +117,7 @@
                 @foreach ($datas as $travel)
 
 
+<<<<<<< HEAD
 
 
 
@@ -113,8 +132,13 @@
                         <input type="hidden" name="places" value="{{ $travel->number_of_places }}">
                         <input type="hidden" name="classe" value="{{ $travel->classe }}">
                         <button type="submit" style="border: none">
+=======
+>>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
 
-                            <div class="item">
+
+
+
+                    <div class="item">
                                 <div class="infos">
                                 <div class="header">
                                     <div>{{ $subAgencyName }}</div>
@@ -150,18 +174,47 @@
                                     <div> <a href="#">{{ __("Rate the agency")}}</a></div>
                                 </div>
                                 </div>
-                                <div class="price">
-                                <span>{{ $travel->price }}</span>
-                                <span>F CFA</span>
-                                </div>
+                                <form method="get" action="{{ route('goto-passenger') }}" id="add">
+                                    @csrf
+                                    <input type="hidden" name="travel_id" value="{{ $travel->id }}">
+                                    <input type="hidden" name="departure" value="{{ $travel->departure }}">
+                                    <input type="hidden" name="arrival" value="{{ $travel->arrival }}">
+                                    <input type="hidden" name="date" value="{{ $travel->date }}">
+                                    <input type="hidden" name="hour" value="{{ $travel->hours }}">
+                                    <input type="hidden" name="price" value="{{ $travel->price }}">
+                                    <input type="hidden" name="places" value="{{ $travel->number_of_places }}">
+                                    <input type="hidden" name="classe" value="{{ $travel->classe }}">
+
+
+
+
+                                <div class="price" style="">
+                                    <span>{{ $travel->price }} F CFA</span>
+
+                                    </div>
+                                    <div class="price" style="margin-top:18px">
+                                        <button type="submit" style="border: none;background:transparent;color:white;font-size:16px">
+                                            Reserver
+                                        </button>
+
+                                        </div>
+
+                                </form>
                             </div>
+<<<<<<< HEAD
                         </button>
                     </form>
+=======
+>>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
 
 
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
                 @endforeach
 
 

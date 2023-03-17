@@ -8,16 +8,16 @@
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-departure.svg')}}" alt="departure icon" />
-      <input class="typeahead form-control" type="text" placeholder="Douala" name="departure" required />
+      <input class="typeahead form-control" type="text" placeholder="Destination" autocomplete="off" name="departure" required />
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-location.svg')}}" alt="location icon" />
-      <input class="typeahead form-control" type="text" placeholder="Yaounde" name="arrival" required />
+      <input class="typeahead form-control" type="text" placeholder="Arrivée" autocomplete="off" name="arrival" required />
     </div>
     <div class="group">
       <div class="input left">
         <img src="{{asset('assets/images/icon-calendar.svg')}}" alt="calendar icon" required />
-        <input type="date" name="dateDeparture" class="date"  required />
+        <input type="date" name="dateDeparture" class="date"   required />
 
       </div>
       <div class="input">
@@ -37,7 +37,7 @@
           {{ __("Number of passengers")}}
         </label>
         <div class="input right">
-          <input type="number" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
+          <input type="number" placeholder="1" id="number-of-passengers" value="1" autocomplete="off" name="number_of_places" required />
 
           <button type="button" class="no-bg" >
 
