@@ -8,7 +8,7 @@
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-departure.svg')}}" alt="departure icon" />
-      <input class="typeahead form-control" type="text" placeholder="Destination" autocomplete="off" name="departure" required />
+      <input class="typeahead form-control" type="text" placeholder="Départ" autocomplete="off" name="departure" required />
     </div>
     <div class="input left">
       <img src="{{asset('assets/images/icon-location.svg')}}" alt="location icon" />

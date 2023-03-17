@@ -5,6 +5,21 @@ Renseignez vos informations et payez
 
 @section('content')
 
+@if(Session::get("error"))
+<div id="cancel" class="modal">
+
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <p style="text-align: center;color:white">{{ Session::get("error") }}</p>
+        </div>
+
+    </div>
+</div>
+    @endif
 <main id="resume-2">
     <section id="breadcumb">
       <div class="content">
@@ -113,5 +128,18 @@ Renseignez vos informations et payez
       </div>
     </section>
   </main>
-
+  <script>
+    let modal = document.getElementById("cancel");
+      let span = document.getElementsByClassName("close")[0];
+      span.onclick = function() {
+        modal.style.display = "none";
+        console.log("eed");
+      }
+    
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
   @endsection

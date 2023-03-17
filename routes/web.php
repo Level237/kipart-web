@@ -50,7 +50,7 @@ Route::post('step-two/choice-your-sub-agency',[SearchController::class,'stepTwo'
 Route::get('step-tree/choice-your-travel',[SearchController::class,'stepThree'])->name('search.step-three');
 Route::get('step-four/add-passengers',[AddPassengerController::class,'index'])->name('goto-passenger');
 Route::get('step-five/payment-review',[PaymentWithStripeController::class,'stepOne'])->name('payment-review');
-Route::post('step-six/payment-final',[PaymentWithStripeController::class,'stepTwo'])->name('payment-final');
+Route::get('step-six/payment-final',[PaymentWithStripeController::class,'stepTwo'])->name('payment-final');
 Route::post('step-final/pay/withStripe',[TestPaymentController::class,'testPayment'])->name('pay');
 Route::get('list/agencyByPath/{departure}/{arrival}',[ListAgencyController::class,'ListAgencyWithPath'])->name('list.agencyByPath');
 Route::get('Privacy-Policy', function (){
@@ -60,8 +60,8 @@ Route::get('cgu', function (){
     return view ('CGU');
 })->name('cgu');
 
-Route::get('User/ListTicket', [CustomerTicketController::class, 'ListTicket'])->name('list');
-Route::get('User/DisplayTicket/{id}', [CustomerTicketController::class, 'DisplayTicket'])->name ('Display');
+Route::get('user/listTicket', [CustomerTicketController::class, 'ListTicket'])->name('list.tickets');
+Route::get('User/DisplayTicket/{id}', [CustomerTicketController::class, 'DisplayTicket'])->name ('display.ticket');
 Route::post('User/sendCode', [PasswordResetController::class, 'SendCode'])->name('send');
 Route::get('User/checkCode', [PasswordResetController::class, 'CheckCode'])->name('check');
 Route::get('step-one/give-your-number', [PasswordResetController::class, 'resetPassword']) ->name('reset');

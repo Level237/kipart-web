@@ -17,7 +17,7 @@ class TicketController extends Controller
         //return $tickets;
 
 
-        return view ('customer.ListTicket', compact('tickets'));
+        return view('customer.ListTicket', compact('tickets'));
     }
 
     public function DisplayTicket($id){

@@ -23,7 +23,18 @@ class TestPaymentController extends Controller
         $payment_id= $request->session()->get('payment_id');
         //$travels=$request->session()->get('travels');
         $testPayment = (new TestPaymentServices())->pay($payment_id,$request->amount,234,$subAgencyId,$request->number,$request->exp_month,$request->exp_year,$request->cvv);
+        $response=json_decode($testPayment);
+        if(isset($response->message)){
+            if($response->message=="succeeded"){
 
-        return $testPayment;
+                return to_route('list.tickets');
+            }
+        }
+        else{
+
+            return redirect()->back()->with("error","une erreur a été survenue");
+            //return $response;
+        }
+        
     }
 }

@@ -49,7 +49,7 @@ class OrangeMoneyController extends Controller
                 }
                 if($statusresponse->status=="SUCCESSFULL"){
 
-                    return $statusresponse;
+                    return to_route('list.tickets');
                 }
                 return redirect()->back()->with("error","une erreur s'est produit");
             }

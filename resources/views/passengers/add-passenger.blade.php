@@ -25,13 +25,13 @@ Ajouter un passager
             <fieldset id="form">
 
               <div class="input">
-                <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" value="{{ $userCurrent['name'] }}">
+                <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" value="{{ $userCurrent['name'] }}" required>
               </div>
               <div class="input">
-                <input type="text" name="cni[]" id="nic" placeholder="N CNI" />
+                <input type="text" name="cni[]" id="nic" placeholder="N CNI" required/>
               </div>
               <div class="input">
-                <input type="text" name="telephone[]" id="phone" placeholder="Téléphone" value="{{ $userCurrent['phone_number'] }}" />
+                <input type="number" name="telephone[]"  id="phone" placeholder="Téléphone" value="{{ $userCurrent['phone_number'] }}"/>
               </div>
               <hr>
 

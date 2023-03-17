@@ -95,7 +95,7 @@ Choisissez votre methode de paiement
               Méthode de paiement
             </div>
 
-            <form action="{{ route('payment-final') }}" method="post" >
+            <form action="{{ route('payment-final') }}" method="get" >
                 @csrf
                 <div style="display: flex">
                     <div style="width: 72px;height: 39px;margin-right:40px">

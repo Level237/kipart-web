@@ -51,7 +51,7 @@ Choisissez votre Agence
               </div>
             <div class="input left">
               <img src="{{ asset('assets/images/icon-departure.svg') }}" alt="departure icon" />
-              <input type="text" class="typeahead form-control" value="{{ $arrayTravel['departure'] }}" autocomplete="off" type="text" placeholder="Destination" name="departure" required />
+              <input type="text" class="typeahead form-control" value="{{ $arrayTravel['departure'] }}" autocomplete="off" type="text" placeholder="Départ" name="departure" required />
             </div>
             <div class="input left">
               <img src="{{ asset('assets/images/icon-location.svg') }}" alt="location icon" />
@@ -147,7 +147,7 @@ Choisissez votre Agence
                 </div>
               </div>
             <hr />
-            <div id="all-departures">
+            {{-- <div id="all-departures">
                 <header>
                   <h6>Tous les départs</h6>
                   <div>
@@ -316,7 +316,7 @@ Choisissez votre Agence
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> --}}
             <div class="message">
               Les prix peuvent changer selon la disponibilité des bus. Tous les frais supplémentaires peuvent être examinés avant le paiement. Le prix total sera finalisé une fois l'achat terminé.
             </div>
