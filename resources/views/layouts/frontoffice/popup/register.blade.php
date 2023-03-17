@@ -16,7 +16,7 @@
       </div>
     </fieldset>
     <div class="actions">
-      <button type="submit">Créer un compte</button>
-      <div>En créeant votre compte vous acceptez nos <a href="#">conditions d'utilisation</a> et notre <a href="#">politique de confidentialité</a></div>
+      <button type="submit">{{ __("Create account")}}</button>
+      <div>{{ __("By creating your account you agree to our")}} <a href="#">{{ __("Terms of use")}}</a> {{ __("and our")}} <a href="#">{{ __("Privacy Policy")}}</a></div>
     </div>
   </form>

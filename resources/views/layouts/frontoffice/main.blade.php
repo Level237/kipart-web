@@ -75,8 +75,8 @@
             <div class="dialog-content">
                 <div class="advert">
                   <div>
-                    <span class="white">Connectez-vous</span>
-                    <span class="colored">et vivez pleinement l'expérience</span>
+                    <span class="white">{{ __("Login ")}}</span>
+                    <span class="colored">{{ __("and fully live the experience ")}}</span>
                     <span class="white">Ki</span><span class="colored">Part</span>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.frontoffice.main')
 @section('title')
-Renseignez vos informations et payez
+{{ __("Fill in your information and pay")}}
 @endsection
 
 @section('content')
@@ -84,11 +84,11 @@ Renseignez vos informations et payez
     <section id="breadcumb">
       <div class="content">
         <ul>
-          <li>Choix du siège</li>
+          <li>{{ __("Choice of seat")}}</li>
           <li><img src="{{ asset('assets/images/icon-arrow-right.svg') }}" alt="icon arrow" /></li>
-          <li>Informations du passager</li>
+          <li>{{ __("Passenger information")}}</li>
           <li><img src="{{ asset('assets/images/icon-arrow-right.svg') }}" alt="icon arrow" /></li>
-          <li>Révision et paiement</li>
+          <li>{{ __("Review and payment")}}</li>
         </ul>
       </div>
     </section>
@@ -96,7 +96,7 @@ Renseignez vos informations et payez
       <div class="content">
         <div class="card">
           <header style="background: url({{ asset('assets/images/orange.png') }});;width:100%;">
-            Detail Orange Money
+            {{ __("Orange Money detail")}}
           </header>
           <form action="{{ route('payment.withOm') }}" method="post">
             @csrf
@@ -111,7 +111,7 @@ Renseignez vos informations et payez
             </fieldset>
             <div class="actions">
               <button type="submit">
-                Payez (<span>{{ $travels['price'] + 500 }} FCFA</span>)
+                {{ __("Pay")}} (<span>{{ $travels['price'] + 500 }} FCFA</span>)
               </button>
             </div>
           </form>
@@ -121,11 +121,11 @@ Renseignez vos informations et payez
             @foreach ($currentPassengers as $passenger)
                 <div id="coords">
                     <div>
-                    <div>Coordonnées du passager</div>
+                    <div>{{ __("Passenger details")}}</div>
                     <div>
                         <a href="#">
                         <img src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
-                        Modifier
+                        {{ __("Edit")}}
                         </a>
                     </div>
                     </div>
@@ -143,7 +143,7 @@ Renseignez vos informations et payez
               <div>
                 <a href="#">
                   <img src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
-                  Modifier
+                  {{ __("Edit")}}
                 </a>
               </div>
             </div>
@@ -164,11 +164,11 @@ Renseignez vos informations et payez
               <div>{{ $travels['price'] }} FCFA</div>
             </div>
             <div>
-              <div>Frais KiPART</div>
+              <div>{{ __("KiPART fees")}}</div>
               <div>500 FCFA</div>
             </div>
             <div>
-              <div>Net à payer</div>
+              <div>{{ __("Total")}}</div>
               <div>{{ $travels['price'] + 500 }} FCFA</div>
             </div>
           </div>

@@ -12,7 +12,7 @@
         </div>
         @endif
     <fieldset>
-      <div class="title">Profitez de réservations et de remboursements plus rapides ainsi que les réductions</div>
+      <div class="title">{{ __("Enjoy faster reservations and refunds as well as discounts")}}</div>
 
       <div class="input">
         <input type="text" name="phone_number" id="username" placeholder="Téléphone" />
@@ -22,16 +22,16 @@
         <button type="button"><img src="{{ asset('assets/images/icon-eye.svg') }}" alt="eye icon" /></button>
       </div>
       <div class="group">
-        <div><a href= {{route('reset')}}>Mot de passe oublié?</a></div>
+        <div><a href= {{route('reset')}}>{{ __("Forgot password? ")}}</a></div>
         <div>
           <input type="checkbox" />
-          Se souvenir de moi
+          {{ __("Remember me ")}}
         </div>
       </div>
     </fieldset>
     <div class="actions">
-      <button type="submit">CONNEXION</button>
-      <div>Vous n'avez pas encore de compte ?</div>
-      <div><a href="#">Créer un compte</a></div>
+      <button type="submit">{{ __("Login ")}}</button>
+      <div>{{ __("Do not have an account yet ")}} ?</div>
+      <div><a href="#">{{ __("Create account ")}}</a></div>
     </div>
   </form>

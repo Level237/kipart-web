@@ -1,6 +1,6 @@
 @extends('layouts.frontoffice.main')
 @section('title')
-Choisissez votre Agence
+{{ __("Choose your agency")}}
 @endsection
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 <style>
@@ -45,8 +45,8 @@ Choisissez votre Agence
           <form method="get" action="{{ route('search.step-one') }}">
             <div class="input select">
                 <select name="type" value="{{ $arrayTravel['type'] }}">
-                  <option value="aller-simple" >Aller Simple</option>
-                  <option value="aller-retour">Aller et Retour</option>
+                  <option value="aller-simple" >{{ __("One way")}}</option>
+                  <option value="aller-retour">{{ __("Round Trip")}}</option>
                 </select>
               </div>
             <div class="input left">
@@ -96,7 +96,7 @@ Choisissez votre Agence
                 </div>
               </div>
             <div class="actions">
-              <button type="submit">CHERCHER</button>
+              <button type="submit">{{ __("SEARCH")}}</button>
             </div>
           </form>
         </div>
@@ -106,7 +106,7 @@ Choisissez votre Agence
           <div class="">
             <div id="by-agencies">
                 <header>
-                  <h6>Départs par agence de voyage</h6>
+                  <h6>{{ __("Departure by travel agency")}}</h6>
                 </header>
                 <div class="items">
                     @foreach ($datas as $data)
@@ -137,7 +137,7 @@ Choisissez votre Agence
                         </div>
                     </div>
                     @empty
-                        <div style="color:gray;text-align:justify;">Aucune Agence disponible Pour ce voyage</div>
+                        <div style="color:gray;text-align:justify;">{{ __("No Agency available For this trip")}}</div>
                     @endforelse
 
 
@@ -149,12 +149,12 @@ Choisissez votre Agence
             <hr />
             {{-- <div id="all-departures">
                 <header>
-                  <h6>Tous les départs</h6>
+                  <h6>{{ __("All departures")}}</h6>
                   <div>
-                    <span>Trié par</span>
+                    <span>{{ __("sort by")}}</span>
                     <select>
-                      <option value="">Heure de départ</option>
-                      <option value="">Heure d'arrivée</option>
+                      <option value="">{{ __("Departure time")}}</option>
+                      <option value="">{{ __("Arrival time")}}</option>
                     </select>
                   </div>
                 </header>
@@ -162,22 +162,22 @@ Choisissez votre Agence
                   <div class="item">
                     <div class="infos">
                       <div class="header">
-                        <div>Nom de l'agence</div>
+                        <div>{{ __("Agency name")}}</div>
                         <div class="name">Douala - Yaoundé</div>
                       </div>
                       <div class="body">
                         <div class="hour">04:00</div>
                         <div class="others">
                           <div>
-                            <div>Type de vehicule</div>
+                            <div>{{ __("Vehicle Type")}}</div>
                             <div class="type-of-car">Gros porteur</div>
                           </div>
                           <div>
-                            <div>Classe</div>
+                            <div>{{ __("Class")}}</div>
                             <div class="class">VIP</div>
                           </div>
                           <div>
-                            <div>Nombre de places</div>
+                            <div>{{ __("Number of places")}}</div>
                             <div class="seats">70</div>
                           </div>
                         </div>
@@ -190,7 +190,7 @@ Choisissez votre Agence
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-regular fa-star"></i>
                         </div>
-                        <div> <a href="#">Notez l'agence</a></div>
+                        <div> <a href="#">{{ __("Rate the agency")}}</a></div>
                       </div>
                     </div>
                     <div class="price">
@@ -201,22 +201,22 @@ Choisissez votre Agence
                   <div class="item">
                     <div class="infos">
                       <div class="header">
-                        <div>Nom de l'agence</div>
+                        <div>{{ __("Agency name")}}</div>
                         <div class="name">Douala - Yaoundé</div>
                       </div>
                       <div class="body">
                         <div class="hour">04:00</div>
                         <div class="others">
                           <div>
-                            <div>Type de vehicule</div>
+                            <div>{{ __("Vehicle Type")}}</div>
                             <div class="type-of-car">Gros porteur</div>
                           </div>
                           <div>
-                            <div>Classe</div>
+                            <div>{{ __("Class")}}</div>
                             <div class="class">VIP</div>
                           </div>
                           <div>
-                            <div>Nombre de places</div>
+                            <div>{{ __("Number of places")}}</div>
                             <div class="seats">70</div>
                           </div>
                         </div>
@@ -229,7 +229,7 @@ Choisissez votre Agence
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-regular fa-star"></i>
                         </div>
-                        <div> <a href="#">Notez l'agence</a></div>
+                        <div> <a href="#">{{ __("Rate the agency")}}</a></div>
                       </div>
                     </div>
                     <div class="price">
@@ -240,22 +240,22 @@ Choisissez votre Agence
                   <div class="item">
                     <div class="infos">
                       <div class="header">
-                        <div>Nom de l'agence</div>
+                        <div>{{ __("Agency name")}}</div>
                         <div class="name">Douala - Yaoundé</div>
                       </div>
                       <div class="body">
                         <div class="hour">04:00</div>
                         <div class="others">
                           <div>
-                            <div>Type de vehicule</div>
+                            <div>{{ __("Vehicle Type")}}</div>
                             <div class="type-of-car">Gros porteur</div>
                           </div>
                           <div>
-                            <div>Classe</div>
+                            <div>{{ __("Class")}}</div>
                             <div class="class">VIP</div>
                           </div>
                           <div>
-                            <div>Nombre de places</div>
+                            <div>{{ __("Number of places")}}</div>
                             <div class="seats">70</div>
                           </div>
                         </div>
@@ -268,7 +268,7 @@ Choisissez votre Agence
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-regular fa-star"></i>
                         </div>
-                        <div> <a href="#">Notez l'agence</a></div>
+                        <div> <a href="#">{{ __("Rate the agency")}}</a></div>
                       </div>
                     </div>
                     <div class="price">
@@ -279,22 +279,22 @@ Choisissez votre Agence
                   <div class="item">
                     <div class="infos">
                       <div class="header">
-                        <div>Nom de l'agence</div>
+                        <div>{{ __("Agency name")}}</div>
                         <div class="name">Douala - Yaoundé</div>
                       </div>
                       <div class="body">
                         <div class="hour">04:00</div>
                         <div class="others">
                           <div>
-                            <div>Type de vehicule</div>
+                            <div>{{ __("Vehicle Type")}}</div>
                             <div class="type-of-car">Gros porteur</div>
                           </div>
                           <div>
-                            <div>Classe</div>
+                            <div>{{ __("Class")}}</div>
                             <div class="class">VIP</div>
                           </div>
                           <div>
-                            <div>Nombre de places</div>
+                            <div>{{ __("Number of places")}}</div>
                             <div class="seats">70</div>
                           </div>
                         </div>
@@ -307,7 +307,7 @@ Choisissez votre Agence
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-regular fa-star"></i>
                         </div>
-                        <div> <a href="#">Notez l'agence</a></div>
+                        <div> <a href="#">{{ __("Rate the agency")}}</a></div>
                       </div>
                     </div>
                     <div class="price">
@@ -318,12 +318,12 @@ Choisissez votre Agence
                 </div>
               </div> --}}
             <div class="message">
-              Les prix peuvent changer selon la disponibilité des bus. Tous les frais supplémentaires peuvent être examinés avant le paiement. Le prix total sera finalisé une fois l'achat terminé.
+                {{ __("Prices may change depending on bus availability. Any additional charges can be reviewed prior to payment. The total price will be finalized once the purchase is complete")}}
             </div>
           </div>
           <div class="advertising">
-            <div>Espace encart PUB</div>
-            <div>Espace encore PUB</div>
+            <div>{{ __("Pub Space")}}</div>
+            <div>{{ __("Pub Space")}}</div>
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 
 @extends('layouts.frontoffice.main')
 @section('title')
-Choisissez votre methode de paiement
+{{ __("Choose your payment method")}}
 @endsection
 
 @section('content')
@@ -9,11 +9,11 @@ Choisissez votre methode de paiement
     <section id="breadcumb">
       <div class="content">
         <ul>
-          <li>Choix du siège</li>
+          <li>{{ __("Choice of seat")}}</li>
           <li><img src="{{ asset('assets/images/icon-arrow-right.svg') }}" alt="icon arrow" /></li>
-          <li>Informations du passager</li>
+          <li>{{ __("Passenger information")}}</li>
           <li><img src="{{ asset('assets/images/icon-arrow-right.svg') }}" alt="icon arrow" /></li>
-          <li>Révision et paiement</li>
+          <li>{{ __("Review and payment")}}</li>
         </ul>
       </div>
     </section>
@@ -23,11 +23,11 @@ Choisissez votre methode de paiement
             @foreach ($currentPassengers as $passenger)
                 <div id="coords">
                     <div>
-                    <div>Coordonnées du passager</div>
+                    <div>{{ __("Passenger details")}}</div>
                     <div>
                         <a href="#">
                         <img src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
-                        Modifier
+                        {{ __("Edit")}}
                         </a>
                     </div>
                     </div>
@@ -41,11 +41,11 @@ Choisissez votre methode de paiement
 
           <div id="choosen">
             <div>
-              <div>départ choisi</div>
+              <div>{{ __("Departure chosen")}}</div>
               <div>
                 <a href="#">
                   <img src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
-                  Modifier
+                  {{ __("Edit")}}
                 </a>
               </div>
             </div>
@@ -66,17 +66,17 @@ Choisissez votre methode de paiement
               <div>{{ $travels['price'] }} FCFA</div>
             </div>
             <div>
-              <div>Frais KiPART</div>
+              <div>{{ __("Total")}}</div>
               <div>500 FCFA</div>
             </div>
             <div>
-              <div>Net à payer</div>
+              <div>{{ __("KiPART fees")}}</div>
               <div>{{ $travels['price'] + 500 }} FCFA</div>
             </div>
           </div>
           <div id="reduction">
             <div>
-              Appliquer une reduction (optionnel)
+                {{ __("Apply a discount (optional)")}}
             </div>
             <div>
               <form>
@@ -84,7 +84,7 @@ Choisissez votre methode de paiement
                   <input type="text" name="code" id="code" placeholder="Code de réduction" />
                 </div>
                 <div class="actions">
-                  <button type="submit">Appliquer</button>
+                  <button type="submit">{{ __("Apply")}}</button>
                 </div>
               </form>
             </div>
@@ -92,7 +92,7 @@ Choisissez votre methode de paiement
 
           <div id="method-payment">
             <div>
-              Méthode de paiement
+                {{ __("Payment method")}}
             </div>
 
             <form action="{{ route('payment-final') }}" method="get" >
@@ -119,15 +119,16 @@ Choisissez votre methode de paiement
 
           </div>
           <div id="actions">
-            <button type="submit">Procéder au paiement</button>
+            <button type="submit">{{ __("Proceed to payment")}}</button>
             <p>
-              Les prix incluent les taxes et peuvent changer selon la disponibilité. Le prix sera finalisé une fois l'achat terminé. Tous les frais supplémentaires peuvent être examinés avant le paiement.
+                {{ __("
+                Prices include taxes and may change based on availability. Pricing will be finalized once purchase is complete. Any additional charges can be reviewed prior to payment.")}}
             </p>
           </div>
         </form>
         </div>
         <div class="advert">
-          ESPACE ENCART PUB
+            {{ __("Space Pub")}}
         </div>
       </div>
     </section>

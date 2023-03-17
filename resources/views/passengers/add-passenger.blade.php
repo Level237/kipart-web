@@ -1,6 +1,6 @@
 @extends('layouts.frontoffice.main')
 @section('title')
-Ajouter un passager
+{{ __("Add a passenger")}}
 @endsection
 
 @section('content')
@@ -9,11 +9,11 @@ Ajouter un passager
     <section id="breadcumb">
       <div class="content">
         <ul>
-          <li>Choix du siège</li>
+          <li>{{ __("Choice of seat")}}</li>
           <li><img src="{{ asset('assets/images/icon-arrow-right.svg') }}" alt="icon arrow" /></li>
-          <li>Informations du passager</li>
+          <li>{{ __("Passenger information")}}</li>
           <li><img src="{{ asset('assets/images/icon-arrow-right.svg') }}" alt="icon arrow" /></li>
-          <li>Révision et paiement</li>
+          <li>{{ __("Review and payment")}}</li>
         </ul>
       </div>
     </section>
@@ -43,13 +43,13 @@ Ajouter un passager
 
             <div class="actions">
 
-              <button type="submit" style="margin-top: 10px;">Ajouter</button>
+              <button type="submit" style="margin-top: 10px;">{{ __("Add")}}</button>
             </div>
           </form>
         </article>
         <article id="travel">
           <div id="choosen">
-            <div>départ choisi</div>
+            <div>{{ __("Departure chosen")}}</div>
             <div class="infos">
               <div class="towns">{{ $myTravel['departure'] }} - {{ $myTravel['arrival'] }}</div>
               <div class="date-seats">
@@ -67,16 +67,16 @@ Ajouter un passager
               <div>{{ $myTravel['price'] }} FCFA</div>
             </div>
             <div>
-              <div>Frais KiPART</div>
+              <div>{{ __("KiPART fees")}}</div>
               <div>500 FCFA</div>
             </div>
             <div>
-              <div>Net à payer</div>
+              <div>{{ __("Total")}}</div>
               <div>{{ $myTravel['price'] + 500 }} FCFA</div>
             </div>
           </div>
           <div id="more">
-            Les prix incluent les taxes et peuvent changer selon la disponibilité. Le prix sera finalisé une fois l'achat terminé. Tous les frais supplémentaires peuvent être examinés avant le paiement.
+            {{ __("Prices include taxes and may change based on availability. Pricing will be finalized once purchase is complete. Any additional charges can be reviewed prior to payment.")}}
           </div>
         </article>
       </div>
