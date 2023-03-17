@@ -54,13 +54,13 @@
                     <div>
 
                       <div class="input right">
-<<<<<<< HEAD
-                        <input type="number" value="{{ $arrayTravel['number_of_places']  }}" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
 
-=======
+                     
+
+
                         <input type="number" value="{{ $arrayTravel['number_of_places']  }}" autocomplete="off" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
     
->>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
+
                         <button type="button" class="no-bg" >
 
                           <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" onclick="increaseNumberOfPassengers()"/>

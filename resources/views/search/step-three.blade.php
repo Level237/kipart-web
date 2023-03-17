@@ -1,6 +1,6 @@
 @extends('layouts.frontoffice.main')
 @section('title')
-{{ __("Choose your trip")}}
+Choisissez votre Voyage
 @endsection
 
 <style>
@@ -36,8 +36,8 @@
               <form method="get" action="{{ route('search.step-one') }}">
                 <div class="input select">
                     <select name="type" value="{{ $arrayTravel['type'] }}">
-                      <option value="aller-simple" >{{ __("One way")}}</option>
-                      <option value="aller-retour">{{ __("Round Trip")}}</option>
+                      <option value="aller-simple" >Aller Simple</option>
+                      <option value="aller-retour">Aller et Retour</option>
                     </select>
                   </div>
                 <div class="input left">
@@ -54,37 +54,32 @@
                     <input type="date" name="dateDeparture"  value="{{ $arrayTravel['dateDeparture'] }}"  required  />
                   </div>
                   <div class="input">
-
+    
                     <select name="departure_time" id="" value="{{ $arrayTravel['departure_time'] }}" required>
                         @foreach ($hours as $hour)
                         <option value="{{ $hour->hours }}" @selected($arrayTravel['departure_time'] ==$hour->hours)>{{ $hour->hours }}</option>
                     @endforeach
                     </select>
-
+    
                 </div>
                 </div>
                 <div class="group">
                     <div>
-
+    
                       <div class="input right">
-<<<<<<< HEAD
-                        <input type="number" value="{{ $arrayTravel['number_of_places']  }}" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
-
-=======
                         <input type="number" value="{{ $arrayTravel['number_of_places']  }}" autocomplete="off" placeholder="1" id="number-of-passengers" value="1" name="number_of_places" required />
     
->>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
                         <button type="button" class="no-bg" >
-
+    
                           <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon" onclick="increaseNumberOfPassengers()"/>
                           <img src="{{asset('assets/images/icon-substract.svg')}}" alt="plus icon" onclick="decreaseNumberOfPassengers()" />
                         </button>
-
-
+    
+    
                       </div>
                     </div>
                     <div>
-
+    
                       <select name="classe" value="{{ $arrayTravel['classe'] }}">
                         <option value="Vip" @selected($arrayTravel['classe'] =="Vip")>VIP</option>
                         <option value="Classique"  @selected($arrayTravel['classe'] =="Classique")>Classique</option>
@@ -92,7 +87,7 @@
                     </div>
                   </div>
                 <div class="actions">
-                  <button type="submit">{{ __("SEARCH")}}</button>
+                  <button type="submit">CHERCHER</button>
                 </div>
               </form>
             </div>
@@ -104,12 +99,12 @@
             <hr />
             <div id="all-departures">
               <header>
-                <h6>{{ __("All departures")}}</h6>
+                <h6>Tous les départs</h6>
                 <div>
-                  <span>{{ __("sort by")}}</span>
+                  <span>Trié par</span>
                   <select>
-                    <option value="">{{ __("Heure de départ")}}</option>
-                    <option value="">{{ __("Heure d'arrivee")}}</option>
+                    <option value="">Heure de départ</option>
+                    <option value="">Heure d'arrivée</option>
                   </select>
                 </div>
               </header>
@@ -117,23 +112,6 @@
                 @foreach ($datas as $travel)
 
 
-<<<<<<< HEAD
-
-
-
-                    <form method="get" action="{{ route('goto-passenger') }}" id="add">
-                        @csrf
-                        <input type="hidden" name="travel_id" value="{{ $travel->id }}">
-                        <input type="hidden" name="departure" value="{{ $travel->departure }}">
-                        <input type="hidden" name="arrival" value="{{ $travel->arrival }}">
-                        <input type="hidden" name="date" value="{{ $travel->date }}">
-                        <input type="hidden" name="hour" value="{{ $travel->hours }}">
-                        <input type="hidden" name="price" value="{{ $travel->price }}">
-                        <input type="hidden" name="places" value="{{ $travel->number_of_places }}">
-                        <input type="hidden" name="classe" value="{{ $travel->classe }}">
-                        <button type="submit" style="border: none">
-=======
->>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
 
 
 
@@ -148,15 +126,15 @@
                                     <div class="hour">{{ $travel->hours }}</div>
                                     <div class="others">
                                     <div>
-                                        <div>{{ __("Vehicle Type")}}</div>
+                                        <div>Type de vehicule</div>
                                         <div class="type-of-car">Gros porteur</div>
                                     </div>
                                     <div>
-                                        <div>{{ __("Class")}}</div>
+                                        <div>Classe</div>
                                         <div class="class">{{ $travel->classe }}</div>
                                     </div>
                                     <div>
-                                        <div>{{ __("Places remaining")}}</div>
+                                        <div>Nombre de places restante</div>
                                         <div class="seats">{{ $travel->placeAvailable }}</div>
                                     </div>
                                     </div>
@@ -171,7 +149,7 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                     </div>
-                                    <div> <a href="#">{{ __("Rate the agency")}}</a></div>
+                                    <div> <a href="#">Notez l'agence</a></div>
                                 </div>
                                 </div>
                                 <form method="get" action="{{ route('goto-passenger') }}" id="add">
@@ -201,32 +179,24 @@
 
                                 </form>
                             </div>
-<<<<<<< HEAD
-                        </button>
-                    </form>
-=======
->>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
 
 
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> b5dfa6b4752e28a7940504c5c43ced5d20dcdd9a
                 @endforeach
 
 
               </div>
             </div>
             <div class="message">
-                {{ __("Prices may change depending on bus availability. Any additional charges can be reviewed prior to payment. The total price will be finalized once the purchase is complete")}}
+              Les prix peuvent changer selon la disponibilité des bus. Tous les frais supplémentaires peuvent être examinés avant le paiement. Le prix total sera finalisé une fois l'achat terminé.
             </div>
           </div>
           <div class="advertising">
-            <div>{{ __("Pub Space")}}</div>
-            <div>{{ __("Pub Space")}}</div>
+            <div>Espace encart PUB</div>
+            <div>Espace encart PUB</div>
           </div>
         </div>
       </section>
