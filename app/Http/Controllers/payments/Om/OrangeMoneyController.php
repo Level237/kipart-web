@@ -53,7 +53,7 @@ class OrangeMoneyController extends Controller
                 }
                 return redirect()->back()->with("error","une erreur s'est produit");
             }
-            return $statusPayment;
+            return redirect()->back()->with("error","une erreur s'est produit");
         }
 
         if($initresponse->message="Votre Credit est insuffisant"){

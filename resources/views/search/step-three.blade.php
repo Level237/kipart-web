@@ -201,4 +201,17 @@ Choisissez votre Voyage
         </div>
       </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+      <script type="text/javascript">
+        var path = "{{ route('list.departure') }}";
+        $('input.typeahead').typeahead({
+            source:  function (query, process) {
+            return $.get(path, { query: query }, function (data) {
+                console.log(data);
+                    return process(data);
+                });
+            }
+        });
+    </script>
 @endsection
