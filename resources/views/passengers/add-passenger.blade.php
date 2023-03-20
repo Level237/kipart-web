@@ -28,7 +28,7 @@
                 <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" value="{{ $userCurrent['name'] }}" required>
               </div>
               <div class="input">
-                <input type="text" name="cni[]" id="nic" placeholder="N CNI" required/>
+                <input type="number"  id="nic" placeholder="N CNI" required/>
               </div>
               <div class="input">
                 <input type="number" name="telephone[]"  id="phone" placeholder="Téléphone" value="{{ $userCurrent['phone_number'] }}"/>
