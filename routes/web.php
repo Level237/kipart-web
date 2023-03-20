@@ -61,6 +61,7 @@ Route::get('cgu', function (){
     return view ('CGU');
 })->name('cgu');
 Route::put('update/passenger/{id}',[UpdatePassengerController::class,'update'])->name('update.passenger');
+Route::get('dasboard',[DashboardController::class,'index'])->name('dashboard');
 Route::get('user/listTicket', [CustomerTicketController::class, 'ListTicket'])->name('list.tickets');
 Route::get('User/DisplayTicket/{id}', [CustomerTicketController::class, 'DisplayTicket'])->name ('display.ticket');
 Route::post('User/sendCode', [PasswordResetController::class, 'SendCode'])->name('send');

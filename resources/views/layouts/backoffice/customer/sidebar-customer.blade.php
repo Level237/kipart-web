@@ -10,71 +10,24 @@
                 <div class="user-info">
                     <a class="image" href="profile.html"><img src="{{ asset('admin/assets/images/profile_av.jpg') }}" alt="User"></a>
                     <div class="detail">
-                        <h4>customer</h4>
-                        <small>Admin Kipart</small>
+                        <h4>{{ $userCurrent['name'] }}</h4>
+                        
                     </div>
                 </div>
             </li>
             <li class="active open"><a href=""><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
             <li><a href="my-profile.html"><i class="zmdi zmdi-account"></i><span>Mon Profil</span></a></li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span></a>
-                <ul class="ml-menu">
-                    <li><a href="mail-inbox.html">Email</a></li>
-                    <li><a href="chat.html">kiPART Apps</a></li>
-                    <li><a href="events.html">Calendar</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-traffic"></i><span>Agences</span></a>
-                <ul class="ml-menu">
-                    <li><a href="{{ route('admin.agencies.index') }}">Liste</a></li>
-                    <li><a href="">Ajouter</a></li>
-
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-bus"></i><span>Voyages</span></a>
-                <ul class="ml-menu">
-                    <li><a href="">Tout les voyages</a></li>
-                    {{-- <li><a href="{{ route('admin.travels.create') }}">Generer</a></li> --}}
-
-                </ul>
+           
+            
+            <li> <a href="{{route('list.tickets')}}" class="menu-toggle"><i class="zmdi zmdi-ticket-star"></i><span>Mes Tickets</span></a>
+        
             </li>
 
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-bus"></i><span>Trajet</span></a>
-                <ul class="ml-menu">
-                    <li><a href="">Tout les Trajets</a></li>
-                    <li><a href="">Ajouter un trajet</a></li>
+           
+            
+            
 
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Brand Ambassador</span></a>
-                <ul class="ml-menu">
-                    <li><a href="{{ route('admin.brandGirls.index') }}">Listes</a></li>
-                    <li><a href="{{ route('admin.brandGirls.create') }}">Ajouter une Brand Ambassador</a></li>
-
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-bus"></i><span>bus</span></a>
-                <ul class="ml-menu">
-                    <li><a href="">Tout les Bus</a></li>
-                    <li><a href="">Ajouter un Bus</a></li>
-
-                </ul>
-            </li>
-
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-ticket-star"></i><span>Tickets</span></a>
-                <ul class="ml-menu">
-                    <li><a href="ec-dashboard.html">Historique</a></li>
-                    <li><a href="ec-dashboard.html">Lister</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-box-o"></i><span>Utilisateurs</span></a>
-                <ul class="ml-menu">
-                    <li><a href="sign-in.html">Lister</a></li>
-                    <li><a href="sign-up.html">Creer un compte Admin</a></li>
-
-                </ul>
-            </li>
+           
             {{-- <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>Components</span></a>
                 <ul class="ml-menu">
                     <li><a href="ui_kit.html">Aero UI KIT</a></li>
@@ -121,56 +74,12 @@
                     <li><a href="table-color.html">Tables Color</a></li>
                 </ul>
             </li>--}}
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-group"></i><span>Chats</span></a>
-            </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Blog</span></a>
-                <ul class="ml-menu">
-                    <li><a href="blog-dashboard.html">Creer</a></li>
-                    <li><a href="blog-post.html">Blog Post</a></li>
-                    <li><a href="blog-list.html">List View</a></li>
-                    <li><a href="blog-grid.html">Grid View</a></li>
-                    <li><a href="blog-details.html">Blog Details</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-delicious"></i><span>Widgets</span></a>
-                <ul class="ml-menu">
-                    <li><a href="widgets-app.html">Apps Widgets</a></li>
-                    <li><a href="widgets-data.html">Data Widgets</a></li>
-                </ul>
-            </li>
+            
+            
 
-            <li class="open_top"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>F A Q</span></a>
-                <ul class="ml-menu">
-                    <li><a href="blank.html">Creer</a></li>
-                    <li><a href="image-gallery.html">Lister</a></li>
-
-                </ul>
-            </li>
-            <li class="open_top"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-map"></i><span>Maps</span></a>
-                <ul class="ml-menu">
-                    <li><a href="google.html">Google Map</a></li>
-                    <li><a href="yandex.html">YandexMap</a></li>
-                    <li><a href="jvectormap.html">jVectorMap</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="progress-container progress-primary m-t-10">
-                    <span class="progress-badge">Traffic this Month</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="width: 67%;">
-                            <span class="progress-value">67%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-container progress-info">
-                    <span class="progress-badge">Server Load</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
-                            <span class="progress-value">86%</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            
+            
+            
         </ul>
     </div>
 </aside>
