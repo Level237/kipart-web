@@ -248,7 +248,9 @@ img {
   /* background-color: white; 3 */
 }
 
-
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 
 input[type=date]::-webkit-inner-spin-button,
 input[type=date]::-webkit-calendar-picker-indicator {

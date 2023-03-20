@@ -28,7 +28,7 @@
                 <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" value="{{ $userCurrent['name'] }}" required>
               </div>
               <div class="input">
-                <input type="number"  id="nic" placeholder="N CNI" required/>
+                <input type="number" name="cni[]"  id="nic" placeholder="N CNI" required/>
               </div>
               <div class="input">
                 <input type="number" name="telephone[]"  id="phone" placeholder="Téléphone" value="{{ $userCurrent['phone_number'] }}"/>
@@ -91,7 +91,7 @@
         const newDiv = document.createElement(`fieldset`);
         newDiv.setAttribute('id',`fieldset-${i}`);
         const div=document.getElementById('form');
-        newDiv.innerHTML=`<div onclick="closeBtn(${i})"><button type="button" style="border: none;"><img src="{{ asset('assets/images/icon-times.svg') }}" alt="Close this dialog" /></button></div><div class="input"><input type="text" name="name[]" id="name" placeholder="Noms & Prénoms"></div><div class="input"><input type="text" style="margin-top: 15px;" name="cni[]" id="nic" placeholder="N CNI" /></div><div class="input"><input type="text" style="margin-top: 15px;" name="telephone[]" id="phone" placeholder="Téléphone"  /></div><hr>`
+        newDiv.innerHTML=`<div onclick="closeBtn(${i})"><button type="button" style="border: none;"><img src="{{ asset('assets/images/icon-times.svg') }}" alt="Close this dialog" /></button></div><div class="input"><input type="text" name="name[]" id="name" placeholder="Noms & Prénoms"></div><div class="input"><input type="number" style="margin-top: 15px;" name="cni[]" id="nic" placeholder="N CNI" /></div><div class="input"><input type="number" style="margin-top: 15px;" name="telephone[]" id="phone" placeholder="Téléphone"  /></div><hr>`
         div.appendChild(newDiv);
 
 

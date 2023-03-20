@@ -35,7 +35,7 @@
     <section id="details">
       <div class="content">
         <div class="card">
-          <header>
+          <header style="background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ asset('assets/images/visa.png') }});;width:100%;">
             {{ __("Card Details")}}
           </header>
           <form action="{{ route('pay') }}" method="post">

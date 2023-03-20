@@ -99,7 +99,7 @@
                 @csrf
                 <div style="display: flex">
                     <div style="width: 72px;height: 39px;margin-right:40px">
-                      <input type="radio" name="method_payment" value="om" />
+                      <input type="radio" name="method_payment" value="om" checked/>
                       <img src="{{ asset('assets/images/orange.png') }}" alt="icon om" style="width: 50px; height:50px;vertical-align:middle" />
                     </div>
                     <div style="width: 72px;height: 39px;margin-right:40px">
