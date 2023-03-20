@@ -18,6 +18,7 @@ use App\Http\Controllers\test\payments\stripe\TestPaymentController;
 use App\Http\Controllers\User\OtpVerificationController;
 use App\Http\Controllers\User\auth\RegisterController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\Passengers\UpdatePassengerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,7 +60,7 @@ Route::get('Privacy-Policy', function (){
 Route::get('cgu', function (){
     return view ('CGU');
 })->name('cgu');
-
+Route::put('update/passenger/{id}',[UpdatePassengerController::class,'update'])->name('update.passenger');
 Route::get('user/listTicket', [CustomerTicketController::class, 'ListTicket'])->name('list.tickets');
 Route::get('User/DisplayTicket/{id}', [CustomerTicketController::class, 'DisplayTicket'])->name ('display.ticket');
 Route::post('User/sendCode', [PasswordResetController::class, 'SendCode'])->name('send');

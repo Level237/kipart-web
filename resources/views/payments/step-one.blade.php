@@ -4,7 +4,36 @@
 {{ __("Choose your payment method")}}
 @endsection
 
+<style>
+
+    .modal-update{
+        background-color: white;
+    margin: auto;
+    padding: 30px;
+    border: none;
+    width: 30%;
+    align-content: center;
+    vertical-align: middle;
+    }
+    .close-btn {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close-btn:hover,
+  .close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
 @section('content')
+<div id="update" class="updateBlock">
+
+
+    
+</div>
 <main id="resume">
     <section id="breadcumb">
       <div class="content">
@@ -20,25 +49,66 @@
     <section id="details">
       <div class="content">
         <div>
-            @foreach ($currentPassengers as $passenger)
+            @foreach ($data as $datas)
+            @foreach ($datas as $passengers)
+            @foreach($passengers->Voyageurs  as $passenger)
                 <div id="coords">
                     <div>
                     <div>{{ __("Passenger details")}}</div>
                     <div>
-                        <a href="#">
-                        <img src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
+                        <a>
+                        <img onclick="updatePassenger()" style="cursor: pointer;" src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
                         {{ __("Edit")}}
                         </a>
                     </div>
                     </div>
                     <div>
-                    <div>M. {{ $passenger['name'] }}</div>
-                    <div>CNI: <span>{{ $passenger['cni'] }}</span></div>
-                    <div>Tél.: <span>{{ $passenger['telephone'] }}</span></div>
+                    <div>M. {{ $passenger->nom }}</div>
+                    <div>CNI: <span>{{ $passenger->cniNumber }}</span></div>
+                    <div>Tél.: <span>{{ $passenger->telephone }}</span></div>
                     </div>
                 </div>
-            @endforeach
+                <div id="myModal" class="modal" style="display: none">
 
+                    <!-- Modal content -->
+                    <div class="modal-update">
+                    <span class="close-btn">&times;</span>
+                   <div>
+                    <h4 style="text-align:center">Modification</h4>
+                    <hr>
+                    <article id="informations">
+                        <form action="{{ route('update.passenger',$passenger->id) }}" method="post" >
+                            @csrf
+                            @method('PUT')
+                          <fieldset id="form">
+              
+                            <div class="input">
+                              <input type="text" name="name" style="margin-top:5px" id="name" placeholder="Noms & Prénoms" value="{{ $passenger->nom }}" required>
+                            </div>
+                            <div class="input">
+                              <input type="number" value="{{ $passenger->cniNumber }}" name="cni" style="margin-top:5px"  id="nic" placeholder="N CNI"  required/>
+                            </div>
+                            <div class="input">
+                              <input type="number" value="{{  $passenger->telephone  }}" name="telephone" style="margin-top:5px"  id="phone" placeholder="Téléphone" />
+                            </div>
+                            <hr>
+              
+                          </fieldset>
+              
+              
+                          <div class="actions">
+              
+                            <button type="submit" style="margin-top: 10px;">{{ __("Update")}}</button>
+                          </div>
+                        </form>
+                      </article>
+                   </div>
+                    </div>
+            
+                </div>
+            @endforeach
+            @endforeach
+            @endforeach
           <div id="choosen">
             <div>
               <div>{{ __("Departure chosen")}}</div>
@@ -134,4 +204,15 @@
     </section>
   </main>
 
+  <script>
+    function updatePassenger(){
+       document.querySelector(".modal").style.display="block"
+       console.log('ll')
+    }
+    var span = document.getElementsByClassName("close-btn")[0];
+  span.onclick = function() {
+    modal.style.display = "none";
+    console.log("eed");
+  }
+  </script>
   @endsection

@@ -20,6 +20,7 @@
         </div>
 
     </div>
+</div>
     @endif
     @if(Session::get("expired"))
     <div id="cancel" class="modal">
