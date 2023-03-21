@@ -22,20 +22,28 @@
         <article id="informations">
           <form action="{{ route('add-passenger') }}" method="post" >
             @csrf
-            <fieldset id="form">
 
-              <div class="input">
-                <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" value="{{ $userCurrent['name'] }}" required>
-              </div>
-              <div class="input">
-                <input type="number" name="cni[]"  id="nic" placeholder="N CNI" required/>
-              </div>
-              <div class="input">
-                <input type="number" name="telephone[]"  id="phone" placeholder="Téléphone" value="{{ $userCurrent['phone_number'] }}"/>
-              </div>
-              <hr>
 
-            </fieldset>
+                <fieldset id="form">
+
+                    <div class="input">
+                      <input type="text" name="name[]" id="name" placeholder="Noms & Prénoms" value="{{ $userCurrent['name'] }}" required>
+                    </div>
+                    <div class="input">
+                      <input type="number" name="cni[]"  id="nic" placeholder="N CNI" required/>
+                    </div>
+                    <div class="input">
+                      <input type="number" name="telephone[]"  id="phone" placeholder="Téléphone" value="{{ $userCurrent['phone_number'] }}"/>
+                    </div>
+                    <hr>
+
+                  </fieldset>
+                  @for($i = 0; $i < $place - 1; $i++)
+                  <fieldset id="fieldset-{{ $i }}">
+                    <div onclick="closeBtn({{ $i }})"><button type="button" style="border: none;"><img src="{{ asset('assets/images/icon-times.svg') }}" alt="Close this dialog" /></button></div><div class="input"><input type="text" name="name[]" id="name" placeholder="Noms & Prénoms"></div><div class="input"><input type="number" style="margin-top: 15px;" name="cni[]" id="nic" placeholder="N CNI" /></div><div class="input"><input type="number" style="margin-top: 15px;" name="telephone[]" id="phone" placeholder="Téléphone"  /></div><hr>
+                  </fieldset>
+                  @endfor
+
             <div style="margin-top: 15px; text-align:center;cursor:pointer" onclick="addPassenger()">
                 <img src="{{asset('assets/images/icon-plus.svg')}}" alt="plus icon"/>Ajouter une Personne
             </div>
@@ -54,7 +62,7 @@
               <div class="towns">{{ $myTravel['departure'] }} - {{ $myTravel['arrival'] }}</div>
               <div class="date-seats">
                 <span class="date">{{ $myTravel['date'] }}</span>,
-                <span class="number-of-seats">1 place</span>
+                <span class="number-of-seats">{{ $place }} place(s)</span>
               </div>
               <div class="agency">{{ $agency_name }}</div>
               <div class="hour">{{ $myTravel['hour'] }}</div>
@@ -63,8 +71,8 @@
           </div>
           <div id="ticket">
             <div>
-              <div>Tickets (1)</div>
-              <div>{{ $myTravel['price'] }} FCFA</div>
+              <div>Tickets ({{ $place }})</div>
+              <div>{{ $myTravel['price'] * $place }} FCFA</div>
             </div>
             <div>
               <div>{{ __("KiPART fees")}}</div>
@@ -72,7 +80,7 @@
             </div>
             <div>
               <div>{{ __("Total")}}</div>
-              <div>{{ $myTravel['price'] + 500 }} FCFA</div>
+              <div>{{ ($myTravel['price'] * $place) + (500 * $place) }} FCFA</div>
             </div>
           </div>
           <div id="more">
