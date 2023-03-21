@@ -9,6 +9,12 @@ Listes des Tickets
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
+            @if(Session::get("success"))
+                <div class="alert alert-success">
+                    <strong>{{ Session::get("success") }}</strong>
+                </div>
+            @endif
+            
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>Listes des Tickets</h2>
