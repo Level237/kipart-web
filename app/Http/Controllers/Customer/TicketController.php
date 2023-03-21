@@ -24,11 +24,12 @@ class TicketController extends Controller
     public function DisplayTicket($id){
         $accessToken= Session::get('tokenUser');
         $response=Http::retry(3,300,throw:false)->withToken($accessToken)->get('http://api.mykipart.com/api/v1/get/qrCode/'.$id);
-        $ticket=json_decode($response->body());
+        $ticket=Http::withToken($accessToken)->get('http://api.mykipart.com/api/v1/getTicket/'.$id);
+        $data=json_decode($ticket);
         $userCurrent=(new DetailUserService())->getCurrentUser();
         //return $response;
-
-        return view('customer.DisplayTicket',compact('response','userCurrent'));
+        //return $ticket;
+        return view('customer.DisplayTicket',compact('response','userCurrent','data'));
     }
 }
 
