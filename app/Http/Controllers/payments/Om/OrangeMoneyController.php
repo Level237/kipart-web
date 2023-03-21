@@ -16,8 +16,8 @@ class OrangeMoneyController extends Controller
         $agency_name = $request->session()->get('agency_name');
         $travels=$request->session()->get('travels');
         $userCurrent=(new DetailUserService())->getCurrentUser();
-
-        return view('payments.payment-with-om',compact('userCurrent','currentPassengers','travels','agency_name'));
+        $count=count($currentPassengers);
+        return view('payments.payment-with-om',compact('userCurrent','currentPassengers','travels','agency_name','count'));
     }
     public function pay(Request $request){
 

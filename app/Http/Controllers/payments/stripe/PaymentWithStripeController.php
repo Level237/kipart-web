@@ -20,9 +20,12 @@ class PaymentWithStripeController extends Controller
         $data=json_decode($list);
         $agency_name = $request->session()->get('agency_name');
         $travels=$request->session()->get('travels');
+        $currentPassenger=$request->session()->get('currentPassengers');
+
         $userCurrent=(new DetailUserService())->getCurrentUser();
-        //return $data;
-        return view('payments.step-one',compact('userCurrent','travels','agency_name','data'));
+        $count=count($currentPassenger);
+        //return $count;
+        return view('payments.step-one',compact('userCurrent','travels','agency_name','data','count'));
         //return $currentPassengers;
     }
 
@@ -33,7 +36,8 @@ class PaymentWithStripeController extends Controller
         $agency_name = $request->session()->get('agency_name');
         $travels=$request->session()->get('travels');
         $userCurrent=(new DetailUserService())->getCurrentUser();
-            return view('payments.step-two',compact('userCurrent','currentPassengers','travels','agency_name'));
+        $count=count($currentPassengers);
+            return view('payments.step-two',compact('userCurrent','currentPassengers','travels','agency_name','count'));
         }
         if($request->method_payment=="om"){
 

@@ -58,12 +58,24 @@
                 <div class="input">
                     <input type="text" name="cvv" id="cvv" placeholder="CVV" />
                   </div>
-                  <input type="hidden" name="amount" value="{{ $travels['price'] + 500 }}">
+                  @if($travels['classe']=="vip")
+                    <input type="hidden" name="amount" value="{{ $travels['price'] + 1000 }}">
+              @endif
+              @if($travels['classe']=="classique")
+                    <input type="hidden" name="amount" value="{{ $travels['price'] + 500 }}">
+            @endif
+
               </div>
             </fieldset>
             <div class="actions">
               <button type="submit">
-                {{ __("Pay")}}(<span>{{ $travels['price'] + 500 }} FCFA</span>)
+              @if($travels['classe']=="vip")
+              {{ __("Pay")}}(<span> {{ $travels['price'] + 1000 }} FCFA</span>)
+              @endif
+              @if($travels['classe']=="classique")
+              {{ __("Pay")}} ( <span> {{ $travels['price'] + 500 }} FCFA</span>)
+            @endif
+
               </button>
             </div>
           </form>
@@ -74,12 +86,7 @@
                 <div id="coords">
                     <div>
                     <div>{{ __("Passenger details")}}</div>
-                    <div>
-                        <a href="#">
-                        <img src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
-                        {{ __("Edit")}}
-                        </a>
-                    </div>
+
                     </div>
                     <div>
                     <div>M. {{ $passenger['name'] }}</div>
@@ -92,18 +99,13 @@
           <div id="choosen">
             <div>
               <div>{{ __("Departure chosen")}}</div>
-              <div>
-                <a href="#">
-                  <img src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
-                  {{ __("Edit")}}
-                </a>
-              </div>
+
             </div>
             <div class="infos">
               <div class="towns">{{ $travels['departure'] }} - {{ $travels['arrival'] }}</div>
               <div class="date-seats">
                 <span class="date">{{ $travels['date'] }}</span>,
-                <span class="number-of-seats">1 place</span>
+                <span class="number-of-seats">{{ $count }} place(s)</span>
               </div>
               <div class="agency">{{ $agency_name }}</div>
               <div class="hour">{{ $travels['hour'] }}</div>
@@ -112,16 +114,26 @@
           </div>
           <div id="ticket">
             <div>
-              <div>Tickets (1)</div>
-              <div>{{ $travels['price'] }} FCFA</div>
+                <div>Tickets ({{ $count }})</div>
+                <div>{{ $travels['price'] * $count }} FCFA</div>
             </div>
             <div>
-              <div>{{ __("KiPART fees")}}</div>
-              <div>500 FCFA</div>
+                <div>{{ __("KiPART fees")}}</div>
+                @if($travels['classe']=="vip")
+                <div>1000 FCFA</div>
+                @endif
+                @if($travels['classe']=="classique")
+                <div>500 FCFA</div>
+              @endif
             </div>
             <div>
-              <div>{{ __("Total")}}</div>
-              <div>{{ $travels['price'] + 500 }} FCFA</div>
+                <div>{{ __("Total")}}</div>
+                @if($travels['classe']=="vip")
+                  <div>{{ ($travels['price'] * $count) + (1000 * $count) }} FCFA</div>
+                @endif
+                @if($travels['classe']=="classique")
+                <div>{{ ($travels['price'] * $count) + (500 * $count) }} FCFA</div>
+              @endif
             </div>
           </div>
         </div>
@@ -135,7 +147,7 @@
         modal.style.display = "none";
         console.log("eed");
       }
-    
+
       window.onclick = function(event) {
         if (event.target == modal) {
           modal.style.display = "none";

@@ -32,7 +32,7 @@
 <div id="update" class="updateBlock">
 
 
-    
+
 </div>
 <main id="resume">
     <section id="breadcumb">
@@ -81,7 +81,7 @@
                             @csrf
                             @method('PUT')
                           <fieldset id="form">
-              
+
                             <div class="input">
                               <input type="text" name="name" style="margin-top:5px" id="name" placeholder="Noms & Prénoms" value="{{ $passenger->nom }}" required>
                             </div>
@@ -92,19 +92,19 @@
                               <input type="number" value="{{  $passenger->telephone  }}" name="telephone" style="margin-top:5px"  id="phone" placeholder="Téléphone" />
                             </div>
                             <hr>
-              
+
                           </fieldset>
-              
-              
+
+
                           <div class="actions">
-              
+
                             <button type="submit" style="margin-top: 10px;">{{ __("Update")}}</button>
                           </div>
                         </form>
                       </article>
                    </div>
                     </div>
-            
+
                 </div>
             @endforeach
             @endforeach
@@ -112,12 +112,7 @@
           <div id="choosen">
             <div>
               <div>{{ __("Departure chosen")}}</div>
-              <div>
-                <a href="#">
-                  <img src="{{ asset('assets/images/icon-edit.svg') }}" alt="icon edit" />
-                  {{ __("Edit")}}
-                </a>
-              </div>
+
             </div>
             <div class="infos">
               <div class="towns">{{ $travels['departure'] }} - {{ $travels['arrival'] }}</div>
@@ -132,16 +127,27 @@
           </div>
           <div id="ticket">
             <div>
-              <div>Tickets (1)</div>
-              <div>{{ $travels['price'] }} FCFA</div>
-            </div>
-            <div>
-              <div>{{ __("Total")}}</div>
-              <div>500 FCFA</div>
+              <div>Tickets ({{ $count }})</div>
+              <div>{{ $travels['price'] * $count }} FCFA</div>
             </div>
             <div>
               <div>{{ __("KiPART fees")}}</div>
-              <div>{{ $travels['price'] + 500 }} FCFA</div>
+              @if($travels['classe']=="vip")
+              <div>1000 FCFA</div>
+              @endif
+              @if($travels['classe']=="classique")
+              <div>500 FCFA</div>
+            @endif
+
+            </div>
+            <div>
+              <div>{{ __("Total")}}</div>
+              @if($travels['classe']=="vip")
+                <div>{{ ($travels['price'] * $count) + (1000 * $count) }} FCFA</div>
+              @endif
+              @if($travels['classe']=="classique")
+              <div>{{ ($travels['price'] * $count) + (500 * $count) }} FCFA</div>
+            @endif
             </div>
           </div>
           <div id="reduction">
